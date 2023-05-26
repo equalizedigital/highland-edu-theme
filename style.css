@@ -1,0 +1,277 @@
+/*
+Theme Name: Morningstar Skeleton
+Author: MorningStar
+Author URI: https://morningstarmediagroup.com
+Description: Bare bones, responsive (%) framework based on Wyck's WP-Skeleton https://github.com/wycks/WP-Skeleton-Theme/
+Version: 1.1
+License: http://www.opensource.org/licenses/mit-license.php.
+Tags: Responsive, grid, mobile, framework, bare-bones, white, minimal
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* Table of Contents
+==================================================
+    #Base 960 Grid
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+    #Clearing */
+
+
+
+/* #Base 960 Grid
+================================================== */
+
+	.super-container							{ position: relative; width:100%; }
+    .container                                  { position: relative; margin: 0 auto; width: 90%; max-width:1366px; }
+    .column, .columns                           { float: left; display: inline; margin-left: 1.041666666667%; margin-right: 1.041666666667%; }
+    .row                                        { margin-bottom: 20px; }
+
+    /* Nested Column Classes */
+    .column.alpha, .columns.alpha               { margin-left: 0; }
+    .column.omega, .columns.omega               { margin-right: 0; }
+    .column.beta, .columns.beta              	{ margin-left: 0; margin-right: 2.08333334%; }
+    .column.delta, .columns.delta               { margin-right: 0; margin-left: 2.08333334%; }
+
+    /* Base Grid */
+    .container .one.column                      { width: 4.16666666666667%; } /* 40px  */
+    .container .two.columns                     { width: 10.4166666666667%; } /* 100px */
+    .container .three.columns                   { width: 16.6666666666667%; } /* 160px */
+    .container .four.columns                    { width: 22.9166666666667%; } /* 220px */
+    .container .five.columns                    { width: 29.1666666666667%; } /* 280px */
+    .container .six.columns                     { width: 35.4166666666667%; } /* 340px */
+    .container .seven.columns                   { width: 41.6666666666667%; } /* 400px */
+    .container .eight.columns                   { width: 47.9166666666667%; } /* 460px */
+    .container .nine.columns                    { width: 54.1666666666667%; } /* 520px */
+    .container .ten.columns                     { width: 60.4166666666667%; } /* 580px */
+    .container .eleven.columns                  { width: 66.6666666666667%; } /* 640px */
+    .container .twelve.columns                  { width: 72.9166666666667%; } /* 700px */
+    .container .thirteen.columns                { width: 79.1666666666667%; } /* 760px */
+    .container .fourteen.columns                { width: 85.4166666666667%; } /* 820px */
+    .container .fifteen.columns                 { width: 91.6666666666667%; } /* 880px */
+    .container .sixteen.columns                 { width: 100%; } /* 940px */
+
+    .container .one-third.column                { width: 31.25%;            } /* 300px */
+    .container .two-thirds.column               { width: 64.5833333333333%; } /* 620px */
+
+    /* Offsets */
+    .container .offset-by-one                   { padding-left: 6.25%;  }	  /* 60px  */
+    .container .offset-by-two                   { padding-left: 12.5%;  }	  /* 120px */
+    .container .offset-by-three                 { padding-left: 18.75%;  }	  /* 180px */
+    .container .offset-by-four                  { padding-left: 25%;    }	  /* 240px */
+    .container .offset-by-five                  { padding-left: 31.25%; }	  /* 300px */
+    .container .offset-by-six                   { padding-left: 37.5%;  }	  /* 360px */
+    .container .offset-by-seven                 { padding-left: 43.75%; }	  /* 420px */
+    .container .offset-by-eight                 { padding-left: 50%;    }	  /* 480px */
+    .container .offset-by-nine                  { padding-left: 56.25%; }	  /* 540px */
+    .container .offset-by-ten                   { padding-left: 62.5%;  }	  /* 600px */
+    .container .offset-by-eleven                { padding-left: 68.75%; }	  /* 660px */
+    .container .offset-by-twelve                { padding-left: 75%;    }	  /* 720px */
+    .container .offset-by-thirteen              { padding-left: 81.25%; }	  /* 780px */
+    .container .offset-by-fourteen              { padding-left: 87.5%;  }	  /* 840px */
+    .container .offset-by-fifteen               { padding-left: 93.75%; }	  /* 900px */
+
+
+        /* WordPress sidebar*/
+        .one-third.column{
+          margin-left: 3.1249999999997%;
+        }
+        
+
+/* #Tablet (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 768px */
+
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+        .container                                  { width: 90%; }
+        .container .column,
+        .container .columns                         { margin-left: 1.063829787234%; margin-right: 1.063829787234%;  }
+        .column.alpha, .columns.alpha               { margin-left: 0; margin-right: 1.063829787234%; }
+        .column.omega, .columns.omega               { margin-right: 0; margin-left: 1.063829787234%; }
+        .alpha.omega                                { margin-left: 0; margin-right: 0; }
+
+        .container .one.column                      { width: 3.64583333333333%; } /* 28px  */
+        .container .two.columns                     { width: 9.89583333333333%; } /* 76px  */
+        .container .three.columns                   { width: 16.1458333333333%; } /* 124px */
+        .container .four.columns                    { width: 22.3958333333333%; } /* 172px */
+        .container .five.columns                    { width: 28.6458333333333%; } /* 220px */
+        .container .six.columns                     { width: 34.8958333333333%; } /* 268px */
+        .container .seven.columns                   { width: 41.1458333333333%; } /* 316px */
+        .container .eight.columns                   { width: 47.3958333333333%; } /* 364px */
+        .container .nine.columns                    { width: 53.6458333333333%; } /* 412px */
+        .container .ten.columns                     { width: 59.8958333333333%; } /* 460px */
+        .container .eleven.columns                  { width: 66.1458333333333%; } /* 508px */
+        .container .twelve.columns                  { width: 72.3958333333333%; } /* 556px */
+        .container .thirteen.columns                { width: 78.6458333333333%; } /* 604px */
+        .container .fourteen.columns                { width: 84.8958333333333%; } /* 652px */
+        .container .fifteen.columns                 { width: 91.1458333333333%; } /* 700px */
+        .container .sixteen.columns                 { width: 100%; } /* 748px */
+
+        .container .one-third.column                { width: 30.7291666666667%; } /* 236px */
+        .container .two-thirds.column               { width: 64.0625%;          } /* 492px */
+
+        /* Offsets */
+        .container .offset-by-one                   { padding-left: 6.25%;  	} /* 48px  */
+        .container .offset-by-two                   { padding-left: 12.5%;  	} /* 96px  */
+        .container .offset-by-three                 { padding-left: 18.75%; 	} /* 144px */
+        .container .offset-by-four                  { padding-left: 25%;    	} /* 192px */
+        .container .offset-by-five                  { padding-left: 31.25%; 	} /* 240px */
+        .container .offset-by-six                   { padding-left: 37.5%;  	} /* 288px */
+        .container .offset-by-seven                 { padding-left: 43.75%; 	} /* 336px */
+        .container .offset-by-eight                 { padding-left: 45.3125%; 	} /* 348px */
+        .container .offset-by-nine                  { padding-left: 56.25%; 	} /* 432px */
+        .container .offset-by-ten                   { padding-left: 62.5%; 		} /* 480px */
+        .container .offset-by-eleven                { padding-left: 68.75%; 	} /* 528px */
+        .container .offset-by-twelve                { padding-left: 75%;    	} /* 576px */
+        .container .offset-by-thirteen              { padding-left: 81.25%; 	} /* 624px */
+        .container .offset-by-fourteen              { padding-left: 87.5%; 		} /* 672px */
+        .container .offset-by-fifteen               { padding-left: 93.75%; 	} /* 720px */
+        
+        /* WordPress sidebar*/
+        .one-third.column{
+        margin-left: 3.90625%;
+        }
+    }
+
+    
+    
+
+/*  #Mobile (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 320px */
+
+    @media only screen and (max-width: 767px) {
+        .container { width: 93.75%; }
+        .container .columns,
+        .container .column { margin: 0; }
+
+        .container .one.column,
+        .container .two.columns,
+        .container .three.columns,
+        .container .four.columns,
+        .container .five.columns,
+        .container .six.columns,
+        .container .seven.columns,
+        .container .eight.columns,
+        .container .nine.columns,
+        .container .ten.columns,
+        .container .eleven.columns,
+        .container .twelve.columns,
+        .container .thirteen.columns,
+        .container .fourteen.columns,
+        .container .fifteen.columns,
+        .container .sixteen.columns,
+        .container .one-third.column,
+        .container .two-thirds.column  { width: 100%; }
+
+        /* Offsets */
+        .container .offset-by-one,
+        .container .offset-by-two,
+        .container .offset-by-three,
+        .container .offset-by-four,
+        .container .offset-by-five,
+        .container .offset-by-six,
+        .container .offset-by-seven,
+        .container .offset-by-eight,
+        .container .offset-by-nine,
+        .container .offset-by-ten,
+        .container .offset-by-eleven,
+        .container .offset-by-twelve,
+        .container .offset-by-thirteen,
+        .container .offset-by-fourteen,
+        .container .offset-by-fifteen { padding-left: 0; }
+        
+       /* Float WordPress menu left now, and reduce padding*/
+        .menu {float: left;}
+ 
+        /* WordPress sidebar*/
+        #side{margin-left: 0px;}
+    }
+
+
+/* #Mobile (Landscape)
+================================================== */
+
+    /* Note: Design for a width of 480px */
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+        .container { width: 90%; }
+        .container .columns,
+        .container .column { margin: 0; }
+
+        .container .one.column,
+        .container .two.columns,
+        .container .three.columns,
+        .container .four.columns,
+        .container .five.columns,
+        .container .six.columns,
+        .container .seven.columns,
+        .container .eight.columns,
+        .container .nine.columns,
+        .container .ten.columns,
+        .container .eleven.columns,
+        .container .twelve.columns,
+        .container .thirteen.columns,
+        .container .fourteen.columns,
+        .container .fifteen.columns,
+        .container .sixteen.columns,
+        .container .one-third.column,
+        .container .two-thirds.column { width: 100%; }
+        
+
+        /* Float WordPress menu left now and reduce padding*/
+       .menu {float: left;}
+
+       /* WordPress sidebar*/
+       #side{margin-left: 0px;}
+       
+      }
+
+
+/* #Clearing
+================================================== */
+
+    /* Self Clearing Goodness */
+    .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+    /* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+    .clearfix:before,
+    .clearfix:after,
+    .row:before,
+    .row:after {
+      content: '\0020';
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0; }
+    .row:after,
+    .clearfix:after {
+      clear: both; }
+    .row,
+    .clearfix {
+      zoom: 1; }
+
+    /* You can also use a <br class="clear" /> to clear columns */
+    .clear {
+      clear: both;
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+
+
+/* #Image Handling
+================================================== */
+	img {
+		max-width:100%;
+		height: auto !important;
+        vertical-align: bottom;
+	}

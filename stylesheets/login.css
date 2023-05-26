@@ -1,0 +1,47 @@
+body.login {
+	background: #FFF !important;
+}
+.login form  {
+	color: #FFF;
+	background: #ff6140;
+}
+
+input.button-primary, 
+button.button-primary, 
+a.button-primary {
+	border: 1px #222 !important;
+	background: #FFF !important;
+}
+.wp-core-ui .button-primary {
+	color: #000;
+	text-shadow: none;
+}
+
+.wp-core-ui .button-primary.hover,
+.wp-core-ui .button-primary:hover, 
+.wp-core-ui .button-primary.focus, 
+.wp-core-ui .button-primary:focus {
+	border: 1px #F00 !important;
+	background: #555 !important;
+}
+
+.login label {
+	color: #FFF;
+}
+
+.login #nav a, .login #backtoblog a {	
+	text-decoration:none;
+}
+
+.login #nav a:hover, .login #backtoblog a:hover {
+	color: #111!important;
+	text-decoration:underline;
+}
+
+#login h1 a {
+	background:url(../images/logo.jpg) center no-repeat !important;
+	background-size: 162px 164px !important;
+	width: 162px !important;
+	height: 164px !important;
+
+}
