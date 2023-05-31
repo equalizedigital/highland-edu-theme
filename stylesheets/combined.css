@@ -746,6 +746,7 @@ div.menu li{margin:0 0;}
 /* #Sub Menus
 ================================================== */
 .sub-menus {
+    display: none;
     position: absolute;
     right: 0;
     width: 100%;
@@ -757,10 +758,14 @@ div.menu li{margin:0 0;}
     background: #fff;
     overflow: hidden;
     max-height: 0;
-    opacity: 0;
     margin: 0 auto;
     z-index: 9999;
     font-family: 'Raleway', sans-serif;
+    max-height: 650px;
+    padding: 0 0 25px 0px;
+}
+.sub-menus.active {
+    display: block !important;
 }
 
 /*The Id refers to the container that the menu resides in*/
@@ -770,10 +775,10 @@ div.menu li{margin:0 0;}
 #campus-subs-actuator:hover ~ #campus-subs, #campus-subs:hover,
 #arts-subs-actuator:hover ~ #arts-subs, #arts-subs:hover
 {
-    max-height: 650px;
+    /* max-height: 650px; */
     /*This could probably be changed to min-height: 500px; */
-    opacity: 1;
-    padding: 0 0 25px 0px;
+    /* display: block; */
+    /* padding: 0 0 25px 0px; */
 }
 .actuator-acuated {
     background-color: #666 !important;
@@ -1432,3 +1437,85 @@ img{max-width:100%;height:auto !important;vertical-align:bottom;}
 }
 
 #calendar_page .container { max-width: 1920px; }
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+  .caret-icon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+  }
+  button.toggle-button {
+    padding: 0;
+    margin-left: 5px;
+    background: none;
+    border: 0;
+    color: rgba(255,255,255,1);
+    cursor: pointer;
+    opacity: 0;
+    display: inline-block;
+  }
+  ul#menu-topnav li a.link-icon {
+    display: inline-block;
+  }
+  button.toggle-button:focus {
+    outline-offset: 2px;
+    opacity: 1;
+  }
+  button.toggle-item-button {
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    line-height: 55px;
+    letter-spacing: -0.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #FFF;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    background: none;
+    border: 0;
+  }
+  button.toggle-item-button .caret-icon {
+    opacity: 0;
+    margin-left: 5px;
+  }
+  button.toggle-item-button:focus .caret-icon {
+    outline-offset: 2px;
+    opacity: 1;
+  }
+  .toggle-item-button[aria-expanded=true] + .sub-menu {
+    display: block !important;
+  }
+  .toggle-mega-menu {
+    background: none;
+    border: 0;
+    font-family: 'Overpass', sans-serif;
+    position: relative;
+    font-size: 16px;
+    display: block;
+    padding: 25px 25px;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+.toggle-mega-menu .caret-icon {
+    opacity: 0;
+}
+.toggle-mega-menu:focus .caret-icon {
+    opacity: 1;
+}

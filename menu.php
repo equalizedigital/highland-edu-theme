@@ -25,7 +25,13 @@ defined('ABSPATH') OR exit;
                         </a>
                     </div>
                     <!--  the Menu -->
-                    <? wp_nav_menu(array('theme_location' => 'topnav')); ?>
+                    <? 
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'topnav',
+                            'walker' => new topNavWalker()
+                        ),
+                    ); ?>
                 </div>
             </div>
         </div>
@@ -36,11 +42,11 @@ defined('ABSPATH') OR exit;
                     <div id="access">
                         <?
                         wp_nav_menu(array('theme_location' => 'primary'));
-                        wp_nav_menu( array( 'menu' => 'main-nav-1', 'menu_id' => 'admissions-subs-actuator', 'menu_class' => 'menu-main-menu', 'container' => false ) );
-                        wp_nav_menu( array( 'menu' => 'main-nav-2', 'menu_id' => 'academics-subs-actuator', 'menu_class' => 'menu-main-menu', 'container' => false ) );
+                        wp_nav_menu( array( 'menu' => 'main-nav-1', 'menu_id' => 'admissions-subs-actuator', 'menu_class' => 'menu-main-menu', 'container' => false, 'walker' => new admissionsWalker() ) );
+                        wp_nav_menu( array( 'menu' => 'main-nav-2', 'menu_id' => 'academics-subs-actuator', 'menu_class' => 'menu-main-menu', 'container' => false, 'walker' => new academicsWalker() ) );
                         wp_nav_menu( array( 'menu' => 'main-nav-3', 'menu_id' => 'athletics-subs-actuator', 'menu_class' => 'menu-main-menu', 'container' => false ) );
-                        wp_nav_menu( array( 'menu' => 'main-nav-4', 'menu_id' => 'campus-subs-actuator', 'menu_class' => 'menu-main-menu', 'container' => false ) );
-                        wp_nav_menu( array( 'menu' => 'main-nav-5', 'menu_id' => 'arts-subs-actuator', 'menu_class' => 'menu-main-menu', 'container' => false ) );
+                        wp_nav_menu( array( 'menu' => 'main-nav-4', 'menu_id' => 'campus-subs-actuator', 'menu_class' => 'menu-main-menu', 'container' => false, 'walker' => new campusWalker() ) );
+                        wp_nav_menu( array( 'menu' => 'main-nav-5', 'menu_id' => 'arts-subs-actuator', 'menu_class' => 'menu-main-menu', 'container' => false, 'walker' => new artsWalker() ) );
                         get_template_part('submenu', 'admissions');
                         get_template_part('submenu', 'academics');
                         //get_template_part('submenu', 'athletics');

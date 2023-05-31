@@ -83,6 +83,7 @@ function mstar_jquery_enqueue() {
 	wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", false, null);
 	wp_enqueue_script('detect', get_template_directory_uri().'/includes/js/mobile-detect.js#asyncload', array( 'jquery' ) );
 	wp_enqueue_script('jquery');
+	wp_enqueue_script('navigation', get_template_directory_uri().'/includes/js/navigation.js', array(), '1.0.0', true );
 }
 
 
@@ -104,6 +105,8 @@ include('includes/tracker_functions.php');
 include('includes/upload_functions.php');
 include('includes/form_functions.php');
 include('includes/cpt_functions.php'); 	//-- use for custom post types
+include('includes/menus.php');
+
 //include('includes/twitter_loader.php'); 	//-- call within page, not functions!
 //include('includes/facebook_feed.php');  	//-- call within page, not functions!
 //include('includes/fancy_loader.php');   	//-- call within page, not functions!
