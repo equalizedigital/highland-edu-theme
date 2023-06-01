@@ -97,7 +97,9 @@
                             <a class="parent" href="<? echo $link; ?>" tabindex="0"><? echo $parent_title; ?></a>
                             <?php
                         } else {?>
-                            <a class="parent segundo" href="<? echo $link; ?>" tabindex="0"><? echo $parent_title; ?></a>
+                            <a class="parent segundo" href="<? echo $link; ?>" tabindex="0">
+                                <h2><? echo $parent_title; ?></h2>
+                            </a>
                             <?php
                         }
                         ?>

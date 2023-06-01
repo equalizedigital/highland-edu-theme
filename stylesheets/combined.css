@@ -1519,3 +1519,14 @@ img{max-width:100%;height:auto !important;vertical-align:bottom;}
 .toggle-mega-menu:focus .caret-icon {
     opacity: 1;
 }
+legend.reset-legend {
+    font-size: inherit;
+}
+
+.sidebar .menu li:first-child a h2 {
+    color: #fff;
+    font-size: 22px;
+    display: inline-block;
+    padding: 0;
+    font-weight: inherit;
+}
