@@ -1521,6 +1521,7 @@ img{max-width:100%;height:auto !important;vertical-align:bottom;}
 }
 legend.reset-legend {
     font-size: inherit;
+    padding: 0;
 }
 
 .sidebar .menu li:first-child a h2 {
