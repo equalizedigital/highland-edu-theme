@@ -97,7 +97,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
                                                     </div>
 
 
-                                                    <div   class="simpleTabsContent" role="tabpanel" aria-labelledby="prairie-cat-tab" id="tabber57_div_1" aria-hidden="true"><p />
+                                                    <div   class="simpleTabsContent" role="tabpanel" aria-labelledby="prairie-cat-tab" id="tabber57_div_1" aria-hidden="true">
                                                         <form action="http://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0;" onsubmit="ebscoPreProcess(this)"><p />
                                                             <!-- Dropdown menu to prepend the selected value below to the user's search term -->
                                                             <select onchange="#" size="1" name="search_prefix" style="width: 100px"><option selected="selected" value="">Keyword</option><option value="TI ">Title</option><option value="AU ">Author</option></select><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
@@ -131,7 +131,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 
                                                     <div  class="simpleTabsContent" role="tabpanel" aria-labelledby="ebooks-tab" id="tabber57_div_2" aria-hidden="true">
                                                         <!-- Begin form which will construct a link into EDS https://support.epnet.com/knowledge_base/detail.php?id=2747#linksearch -->
-                                                        <form action="https://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0" onsubmit="ebscoPreProcess(this); limittoeBooks(this)"><p />
+                                                        <form action="https://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0" onsubmit="ebscoPreProcess(this); limittoeBooks(this)">
                                                             <!-- Dropdown menu to prepend the selected value below to the user's search term -->
                                                             <select onchange="#" size="1" name="search_prefix" style="width: 100px"><option selected="selected" value="">Keyword</option><option value="TI ">Title</option><option value="AU ">Author</option></select><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
                                                             <!-- target an EDS profile -->
@@ -157,7 +157,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 
                                                     <div  class="simpleTabsContent" role="tabpanel" aria-labelledby="articles-tab" id="tabber57_div_3" aria-hidden="true">
                                                         <!-- Begin form which will construct a link into EDS https://support.epnet.com/knowledge_base/detail.php?id=2747#linksearch -->
-                                                        <form action="https://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0" onsubmit="ebscoPreProcess(this); limittoArticles(this)"><p />
+                                                        <form action="https://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0" onsubmit="ebscoPreProcess(this); limittoArticles(this)">
                                                             <!-- Dropdown menu to prepend the selected value below to the user's search term -->
                                                             <select onchange="#" size="1" name="search_prefix" style="width: 100px"><option selected="selected" value="">Keyword</option><option value="TI ">Title</option><option value="AU ">Author</option></select><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
                                                             <!-- target an EDS profile -->
@@ -181,7 +181,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 
                                                     <div  class="simpleTabsContent" role="tabpanel" aria-labelledby="videos-tab" id="tabber57_div_4" aria-hidden="true">
                                                         <!-- Begin form which will construct a link into EDS https://support.epnet.com/knowledge_base/detail.php?id=2747#linksearch -->
-                                                        <form action="https://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0" onsubmit="ebscoPreProcess(this); limittoVideos(this)"><p />
+                                                        <form action="https://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0" onsubmit="ebscoPreProcess(this); limittoVideos(this)">
                                                             <!-- Dropdown menu to prepend the selected value below to the user's search term -->
                                                             <select onchange="#" size="1" name="search_prefix" style="width: 100px"><option selected="selected" value="">Keyword</option><option value="TI ">Title</option><option value="AU ">Author</option></select><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
                                                             <!-- target an EDS profile -->
