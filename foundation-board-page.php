@@ -42,7 +42,11 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
                                 $the_photoless = array();
                                 while($loop->have_posts()) : $loop->the_post();
                                     if ( has_post_thumbnail() ) {
-                                        $thumbnail = get_the_post_thumbnail($post->ID, 'staff-thumb', array('class' => 'staff-thumb')); ?>
+                                        $alt = get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true);
+                                        if (empty($alt)) {
+                                            $alt = get_the_title();
+                                        }
+                                        $thumbnail = get_the_post_thumbnail($post->ID, 'staff-thumb', array('class' => 'staff-thumb', 'alt'=> $alt )); ?>
                                         <div class="team-object">
                                             <?
                                                 $title 	= get_post_meta($post->ID,'_cmb_title', true);
