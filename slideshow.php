@@ -1,6 +1,6 @@
 <?
 if (function_exists('meteor_slideshow')) { ?>
-	<div class="super-container slideshow-holder">
+	<section class="super-container slideshow-holder" aria-label="Home page main carousel">
 		<div class="slideshow-stage">
 			<?php
 			meteor_slideshow();
@@ -29,6 +29,6 @@ if (function_exists('meteor_slideshow')) { ?>
 				</div><!-- menu-holder -->
 			</div><!-- End container -->
 		</div> <!-- End menu-overlay -->
-	</div><!-- End slideshow-holder -->
+	</section><!-- End slideshow-holder -->
 
 <? } ?>
