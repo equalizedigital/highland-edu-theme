@@ -321,10 +321,10 @@ ul.bootpag li, ul.bootpag li.prev.disabled, ul.bootpag li.next.disabled{width:au
 .scholarship-entry div:nth-child(3){width:40%;}
 .scholarship-entry div:nth-child(4){width:10%;}
 .accordion{cursor:pointer;margin:10px 0;width:100%;border:none;outline:none;}
-.accordion h1{font-family:'Raleway', sans-serif;line-height:28px;letter-spacing:-0.15px;font-weight:700;background-color:#ff6200;color:#FFF;font-size:15px;padding:18px;}
-.accordion h1.active, .accordion h1:hover{background-color:#ff6200;}
-.accordion button{text-align: left;font-family:'Raleway', sans-serif;line-height:24px;letter-spacing:-0.15px;font-weight:700;background-color:#ff6200;border: none;color:#FFF;font-size:15px;padding:18px; width: 100%;}
-.accordion button.active, .accordion button:hover{background-color:#ff6200;}
+.accordion h1{font-family:'Raleway', sans-serif;line-height:28px;letter-spacing:-0.15px;font-weight:700;background-color:#285699;color:#FFF;font-size:15px;padding:18px;}
+.accordion h1.active, .accordion h1:hover{background-color:#285699;}
+.accordion button{text-align: left;font-family:'Raleway', sans-serif;line-height:24px;letter-spacing:-0.15px;font-weight:700;background-color:#285699;border: none;color:#FFF;font-size:15px;padding:18px; width: 100%;}
+.accordion button.active, .accordion button:hover{background-color:#3a70c0;}
 .accordion .panel{padding:0 18px;max-height:0;overflow:hidden;background-color:white;-moz-transition:.75s;-ms-transition:.75s;-o-transition:.75s;-webkit-transition:.75s;transition: all .75s;color:#000;}
 .accordion.active .panel{max-height:999px;}
 .accordion .panel > *{display:none;}
