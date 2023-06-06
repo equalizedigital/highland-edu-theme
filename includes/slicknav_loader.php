@@ -1,5 +1,5 @@
 <script src="<? echo "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : ""); ?>://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/includes/slicknav/jquery.slicknav.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/includes/slicknav/jquery.slicknav.js"></script>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/includes/slicknav/slicknav.min.css">
 
 

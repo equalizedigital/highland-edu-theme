@@ -21,7 +21,8 @@
 							<header class="entry-header">
 								<h1 class="entry-title"><? the_title(); ?></h1>
 							</header><!-- .entry-header -->
-							<div class="entry-content staff-directory">
+							<section class="entry-content staff-directory" aria-label="staff filter">
+								<div class="sr-only">The following text field filters the results that follow as you type. Use Tab to access the results.</div>
 								<div id="srch-step-one" class="mstarAjax">
 									<? /* these hidden inputs are used to set default values for the ajax args */ ?>
 									<input type="hidden" value="staff" id="post-type-holder" target="srch-step-two">
@@ -37,7 +38,7 @@
 								<div name="search_options" id="srch-step-two" class="mstarAjax search-options">
 									<form id="staff-finder">
 										<div class="find-col tt-search reset-holder staff-search">
-											<label for="search_term">Search By Last Name (above options not available)</label>
+											<label for="search_box">Search By Last Name (above options not available)</label>
 											<span class="delete-me">
 												<input class="the-selectors tts ref-select" type="text" name="search_term" id="search_box" placeholder="Type to Search" <?php if(!empty($search_term)) echo 'value="'.$search_term.'"';?> key="_cmb_staff_lname" compare_key="LIKE">
 												<input type="button" name="clear-me" id="clear-me" value="clear" style="width: 15%">
@@ -50,26 +51,54 @@
                                             <div class="search-options-overlay"><p>Location selection is not available when using type to search.</p></div>
                                         </div>-->
                                         <div class="find-col toggler">
-                                            <label for="location">Department</label>
-                                            <select class="the-selectors" name="location" id="loc" tax="department"></select>
+                                            <label for="location_box">Department</label>
+                                            <select class="the-selectors" id="location_box" name="location" id="loc" tax="department"></select>
                                             <div class="search-options-overlay"><p>Location selection is not available when using type to search.</p></div>
                                         </div>
+										<div id="results-count" class="sr-only" aria-live="assertive">
+										</div>
 										<div class="clear"></div><br />
 									</form>
 								</div>
                                 <hr>
 								<div class="results-holder">
 									<div class="clear"></div>
-									<div id="ajax-pagination-top"></div>
+									<fieldset>
+										<legend>Filter by letters</legend>
+										<div id="ajax-pagination-top">
+										</div>
+									</fieldset>
 									<div class="clear"></div>
 									<hr>
 									<div class="ajax-loading">Loading<br /><img src="<?php bloginfo('template_url');?>/images/loady.gif" /></div>
 									<div id="display-results" class="mstarAjax"></div>
 								</div>
 								<div id="results-template" class="mstarAjax">
-									<li class="staff-entry"><div><h2><span type="function" key="the_title">&nbsp;</span></h2></div><div><span type="meta" key="_cmb_staff_grade">&nbsp;</span></div><div><span type="tax" slug="staff-member-location">&nbsp;</span></div><div><a type="tel"><span type="meta" key="_cmb_staff_phone">&nbsp;</span></a></div><div><a type="email"><span type="meta" key="_cmb_staff_email">&nbsp;</span></a></div></li>
+									<li class="staff-entry" role="group" aria-label="staff member">
+										<div>
+											<h2>
+												<span type="function" key="the_title">&nbsp;</span>
+											</h2>
+										</div>
+										<div>
+											<span type="meta" key="_cmb_staff_grade">&nbsp;</span>
+										</div>
+										<div>
+											<span type="tax" slug="staff-member-location">&nbsp;</span>
+										</div>
+										<div>
+											<a type="tel">
+												<span type="meta" key="_cmb_staff_phone">&nbsp;</span>
+											</a>
+										</div>
+										<div>
+											<a type="email">
+												<span type="meta" key="_cmb_staff_email">&nbsp;</span>
+											</a>
+										</div>
+									</li>
 								</div>
-							</div><!-- .entry-content -->
+							</section><!-- .entry-content -->
 						</article><!-- #post-<? the_ID(); ?> -->
 					</div><!-- #main -->
 				</div><!-- #content -->

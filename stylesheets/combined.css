@@ -57,7 +57,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 textarea,
-select{border:1px solid #ccc;padding:6px 4px;outline:none;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;font:13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;color:#777;margin:0;max-width:100%;display:block;background:#fff;}
+select{border:1px solid #ccc;padding:6px 4px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;font:13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;color:#777;margin:0;max-width:100%;display:block;background:#fff;}
 select{padding:0 !important;}
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -109,8 +109,20 @@ ul#menu-topnav ul:hover > a{color:#FFF;}
 ul#menu-topnav li:hover > ul{display:block;}
 ul#menu-topnav li:hover > a{color:#FFF;text-decoration:underline;text-decoration-thickness:2px;}
 #top_nav ul#menu-topnav li.mobile-only { display: none; }
-.slicknav_menu{display:none;}
-.slicknav_btn{z-index: 10000;}
+.slicknav_menu{display:none;background-color: black !important;}
+.slicknav_icon-bar{background-color: black !important;}
+.slicknav_btn{z-index: 10000;background-color: #FF6A2A !important;}
+.slicknav_nav .slicknav_row:hover>a,
+.slicknav_nav .slicknav_row:hover .slicknav_arrow,
+.slicknav_open>a,
+.slicknav_open .slicknav_arrow {
+    color: black !important;
+}
+.slicknav_open>a>a,
+.slicknav_open>a {
+    background-color: #ccc !important;
+    color: black !important;
+}
 .slicknav_nav {padding-top: 60px !important;}
 .slicknav_nav a {position: relative;z-index: 10000;}
 .menu-wrapper{background:#ddd;}

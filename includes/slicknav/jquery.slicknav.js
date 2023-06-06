@@ -123,7 +123,7 @@
             $(menuBar).append(brand);
         }
         $this.btn = $(
-            ['<' + settings.parentTag + ' aria-haspopup="true" role="button" tabindex="0" class="' + prefix + '_btn ' + prefix + '_collapsed">',
+            ['<' + settings.parentTag + ' role="button" aria-controls="menu-main-menu" aria-expanded="false" aria-label="Toggle Main Menu"  tabindex="0" class="' + prefix + '_btn ' + prefix + '_collapsed">',
                 '<span class="' + prefix + '_menutxt">' + settings.label + '</span>',
                 '<span class="' + iconClass + '">',
                 '<span class="' + prefix + '_icon-bar"></span>',
@@ -172,7 +172,7 @@
                 });
 
                 var wrapElement = $(
-                    '<' + settings.parentTag + ' role="menuitem" aria-haspopup="true" tabindex="-1" class="' + prefix + '_item"/>'
+                    '<' + settings.parentTag + ' tabindex="-1" class="' + prefix + '_item"/>'
                 );
 
                 // wrap item text with tag and add classes unless we are separating parent links
@@ -205,7 +205,7 @@
             }
 
             // accessibility for links
-            item.children('a').attr('role', 'menuitem').click(function(event){
+            item.children('a').click(function(event){
                 //Ensure that it's not a parent
                 if (settings.closeOnClick && !$(event.target).parent().closest('li').hasClass(prefix+'_parent')) {
                     //Emulate menu close if set
@@ -239,7 +239,7 @@
         $this._visibilityToggle($this.mobileNav, null, false, 'init', true);
 
         // accessibility for menu button
-        $this.mobileNav.attr('role','menu');
+        // $this.mobileNav.attr('role','menu');
 
         // outline prevention when using mouse
         $(document).mousedown(function(){
@@ -358,9 +358,11 @@
         if (btn.hasClass(prefix+'_collapsed')) {
             btn.removeClass(prefix+'_collapsed');
             btn.addClass(prefix+'_open');
+            btn.attr('aria-expanded','true');
         } else {
             btn.removeClass(prefix+'_open');
             btn.addClass(prefix+'_collapsed');
+            btn.attr('aria-expanded','false');
         }
         btn.addClass(prefix+'_animating');
         $this._visibilityToggle(mobileNav, btn.parent(), true, btn);
