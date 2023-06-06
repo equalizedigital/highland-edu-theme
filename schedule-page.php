@@ -59,25 +59,54 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 									</div>
                                     <hr>
 									<div class="clear"></div>
-									<div class="results-holder">
-
-                                        <div class="header_holder">
-                                            <div class="schedule-head">&nbsp</div>
-                                            <div class="schedule-head">&nbsp</div>
-                                            <div class="schedule-head">Days</div>
-                                            <div class="schedule-head">Time</div>
-                                            <div class="schedule-head">Class Dates</div>
-	                                        <div class="schedule-head">Course Number</div>
-	                                        <div class="schedule-head">Credits</div>
-                                            <div class="schedule-head">Fee</div>
-                                        </div><!-- header -->
-                                        <div class="clear"></div>
-										<div class="ajax-loading">Loading<br /><img src="<?php bloginfo('template_url');?>/images/loady.gif" /></div>
-										<div id="display-results" class="mstarAjax"></div>
-									</div>
+									<div class="ajax-loading">Loading<br /><img src="<?php bloginfo('template_url');?>/images/loady.gif" /></div>
+									<table class="results-holder stripe-table">
+                                        <thead class="header_holder">
+											<tr>
+                                            <th class="schedule-head" scope="col">&nbsp</th>
+                                            <th class="schedule-head" scope="col">Days</th>
+                                            <th class="schedule-head" scope="col">Time</th>
+                                            <th class="schedule-head" scope="col">Class Dates</th>
+	                                        <th class="schedule-head" scope="col">Course Number</th>
+	                                        <th class="schedule-head" scope="col">Credits</th>
+                                            <th class="schedule-head" scope="col">Fee</th>
+											</tr>
+                                        </thead><!-- header -->
+										<tbody id="display-results" class="mstarAjax"></tbody>
+									</table>
                                     <hr>
-									<div id="results-template" class="mstarAjax">
-										<li class="schedule-entry"><div><h2><a type="permalink" target="_blank"><span type="function" key="the_title"></span></a></h2></div><div><span type="tax" slug="department">&nbsp;</span></div><div><a type="email"><span type="meta" key="_cmb_class_days">&nbsp;</span></a></div><div><span type="meta" key="_cmb_class_start_time">&nbsp;</span><span type="meta" key="_cmb_class_end_time">&nbsp;</span></div><div><span type="date" key="_cmb_class_start_date">&nbsp;</span><span type="date" key="_cmb_class_end_date">&nbsp;</span></div><div><span type="meta" key="_cmb_course_number">&nbsp;</span></div><div><span type="meta" key="_cmb_credit_hours">&nbsp;</span></div><div><span type="money" key="_cmb_class_fee"></span></div></li>
+									<div id="results-template" class="mstarAjax" data-structure="table">
+										<ul class="schedule-entry">
+											<li>
+												<h2>
+													<a type="permalink" target="_blank">
+														<span type="function" key="the_title"></span>
+													</a>
+												</h2>
+												<span type="tax" slug="department">&nbsp;</span>
+
+											</li>
+											<li>
+												<span type="meta" key="_cmb_class_days">&nbsp;</span>
+											</li>
+											<li>
+												<span type="meta" key="_cmb_class_start_time line-data">&nbsp;</span>
+												<span type="meta" key="_cmb_class_end_time line-data">&nbsp;</span>
+											</li>
+											<li>
+												<span type="date" key="_cmb_class_start_date line-data">&nbsp;</span>
+												<span type="date" key="_cmb_class_end_date line-data">&nbsp;</span>
+											</li>
+											<li>
+												<span type="meta" key="_cmb_course_number">&nbsp;</span>
+											</li>
+											<li>
+												<span type="meta" key="_cmb_credit_hours">&nbsp;</span>
+											</li>
+											<li>
+												<span type="money" key="_cmb_class_fee"></span>
+											</div>
+										</ul>
 									</div>
 								</div><!-- .entry-content -->
 							</article><!-- #post-<? the_ID(); ?> -->
