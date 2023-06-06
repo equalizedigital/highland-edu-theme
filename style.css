@@ -275,3 +275,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 		height: auto !important;
         vertical-align: bottom;
 	}
+  .library-image img {
+    max-width: none !important;
+  }
