@@ -8,6 +8,15 @@
 get_template_part( 'sub-header', 'index' ); //the  header stuffs
 	get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 ?>
+<header class="super-container title-holder">
+	<div class="container">
+		<div class="sixteen columns alpha omega primary-nav-holder">
+			<h1>
+				<? printf( __( 'Search Results for: %s', 'mb' ), '<span>' . get_search_query() . '</span>' ); ?>
+			</h1>
+		</div><!-- menu-holder -->
+	</div>
+</header>
 <div class="super-container interior-page">
 	<div class="container">
 		<div class="sixteen columns alpha">
@@ -16,7 +25,6 @@ get_template_part( 'sub-header', 'index' ); //the  header stuffs
 					<div class="two-thirds column alpha">
 						<div class="main">
 							<? if ( have_posts() ) : ?>
-								<h2 class="page-title"><? printf( __( 'Search Results for: %s', 'mb' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 								<? get_search_form(); ?>
 								<? get_template_part( 'loop', 'search' ); ?>
 							<? else : ?>

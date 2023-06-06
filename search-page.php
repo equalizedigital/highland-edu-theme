@@ -14,15 +14,13 @@ get_template_part( 'sub-header', 'index' ); //the  header stuffs
 get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 ?>
 
-	<div class="super-container title-holder">
+	<header class="super-container title-holder">
 		<div class="container">
 			<div class="sixteen columns alpha omega primary-nav-holder">
-				<header>
-					<h1><? the_title(); ?></h1>
-				</header><!-- access -->
+				<h1><? the_title(); ?></h1>
 			</div><!-- menu-holder -->
 		</div>
-	</div>
+	</header>
 
 	<div class="super-container interior-page">
 		<div class="container">
