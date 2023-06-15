@@ -3,7 +3,7 @@ Theme Name: Morningstar Skeleton
 Author: MorningStar
 Author URI: https://morningstarmediagroup.com
 Description: Bare bones, responsive (%) framework based on Wyck's WP-Skeleton https://github.com/wycks/WP-Skeleton-Theme/
-Version: 1.5
+Version: 1.6
 License: http://www.opensource.org/licenses/mit-license.php.
 Tags: Responsive, grid, mobile, framework, bare-bones, white, minimal
 
@@ -277,4 +277,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	}
   .library-image img {
     max-width: none !important;
+  }
+  .library-image a{
+    display: block;
+  }
+
+  #search_field {
+    width:700px;
   }

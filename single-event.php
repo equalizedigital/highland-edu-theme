@@ -23,7 +23,7 @@
 		    
 	<?
 		the_post();
-		the_title('<h1>', '</h1>');
+		the_title('<h1 tabindex="-1">', '</h1>');
 		$post->event_location 	= get_post_meta($post->ID, '_cmb_event_location', true);
 		$post->start_date 		= get_post_meta($post->ID, '_cmb_start_date', true);
 		$post->frequency		= get_post_meta($post->ID, '_cmb_frequency', true);
