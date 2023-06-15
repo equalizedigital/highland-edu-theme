@@ -91,6 +91,10 @@ legend span{font-weight:normal;font-size:13px;color:#444;}
 .menu-dark{background:#787474;}
 .menu-orng{background:#ff6200;}
 .top-nav-holder{z-index:2005;}
+/* on desktop */
+@media screen and (min-width: 1024px) {
+    .top-nav-holder{display: flex!important;justify-content: flex-end;}
+}
 .menu-item i._before, .rtl .menu-item i._after {margin-right: 0 !important;}
 .menu-item i._mi {font-size: 1.75em !important;}
 ul#menu-topnav{float:right;margin-bottom:0;margin-left:0;}
