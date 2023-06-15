@@ -18,12 +18,6 @@ defined('ABSPATH') OR exit;
         <div class="super-container top-menu-holder">
             <div class="container">
                 <div class="sixteen columns top-nav-holder" id="top_nav">
-                    <!-- Search Icom -->    
-                    <div class="search-icon">
-                        <a href="<? echo get_permalink(5461); ?>">
-                            <img src="<? bloginfo('template_url'); ?>/images/search_icon.png" alt="Search"/>
-                        </a>
-                    </div>
                     <!--  the Menu -->
                     <? 
                     wp_nav_menu(
@@ -32,6 +26,12 @@ defined('ABSPATH') OR exit;
                             'walker' => new topNavWalker()
                         ),
                     ); ?>
+                    <!-- Search Icom -->    
+                    <div class="search-icon">
+                        <a href="<? echo get_permalink(5461); ?>">
+                            <img src="<? bloginfo('template_url'); ?>/images/search_icon.png" alt="Search"/>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

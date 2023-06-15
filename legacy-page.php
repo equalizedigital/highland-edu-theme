@@ -13,7 +13,7 @@
     get_template_part( 'menu-legacy', 'index' ); //the  menu + logo/site title
 ?>
 
-<main>
+<main id="content" role="main">
     <section id="hero">
         <div class="super-container"><?php
             $hero_image_data = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'full');
@@ -41,7 +41,7 @@
             $legacy_campaign_main_btn_txt = get_theme_mod('legacy_campaign_main_btn_txt');
             $legacy_campaign_main_btn_link = get_theme_mod('legacy_campaign_main_btn_link'); ?>
             <div class="container">
-                <div class="sixteen columns" id="content">
+                <div class="sixteen columns">
                     <div class="six columns support">
                         <h1><? echo $legacy_campaign_main_hdr_txt; ?></h1>
                         <a href="<? echo $legacy_campaign_main_btn_link; ?>" class="btn"><? echo $legacy_campaign_main_btn_txt; ?></a>
