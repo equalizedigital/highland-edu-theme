@@ -43,7 +43,8 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
                                 while($loop->have_posts()) : $loop->the_post();
                                     if ( has_post_thumbnail() ) {
                                         $alt = get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true);
-                                        if (empty($alt)) {
+                                        $file_name = basename(get_attached_file(get_post_thumbnail_id($post->ID)));
+                                        if (empty($alt) && 'blank.png' != $file_name) {
                                             $alt = get_the_title();
                                         }
                                         $thumbnail = get_the_post_thumbnail($post->ID, 'staff-thumb', array('class' => 'staff-thumb', 'alt'=> $alt )); ?>

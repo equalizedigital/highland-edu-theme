@@ -21,15 +21,18 @@ jQuery(document).ready(function($) {
         setCurrentTab(this);
     });
     $('.customSimpleTabs [role=tab]').keydown(function(e) {
+        if (e.keyCode == 13 || e.keyCode == 32) {
+            setCurrentTab(this);
+        }
+    });
+    $('.customSimpleTabs [role=tab]').keydown(function(e) {
         // Left Arrow
         if (e.keyCode == 37) {
             // if first tab then focus last tab
             if ($(this).prev().length == 0) {
                 $('.customSimpleTabs [role=tab]:last').focus();
-                setCurrentTab($('.customSimpleTabs [role=tab]:last'));
             } else {
                 $(this).prev().focus();
-                setCurrentTab($(this).prev());
             }
         }
         // Right Arrow
@@ -37,10 +40,8 @@ jQuery(document).ready(function($) {
             // if last tab then focus first tab
             if ($(this).next().length == 0) {
                 $('.customSimpleTabs [role=tab]:first').focus();
-                setCurrentTab($('.customSimpleTabs [role=tab]:first'));
             } else {
                 $(this).next().focus();
-                setCurrentTab($(this).next());
             }
         }
         // home button select and activate the first tab.
@@ -48,15 +49,24 @@ jQuery(document).ready(function($) {
             //prevent default action
             e.preventDefault();
             $('.customSimpleTabs [role=tab]:first').focus();
-            setCurrentTab($('.customSimpleTabs [role=tab]:first'));
         }
         // end button select and activate the last tab.
         if (e.keyCode == 35) {
             //prevent default action
             e.preventDefault();
             $('.customSimpleTabs [role=tab]:last').focus();
-            setCurrentTab($('.customSimpleTabs [role=tab]:last'));
         }
     });
-
+    //convert .slicknav_nav find a href # and convert to span
+    $('.slicknav_nav a a[href^="#"]').each(function() {
+        $(this).replaceWith('<span>' + $(this).text() + '</span>');
+    });
+    $('.slicknav_nav .toggle-item-button').each(function() {
+        $(this).replaceWith('<span>' + $(this).text() + '</span>');
+    });
+    $(window).on('load', function() {
+        $('button.c-accordion__title').each(function() {
+            $(this).wrap('<h2></h2>');
+        });
+    });
 });

@@ -38,10 +38,10 @@
 								<div name="search_options" id="srch-step-two" class="mstarAjax search-options">
 									<form id="staff-finder">
 										<div class="find-col tt-search reset-holder staff-search">
-											<label for="search_box">Search By Last Name (above options not available)</label>
+											<label for="search_box">Search By Last Name</label>
 											<span class="delete-me">
 												<input class="the-selectors tts ref-select" type="text" name="search_term" id="search_box" placeholder="Type to Search" <?php if(!empty($search_term)) echo 'value="'.$search_term.'"';?> key="_cmb_staff_lname" compare_key="LIKE">
-												<input type="button" name="clear-me" id="clear-me" value="clear" style="width: 15%">
+												<input type="button" name="clear-me" id="clear-me" value="Clear Last Name" style="width: 25%">
 												<div id="filtered_list" class="filtered_by"></div>
 											</span>
 										</div>
@@ -63,7 +63,7 @@
                                 <hr>
 								<div class="results-holder">
 									<div class="clear"></div>
-									<fieldset>
+									<fieldset id="ajax-pagination-top-fieldset">
 										<legend>Filter by letters</legend>
 										<div id="ajax-pagination-top">
 										</div>

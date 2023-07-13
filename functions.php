@@ -171,4 +171,41 @@ function acco_add_fields_wrapper( $content, $field, $value, $lead_id, $form_id )
 add_filter( 'gform_field_content_5', 'acco_add_fields_wrapper', 10, 5 );
 
 
+/**
+ * Add scope attributes to table cells using the tablepress_cell_tag_attributes filter.
+ * Adds scope="col" to the first row items if the table has a head, and scope="row" to the first column item.
+ *
+ * @param array  $tag_attributes Array of tag attributes for the table cell.
+ * @param int    $table_id       ID of the table.
+ * @param string $cell_content   Content of the table cell.
+ * @param int    $row_number     Row number of the table cell.
+ * @param int    $col_number     Column number of the table cell.
+ * @param int    $colspan        Number of columns spanned by the table cell.
+ * @param int    $rowspan        Number of rows spanned by the table cell.
+ *
+ * @return array Modified array of tag attributes.
+ */
+function ada_tablepress_add_scope( $tag_attributes, $table_id, $cell_content, $row_number, $col_number, $colspan, $rowspan ) {
+	$table = TablePress::$model_table->load( $table_id, true, true );
+
+	// Check if the table loading resulted in an error
+	if ( is_wp_error( $table ) ) {
+		return $tag_attributes;
+	}
+
+	// Add scope="col" to the first row items if the table has a head
+	if ( $row_number === 1 && $table['options']['table_head'] ) {
+		$tag_attributes['scope'] = 'col';
+	}
+
+	// Add scope="row" to the first column item
+	if ( $col_number === 1 && $row_number !== 1 ) {
+		$tag_attributes['scope'] = 'row';
+	}
+
+	return $tag_attributes;
+}
+add_filter( 'tablepress_cell_tag_attributes', 'ada_tablepress_add_scope', 10, 7 );
+
+
 ?>

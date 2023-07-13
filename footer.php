@@ -26,7 +26,7 @@
         </div>
     <? } ?>
 
-    <div class="literal super-container map-area parallax-area"  style="background-image: url(<? echo $parallax_bg3; ?>);">
+    <div class="literal super-container map-area parallax-area">
         <div class="container">
             <div class="address">
                 <h2>Highland Campus</h2>
