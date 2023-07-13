@@ -271,6 +271,9 @@ a.tour{background:#ff6200;}
 .footer-logo{text-align:center;}
 .copy{padding-left:20px;}
 .copy p{width:80%;font-family:'Roboto', sans-serif;font-size:14px;line-height:28px;letter-spacing:.5px;text-transform:uppercase;color:#666;}
+.social-icons {
+    list-style: none;
+}
 .social-icons a{text-decoration: none;width: 25%;float: left;text-align: center;padding: 3%;box-sizing: border-box;}
 .footer-menu, .social-outer{width:40%;float:left;}
 .left-menu{width:100%;padding-left:2%;padding-right: 2%;box-sizing:border-box;float:left;}
