@@ -196,6 +196,8 @@ function ada_tablepress_add_scope( $tag_attributes, $table_id, $cell_content, $r
 	// Add scope="col" to the first row items if the table has a head
 	if ( $row_number === 1 && $table['options']['table_head'] ) {
 		$tag_attributes['scope'] = 'col';
+	} else if ( $col_number === 1 && $row_number === 1 && ! $table['options']['table_head'] ) {
+		$tag_attributes['scope'] = 'row';
 	}
 
 	// Add scope="row" to the first column item
