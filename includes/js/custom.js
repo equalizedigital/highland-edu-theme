@@ -21,6 +21,10 @@ jQuery(document).ready(function($) {
         setCurrentTab(this);
     });
     $('.customSimpleTabs [role=tab]').keydown(function(e) {
+        // if space prevent scrolling
+        if (e.keyCode == 32) {
+            e.preventDefault();
+        }
         if (e.keyCode == 13 || e.keyCode == 32) {
             setCurrentTab(this);
         }
