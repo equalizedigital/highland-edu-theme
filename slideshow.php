@@ -1,6 +1,7 @@
 <?
 if (function_exists('meteor_slideshow')) { ?>
 	<section class="super-container slideshow-holder" aria-label="Home page main carousel">
+		<p class="sr-only">This is the main carousel for the home page. It is set to auto play. Use the pause button to stop the carousel and the play button to resume.</p>
 		<div class="slideshow-stage">
 			<?php
 			meteor_slideshow();
