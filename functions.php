@@ -107,6 +107,7 @@ include('includes/upload_functions.php');
 include('includes/form_functions.php');
 include('includes/cpt_functions.php'); 	//-- use for custom post types
 include('includes/menus.php');
+include('includes/acf.php');
 
 //include('includes/twitter_loader.php'); 	//-- call within page, not functions!
 //include('includes/facebook_feed.php');  	//-- call within page, not functions!
@@ -208,6 +209,9 @@ function ada_tablepress_add_scope( $tag_attributes, $table_id, $cell_content, $r
 	return $tag_attributes;
 }
 add_filter( 'tablepress_cell_tag_attributes', 'ada_tablepress_add_scope', 10, 7 );
-
-
+add_image_size( 'team-member', 300, 300, true );
+add_action( 'enqueue_block_assets', 'mstar_block_admin_editor_styles' );
+function mstar_block_admin_editor_styles() {
+	wp_enqueue_style( 'mstar-block-editor-styles', get_template_directory_uri(). '/stylesheets/editor.css', false, '1.0', 'all' );
+}
 ?>

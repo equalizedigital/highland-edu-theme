@@ -88,7 +88,7 @@
         //echo $tab;
         //$tab++;
         if($children){ ?>
-            <div class="menu">
+            <nav class="menu" aria-label="Sidebar Menu">
                 <ul>
                     <li>
                         <?php
@@ -100,6 +100,7 @@
                             <?php
                         } else {?>
                             <a class="parent segundo" href="<? echo $link; ?>" tabindex="0">
+                                <span class="icon" aria-hidden="true"></span>
                                 <h2><? echo $parent_title; ?></h2>
                             </a>
                             <?php
@@ -121,15 +122,15 @@
                                 $the_parent = '';
                             }
                             if ($is_parent && !$child_id) { ?>
-                                <li id="<? echo $child->post_name; ?>" class="child show-children" show="li-<? echo $child; ?>">
+                                <li id="<? echo $child->post_name; ?>" class="child show-children" aria-expanded="false" aria-controls="li-<? echo $child; ?>">
                                     <a href="#" tabindex="0"><? echo get_the_title($child); ?></a>
                                 </li>
                             <li class="grandchild li-<? echo $child; ?>">
                                 <a href="<? echo get_the_permalink($child); ?>" tabindex="0">- <? echo get_the_title($child); ?> Home</a>
                                 </li><?
                             } else if ($is_parent && ($child == get_the_id())) { ?>
-                                <li id="<? echo $child->post_name; ?>" class="child show-children" show="li-<? echo $child; ?>">
-                                    <a href="#" tabindex="0"><? echo get_the_title($child); ?></a>
+                                <li id="<? echo $child->post_name; ?>" class="child show-children" aria-expanded="false" aria-controls="li-<? echo $child; ?>">
+                                    <a href="#" role="button" tabindex="0"><? echo get_the_title($child); ?></a>
                                 </li>
                             <li class="grandchild li-<? echo $child; ?>">
                                 <a href="<? echo get_the_permalink($child); ?>" tabindex="0">- <? echo get_the_title($child); ?> Home</a>
@@ -157,7 +158,8 @@
                                     $child_name = '';
                                 }
                                 ?>
-                                <li id="<? echo $child_name; ?>" class="child show-children" show="li-<? echo $child; ?>"><a href="#" tabindex="0"><? echo get_the_title($child); ?></a></li>
+                                <li id="<? echo $child_name; ?>" class="child show-children" aria-expanded="false" aria-controls="li-<? echo $child; ?>">
+                                <a href="#" role="button" tabindex="0"><? echo get_the_title($child); ?></a></li>
                                 <li class="grandchild li-<? echo $child; ?>"><a href="<? echo get_the_permalink($child); ?>" tabindex="0">- <? echo get_the_title($child); ?> Home</a><?
                             } else { ?>
                                 <li class="child">
@@ -168,21 +170,22 @@
                     }
                     ?>
                 </ul>
-            </div>
+            </nav>
             <script type="text/javascript">
                 jQuery(document).ready(function() {
                     jQuery(".show-children").on('click', function(event){
                         event.preventDefault();
-                        var clicked_li = jQuery(this).attr("show");
-                        var close_li = jQuery(this).attr("close");
-                        if(close_li == "opened"){
+                        // aria
+                        var clicked_li = jQuery(this).attr("aria-controls");
+                        var close_li = jQuery(this).attr("aria-expanded");
+                        if(close_li == "true"){
                             jQuery("."+clicked_li).slideUp();
-                            jQuery(this).attr("close", "");
                             jQuery(this).removeClass("list-open");
+                            jQuery(this).attr("aria-expanded", "false");
                         } else {
                             jQuery("."+clicked_li).slideDown(300);
-                            jQuery(this).attr("close", "opened");
                             jQuery(this).addClass("list-open");
+                            jQuery(this).attr("aria-expanded", "true");
                         }
                     });
 
