@@ -66,24 +66,33 @@
             <div class="container">
                 <div class="highlights">
                     <h2><? echo $parallax_title_2; ?></h2>
-                    <div class="highlights-holder">
-                        <a href="http://bookstore.highland.edu/home.aspx" class="highlight-btn">
-                            <img src="<? bloginfo('template_url'); ?>/images/book_store.png" alt="Bookstore"/>
-                        </a><!--
-                    The comments eliminate unintentional white space created by browsers interpreting new lines as spaces
-                    --><a href="/library/" class="highlight-btn">
-                            <img src="<? bloginfo('template_url'); ?>/images/library.png" alt="Library" />
-                        </a><!--
-                    --><a href="https://highlandcougars.com/" target="_blank" class="highlight-btn">
-                            <img src="<? bloginfo('template_url'); ?>/images/athletics.png" alt="Athletics" />
-                        </a><!--
-                    --><a href="/finearts/" class="highlight-btn">
-                            <img src="<? bloginfo('template_url'); ?>/images/fine_arts.png" alt="Fine Arts" />
-                        </a><!--
-                    --><a href="/admissions/new-students/" class="highlight-btn">
-                            <img src="<? bloginfo('template_url'); ?>/images/campus_life.png" alt="Campus Life" />
-                        </a>
-                    </div>
+                    <ul class="highlights-holder">
+                        <li>
+                            <a href="http://bookstore.highland.edu/home.aspx" class="highlight-btn">
+                                <img src="<? bloginfo('template_url'); ?>/images/book_store.png" alt="Bookstore"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/library/" class="highlight-btn">
+                                <img src="<? bloginfo('template_url'); ?>/images/library.png" alt="Library" />
+                            </a>
+                        </li>
+                        <li>    
+                            <a href="https://highlandcougars.com/" target="_blank" class="highlight-btn">
+                                <img src="<? bloginfo('template_url'); ?>/images/athletics.png" alt="Athletics" />
+                            </a>
+                        </li>
+                        <li>    
+                            <a href="/finearts/" class="highlight-btn">
+                                <img src="<? bloginfo('template_url'); ?>/images/fine_arts.png" alt="Fine Arts" />
+                            </a>
+                        </li>
+                        <li>  
+                            <a href="/admissions/new-students/" class="highlight-btn">
+                                <img src="<? bloginfo('template_url'); ?>/images/campus_life.png" alt="Campus Life" />
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div><!-- container -->
         </div><!-- super-container -->
