@@ -10,8 +10,6 @@ if ( ! empty( $block['anchor'] ) ) {
 	$block_id = $block['anchor'];
 }
 
-// member repeater contains member_image, member_name, member_position, member_email.
-// Wrap them in list items.
 if ( have_rows( 'member' ) ) {
 	echo '<ul class="team-block">';
 	while ( have_rows( 'member' ) ) {
