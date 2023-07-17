@@ -6,7 +6,7 @@ defined('ABSPATH') OR exit;
  */
 ?>
 <div class="test-event-feed">
-<div class="event-feed">
+<ul class="event-feed">
     <?
     wp_reset_query();
     $i = 1;
@@ -50,45 +50,45 @@ defined('ABSPATH') OR exit;
             if ( $start_date <= $yesterday ) {
                 continue;
             } ?>
-            <div class="event-item">
-            <a role="button" href="<? echo get_permalink(); ?>" class="simple-modal" data-method="ajax">
-                <div class="literal event-content-holder">
-                    <div class="event-content">
-                        <div class="event-feed-item">
-                            <div class="event-feed-date">
-                                <p class="event_month"><? echo date('M', $start_date); ?></p><p class="event_day"><? echo date('d', $start_date); ?></p>
-                            </div>
-
-                            <div class="event-item-content">
-                                <div class="event-feed-text">
-                                    <p class="event_title"><?
-                                            if($free_event){
-                                                ?><img src="<? bloginfo('template_url'); ?>/images/free_icon.jpg" alt="This event is free." /><?
-                                            }
-                                            echo get_the_title();
-                                        ?>
-                                    </p>
+            <li class="event-item">
+                <a role="button" href="<? echo get_permalink(); ?>" class="fancybox fancybox.ajax">
+                    <div class="literal event-content-holder">
+                        <div class="event-content">
+                            <div class="event-feed-item">
+                                <div class="event-feed-date">
+                                    <p class="event_month"><? echo date('M', $start_date); ?></p><p class="event_day"><? echo date('d', $start_date); ?></p>
                                 </div>
 
-                                <div class="event-feed-times">
-                                    <p><? echo $start_time ." - ". $end_time; ?></p>
+                                <div class="event-item-content">
+                                    <div class="event-feed-text">
+                                        <p class="event_title"><?
+                                                if($free_event){
+                                                    ?><img src="<? bloginfo('template_url'); ?>/images/free_icon.jpg" alt="This event is free." /><?
+                                                }
+                                                echo get_the_title();
+                                            ?>
+                                        </p>
+                                    </div>
+
+                                    <div class="event-feed-times">
+                                        <p><? echo $start_time ." - ". $end_time; ?></p>
+                                    </div>
+
+                                    <!--<div class="event-location">
+                                        <p><? echo $event_location; ?></p>
+                                    </div>-->
                                 </div>
 
-                                <!--<div class="event-location">
-                                    <p><? echo $event_location; ?></p>
-                                </div>-->
                             </div>
-
                         </div>
                     </div>
-                </div>
-            </a>
-            </div><?
+                </a>
+            </li><?
             $i++;
         endwhile;
         wp_reset_query();
     }
     ?>
     <div class="clear"></div>
-</div>
+</ul>
 </div>
