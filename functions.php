@@ -46,6 +46,7 @@ add_image_size( 'story-thumb', 365, 276, true);
 add_image_size( 'blog-thumb', 500, 500, true);
 add_image_size( 'small-thumb', 100, 100, true);
 add_image_size( 'landing-page-img', 830, 400, true);
+add_image_size( 'team-member', 300, 300, true );
 
 
 //Apply do_shortcode() to widgets so that shortcodes will be executed in widgets
@@ -86,6 +87,10 @@ function mstar_jquery_enqueue() {
 	wp_enqueue_script('navigation', get_template_directory_uri().'/includes/js/navigation.js', array(), '1.0.0', true );
 }
 
+add_action( 'enqueue_block_assets', 'mstar_block_admin_editor_styles' );
+function mstar_block_admin_editor_styles() {
+	wp_enqueue_style( 'mstar-block-editor-styles', get_template_directory_uri(). '/stylesheets/editor.css', false, '1.0', 'all' );
+}
 
 //Adds Customizer functinality
 function mytheme_customize_register( $wp_customize ){
@@ -106,6 +111,7 @@ include('includes/upload_functions.php');
 include('includes/form_functions.php');
 include('includes/cpt_functions.php'); 	//-- use for custom post types
 include('includes/menus.php');
+include('includes/acf.php');
 
 //include('includes/twitter_loader.php'); 	//-- call within page, not functions!
 //include('includes/facebook_feed.php');  	//-- call within page, not functions!
