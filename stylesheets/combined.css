@@ -226,7 +226,7 @@ a.tour{background:#ff6200;}
 .staff-portal-events .event-feed-date { width: 25%; float: left; }
 .staff-portal-events .event-feed-details { width: 75%; float: left; }
 .staff-portal-events .event-feed { padding: 0 0; }
-.map-area{max-height:770px;text-align:left;padding:125px 0;}
+.map-area{max-height:770px;text-align:left;padding:125px 0;background-color: #285598;}
 .address h2{font-family:'Roboto', sans-serif;font-size:28px;line-height:60px;letter-spacing:-0.15px;font-weight:700;color:#FFF;text-align:center;margin-bottom:0; padding-bottom: 0;}
 .address p.street{font-family:'Roboto', sans-serif;font-size:28px;font-weight:300;line-height:40px;letter-spacing:-0.15px;text-transform:uppercase;margin-bottom:0;text-align: center; color:#fff;padding-bottom:0;margin-bottom:20px;}
 .address p.phone, .address p.phone a{font-family:'Roboto', sans-serif;font-size:48px;font-weight:700;line-height:40px;letter-spacing:-0.15px;text-transform:uppercase;text-align: center; text-decoration:none;color:#fff;margin-bottom:20px;}
