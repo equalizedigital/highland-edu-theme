@@ -369,8 +369,8 @@ ul.bootpag li, ul.bootpag li.prev.disabled, ul.bootpag li.next.disabled{width:au
 .grandchild{background:#0b3d75 !important;}
 .grandchild a{font-family:'Overpass', sans-serif;text-transform:capitalize;color:#FFF !important;font-size:15px !important;line-height:12px;padding:5px 20px 5px 40px !important;text-align:left;}
 .grandchild a:hover{background:#0b3d75;}
-.show-children a:after{content:'\276F';padding-left:10px;transition:.25s;}
-.show-children.list-open a:after{-ms-transform:rotate(90deg);-ms-transform-origin:60% 50%;-webkit-transform:rotate(90deg);-webkit-transform-origin:60% 50%;transform:rotate(90deg);transform-origin:60% 50%;}
+.show-children a .icon:after{content:'\276F';padding-left:10px;transition:.25s;}
+.show-children.list-open a .icon:after{-ms-transform:rotate(90deg);-ms-transform-origin:60% 50%;-webkit-transform:rotate(90deg);-webkit-transform-origin:60% 50%;transform:rotate(90deg);transform-origin:60% 50%;}
 .segundo .icon:before{content:'\276E';display:inline-block;padding-right:10px;transition:.25s;}
 li.grandchild{display:none;background-color:#0d4e95;}
 li.list-open{background:#0d4e95 !important;color:#fff;}
