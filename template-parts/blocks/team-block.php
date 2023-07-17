@@ -33,7 +33,8 @@ if ( have_rows( 'member' ) ) {
 			echo '<p class="team-block__member-position">' . esc_html( $member_position ) . '</p>';
 		}
 		if ( ! empty( $member_email ) ) {
-			echo '<a class="team-block__member-email" href="mailto:' . esc_html( sanitize_email( $member_email ) ) . '">' . __( 'Contact', 'eqd' ) . '</a>';
+			$aria_label = sprintf( esc_html__( 'Email %s', 'eqd' ), $member_name );
+			echo '<a class="team-block__member-email" aria-label="' . $aria_label . '" href="mailto:' . esc_html( sanitize_email( $member_email ) ) . '">' . __( 'Contact', 'eqd' ) . '</a>';
 		}
 		echo '</li>';
 	}

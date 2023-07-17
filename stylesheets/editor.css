@@ -9,7 +9,7 @@ ul.team-block {
     list-style: none;
     display: flex;
     flex-direction: row;
-    gap: 5px;
+    gap: 30px;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 30px;
@@ -21,7 +21,7 @@ ul.team-block li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 18%;
+    width: calc(100% / 3 - 30px);
 }
 ul.team-block .team-block__member-name {
     font-size: 18px;
@@ -34,9 +34,6 @@ ul.team-block .team-block__member-position {
 ul.team-block .team-block__member-name,
 ul.team-block .team-block__member-email {
     width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 /* less 1024px */
 @media (max-width: 1024px) {
