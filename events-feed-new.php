@@ -51,7 +51,7 @@ defined('ABSPATH') OR exit;
                 continue;
             } ?>
             <div class="event-item">
-            <a role="button" href="<? echo get_permalink(); ?>" class="fancybox fancybox.ajax">
+            <a role="button" href="<? echo get_permalink(); ?>" class="simple-modal" data-method="ajax">
                 <div class="literal event-content-holder">
                     <div class="event-content">
                         <div class="event-feed-item">
