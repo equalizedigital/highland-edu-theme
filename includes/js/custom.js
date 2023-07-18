@@ -1,6 +1,13 @@
 jQuery(document).ready(function($) {
 
     $('.simple-modal').each(function() {
+        // let spacebar fire click event
+        $(this).keydown(function(event) {
+            if (event.keyCode == 32) {
+                event.preventDefault();
+                $(this).click();
+            }
+        });
         $(this).click(function(event) {
             event.preventDefault();
             let method = $(this).data('method');
@@ -17,7 +24,7 @@ jQuery(document).ready(function($) {
                 // close button
                 let closeButton = document.createElement('button');
                 closeButton.classList.add('simple-modal-close');
-                closeButton.setAttribute('aria-label', 'Close');
+                closeButton.setAttribute('aria-label', 'Close dialog');
                 closeButton.innerHTML = '<span aria-hidden="true">&times;</span>';
                 $.ajax({
                     url: url,
