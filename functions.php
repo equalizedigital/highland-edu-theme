@@ -95,6 +95,7 @@ add_action( 'customize_register', 'mytheme_customize_register' );
 
 
 
+add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 
 
 include('includes/custom_login_functions.php');
