@@ -236,6 +236,12 @@ a.tour{background:#ff6200;}
 #portal_page{float:right !important;margin-left:3.1249999999997%;}
 .sidebar{font:14px/1.5em "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;}
 .sidebar li{list-style:none;}
+.sidebar li a h2 {
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+    display: inline;
+}
 .footer-nav-wrapper{background:#000;}
 .footer-nav-wrapper ul{padding:20px;margin:0;}
 .footer-nav-wrapper ul li{padding:0;margin:0;}

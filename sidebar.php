@@ -129,29 +129,29 @@
                                     </a>
                                 </li>
                             <li class="grandchild li-<? echo $child; ?>">
-                                <a href="<? echo get_the_permalink($child); ?>" tabindex="0">- <? echo get_the_title($child); ?> Home</a>
+                                <a href="<? echo get_the_permalink($child); ?>" tabindex="0"><h2>- <? echo get_the_title($child); ?> Home</h2></a>
                                 </li><?
                             } else if ($is_parent && ($child == get_the_id())) { ?>
                                 <li id="<? echo $child->post_name; ?>" class="child show-children" aria-expanded="false" aria-controls="li-<? echo $child; ?>">
                                     <a href="#" role="button" tabindex="0">
-                                        <? echo get_the_title($child); ?>
+                                        <h2><? echo get_the_title($child); ?></h2>
                                         <span class="icon" aria-hidden="true"></span>        
                                     </a>
                                 </li>
                             <li class="grandchild li-<? echo $child; ?>">
-                                <a href="<? echo get_the_permalink($child); ?>" tabindex="0">- <? echo get_the_title($child); ?> Home</a>
+                                <a href="<? echo get_the_permalink($child); ?>" tabindex="0"><h2>- <? echo get_the_title($child); ?> Home</h2></a>
                                 </li><?
                             } else if (($child != $child_parents[0]) && ($child_parents[0] != $the_parent)) { ?>
                             <li class="grandchild li-<? echo wp_get_post_parent_id($child); ?>">
-                                <a href="<? echo get_the_permalink($child); ?>" tabindex="0">- <? echo get_the_title($child); ?></a>
+                                <a href="<? echo get_the_permalink($child); ?>" tabindex="0"><h2>- <? echo get_the_title($child); ?></h2></a>
                                 </li><?
                             } else if ($child_parents[0] == get_the_id()) { ?>
                             <li class="grandchild li-<? echo wp_get_post_parent_id($child); ?>">
-                                <a href="<? echo get_the_permalink($child); ?>" tabindex="0">- <? echo get_the_title($child); ?></a>
+                                <a href="<? echo get_the_permalink($child); ?>" tabindex="0"><h2>- <? echo get_the_title($child); ?></h2></a>
                                 </li><?
                             } else { ?>
                                 <li class="child">
-                                <a href="<? echo get_the_permalink($child); ?>" tabindex="0"><? echo get_the_title($child); ?></a>
+                                <a href="<? echo get_the_permalink($child); ?>" tabindex="0"><h2><? echo get_the_title($child); ?></h2></a>
                                 </li><?
                             }
                         } else {
@@ -166,14 +166,14 @@
                                 ?>
                                 <li id="<? echo $child_name; ?>" class="child show-children" aria-expanded="false" aria-controls="li-<? echo $child; ?>">
                                 <a href="#" role="button" tabindex="0">
-                                <? echo get_the_title($child); ?>
+                                <h2><? echo get_the_title($child); ?></h2>
                                 <span class="icon" aria-hidden="true"></span>
                             </a>
                             </li>
-                                <li class="grandchild li-<? echo $child; ?>"><a href="<? echo get_the_permalink($child); ?>" tabindex="0">- <? echo get_the_title($child); ?> Home</a><?
+                                <li class="grandchild li-<? echo $child; ?>"><a href="<? echo get_the_permalink($child); ?>" tabindex="0"><h2>- <? echo get_the_title($child); ?> Home</h2></a><?
                             } else { ?>
                                 <li class="child">
-                                <a href="<? echo get_the_permalink($child); ?>" tabindex="0"><? echo get_the_title($child); ?></a>
+                                <a href="<? echo get_the_permalink($child); ?>" tabindex="0"><h2><? echo get_the_title($child); ?></h2></a>
                                 </li><?
                             }
                         }
