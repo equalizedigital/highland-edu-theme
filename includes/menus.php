@@ -39,12 +39,12 @@ class admissionsWalker extends Walker_Nav_Menu {
     * if the menu item has children and doesn't navigate to a page, then wrap the anchor text in button
     */
     function start_el(&$output, $data_object, $depth = 0, $args = null, $current_object_id = 0) {
-        $output .= '<li class="' . implode(" ", $data_object->classes) . '">';
+        // $output .= '<li class="' . implode(" ", $data_object->classes) . '">';
         $output .= '<button class="toggle-mega-menu" aria-expanded="false" aria-controls="admissions-subs" id="admissions-subs-actuator">';
         $output .= $data_object->title;
         $output .= '<span class="caret-icon" aria-hidden="true"></span>';
         $output .= '</button>';
-        $output .= '</li>';
+        // $output .= '</li>';
     }
     function start_lvl(&$output, $depth = 0, $args = null)  {
         $output .= '<ul class="sub-menu" id="admissions-subs" aria-labelledby="admissions-subs-actuator">';
@@ -57,12 +57,12 @@ class academicsWalker extends Walker_Nav_Menu {
     * if the menu item has children and doesn't navigate to a page, then wrap the anchor text in button
     */
     function start_el(&$output, $data_object, $depth = 0, $args = null, $current_object_id = 0) {
-        $output .= '<li class="' . implode(" ", $data_object->classes) . '">';
+        // $output .= '<li class="' . implode(" ", $data_object->classes) . '">';
         $output .= '<button class="toggle-mega-menu" aria-expanded="false" aria-controls="academics-subs">';
         $output .= $data_object->title;
         $output .= '<span class="caret-icon" aria-hidden="true"></span>';
         $output .= '</button>';
-        $output .= '</li>';
+        // $output .= '</li>';
     }
     function start_lvl(&$output, $depth = 0, $args = null)  {
         $output .= '<ul class="sub-menu" id="academics-subs" aria-labelledby="academics-subs-actuator">';
@@ -74,12 +74,12 @@ class campusWalker extends Walker_Nav_Menu {
     * if the menu item has children and doesn't navigate to a page, then wrap the anchor text in button
     */
     function start_el(&$output, $data_object, $depth = 0, $args = null, $current_object_id = 0) {
-        $output .= '<li class="' . implode(" ", $data_object->classes) . '">';
+        // $output .= '<li class="' . implode(" ", $data_object->classes) . '">';
         $output .= '<button class="toggle-mega-menu" aria-expanded="false" aria-controls="campus-subs">';
         $output .= $data_object->title;
         $output .= '<span class="caret-icon" aria-hidden="true"></span>';
         $output .= '</button>';
-        $output .= '</li>';
+        // $output .= '</li>';
     }
     function start_lvl(&$output, $depth = 0, $args = null)  {
         $output .= '<ul class="sub-menu" id="campus-subs" aria-labelledby="campus-subs-actuator">';
@@ -91,12 +91,12 @@ class artsWalker extends Walker_Nav_Menu {
     * if the menu item has children and doesn't navigate to a page, then wrap the anchor text in button
     */
     function start_el(&$output, $data_object, $depth = 0, $args = null, $current_object_id = 0){
-        $output .= '<li class="' .implode(" ", $data_object->classes) . '">';
+        // $output .= '<li class="' .implode(" ", $data_object->classes) . '">';
         $output .= '<button class="toggle-mega-menu" aria-expanded="false" aria-controls="arts-subs">';
         $output .= $data_object->title;
         $output .= '<span class="caret-icon" aria-hidden="true"></span>';
         $output .= '</button>';
-        $output .= '</li>';
+        // $output .= '</li>';
     }
     function start_lvl(&$output, $depth = 0, $args = null)  {
         $output .= '<ul class="sub-menu" id="arts-subs" aria-labelledby="arts-subs-actuator">';
