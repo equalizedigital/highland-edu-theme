@@ -241,6 +241,7 @@ a.tour{background:#ff6200;}
     color: inherit;
     font-weight: inherit;
     display: inline;
+    line-height: inherit;
 }
 .footer-nav-wrapper{background:#000;}
 .footer-nav-wrapper ul{padding:20px;margin:0;}
