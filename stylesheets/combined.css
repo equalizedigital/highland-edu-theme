@@ -1519,3 +1519,8 @@ img{max-width:100%;height:auto !important;vertical-align:bottom;}
 .toggle-mega-menu:focus .caret-icon {
     opacity: 1;
 }
+
+ul.bootpag li.active a {
+    color: #FFF;
+    background: #333;
+}
