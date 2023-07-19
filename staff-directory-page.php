@@ -41,7 +41,7 @@
 											<label for="search_box">Search By Last Name</label>
 											<span class="delete-me">
 												<input class="the-selectors tts ref-select" type="text" name="search_term" id="search_box" placeholder="Type to Search" <?php if(!empty($search_term)) echo 'value="'.$search_term.'"';?> key="_cmb_staff_lname" compare_key="LIKE">
-												<input type="button" name="clear-me" id="clear-me" value="Clear Last Name" style="width: 25%">
+												<input type="button" name="clear-me" id="clear-me" value="Clear" style="width: 25%" aria-label="clear search">
 												<div id="filtered_list" class="filtered_by"></div>
 											</span>
 										</div>
@@ -51,12 +51,11 @@
                                             <div class="search-options-overlay"><p>Location selection is not available when using type to search.</p></div>
                                         </div>-->
                                         <div class="find-col toggler">
-                                            <label for="location_box">Department</label>
+                                            <label for="location_box">Search By Department</label>
                                             <select class="the-selectors" id="location_box" name="location" id="loc" tax="department"></select>
                                             <div class="search-options-overlay"><p>Location selection is not available when using type to search.</p></div>
                                         </div>
-										<div id="results-count" class="sr-only" aria-live="assertive">
-										</div>
+										<h2 id="results-count" class="sr-only" aria-live="assertive"></h2>
 										<div class="clear"></div><br />
 									</form>
 								</div>
