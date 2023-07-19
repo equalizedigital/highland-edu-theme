@@ -43,6 +43,7 @@ defined('ABSPATH') OR exit;
             <div class="container primary-nav-wrapper">
                 <div class="sixteen columns alpha omega primary-nav-holder">
                     <nav id="access" aria-label="Main Navigation">
+                        <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
                         <ul class="menu-main-menu">
                             <li>
                                 <button class="toggle-mega-menu" aria-expanded="false" aria-controls="admissions-subs" id="admissions-subs-actuator">Admissions<span class="caret-icon" aria-hidden="true"></span></button>
