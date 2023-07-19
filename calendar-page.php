@@ -27,7 +27,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
         <div class="container">
             <div class="sixteen columns alpha">
                 <div id="primary" class="full-width">
-                    <main id="content" id="main-content">
+                    <main class="content" id="main-content">
                         <? the_post(); ?>
                         <article id="post-<? the_ID(); ?>" <? post_class(); ?> role="article">
                             <header class="entry-header">

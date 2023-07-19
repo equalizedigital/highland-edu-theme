@@ -14,7 +14,7 @@
 	<div class="container">
 		<div class="two-thirds column alpha">
 			<section id="primary" role="region">
-				<main id="content" id="main-content">
+				<main id="main-content">
 					<? the_post(); ?>
 					<header class="page-header">
 						<h2 class="page-title author"><?php printf( __( 'Author Archives: <span class="vcard">%s</span>', 'WP-Skeleton' ), "<a class='author' href='" . get_author_posts_url( get_the_author_meta( 'ID' ) ) . "' title='" . esc_attr( get_the_author() ) . "' rel='me'>" . get_the_author() . "</a>" ); ?></h2>
