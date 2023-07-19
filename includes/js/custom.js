@@ -52,7 +52,9 @@ jQuery(document).ready(function($) {
                         let tabbable =  $('.simple-modal-content').find('[tabindex]:not([tabindex="-1"]), a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
                         let firstTabbable = tabbable.first();
                         let lastTabbable = tabbable.last();
-                        firstTabbable.focus();
+                        // make title focusable
+                        $('#modal-title').attr('tabindex', '-1');
+                        $('#modal-title').focus();
                         lastTabbable.keydown(function(e){
                             if ( e.keyCode === 9 && !e.shiftKey ) {
                                 e.preventDefault();
