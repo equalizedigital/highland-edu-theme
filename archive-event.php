@@ -26,7 +26,7 @@
 			<div id="primary" class="full-width">
 				<div id="content">
 	                <div class="two-thirds column alpha">
-	                    <div class="main">
+                    <main class="main" id="main-content">
 
 	                  <div class="event-feed">
                         <?
@@ -121,7 +121,7 @@
                         ?>
                       </div>
                         </div><!-- #main -->
-                    </div><!-- two-thirds -->
+                    </main><!-- two-thirds -->
                     <? get_sidebar(); ?>
                 </div><!-- #content -->
             </div><!-- #primary -->

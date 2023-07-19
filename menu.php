@@ -5,7 +5,7 @@ defined('ABSPATH') OR exit;
  * @subpackage WP-Skeleton
  */
 ?>
-<a id="hide_me" href="#content">Skip to Content</a>
+<a id="hide_me" href="#main-content">Skip to Content</a>
 
 <div role="banner">
     <div class="logo">

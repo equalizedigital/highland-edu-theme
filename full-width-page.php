@@ -27,7 +27,7 @@
 	<div class="container">
 	    <div class="sixteen columns alpha">
 			<div id="primary" class="full-width">
-				<div id="content">
+				<main id="content">
 					<? the_post(); ?>
 					<article id="post-<? the_ID(); ?>" <? post_class(); ?> role="article">
 						<header class="entry-header">
@@ -38,7 +38,7 @@
 							<? edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
 						</div><!-- .entry-content -->
 					</article><!-- #post-<? the_ID(); ?> -->
-				</div><!-- #content -->
+				</main><!-- #content -->
 			</div><!-- #primary -->
 	    </div>
 	</div>

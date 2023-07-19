@@ -17,7 +17,7 @@
     $parallax_bg2           = get_theme_mod( 'highlight_pic_two' );
     $parallax_title_2       = get_theme_mod( 'hightlight_text_two' );
 ?>
-    <main>
+    <main id="main-content">
         <div class="super-container news-holder">
             <div class="container news-feed">
     			<div class="hcc-page-title-container">
