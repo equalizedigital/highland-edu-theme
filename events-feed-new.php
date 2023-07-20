@@ -47,11 +47,12 @@ defined('ABSPATH') OR exit;
             $end_time  = get_post_meta(get_the_ID(), '_cmb_end_time', true);
             $event_location  = get_post_meta(get_the_ID(), '_cmb_event_location', true);
             $free_event  = get_post_meta(get_the_ID(), '_cmb_free_event_check', true);
+            $aria_label = sprintf(esc_html__('View event details for %1s on %2s', 'wp-skeleton'), get_the_title(), date('F j, Y', $start_date));
             if ( $start_date <= $yesterday ) {
                 continue;
             } ?>
             <div class="event-item">
-            <a role="button" href="<? echo get_permalink(); ?>" class="fancybox fancybox.ajax">
+            <a role="button" href="<? echo get_permalink(); ?>" class="simple-modal" data-method="ajax" aria-haspopup="dialog" aria-label="<?php echo esc_attr( $aria_label ); ?>">
                 <div class="literal event-content-holder">
                     <div class="event-content">
                         <div class="event-feed-item">
