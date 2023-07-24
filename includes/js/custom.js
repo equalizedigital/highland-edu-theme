@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
             toggleAriaExpand(this);
         }
     });
-    $('.slicknav_btn').each(function() {
+    $('.slicknav_row').each(function() {
         $(this).attr('aria-label', 'Toggle Main Menu');
         $(this).removeAttr('aria-haspopup');
         $(this).attr('aria-controls', 'menu-main-menu');
