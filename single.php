@@ -16,7 +16,7 @@
 			<div id="primary" class="full-width">
 				<div id="content">
 					<div class="two-thirds column alpha">
-						<div class="main">
+						<main id="main-content" class="main">
 							<? the_post(); ?>
 							<article id="post-<? the_ID(); ?>" <? post_class(); ?> role="article">
 								<header class="entry-header">
@@ -36,7 +36,7 @@
 									<? comments_template(); ?>
 								</div><!-- .entry-content -->
 							</article><!-- #post-<? the_ID(); ?> -->
-						</div><!-- #main -->
+						</main><!-- #main -->
 					</div><!-- two-thirds -->
 					<? get_sidebar('page'); ?>
 				</div><!-- #content -->

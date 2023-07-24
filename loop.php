@@ -8,7 +8,7 @@
 
 <div class="content">
 	<div class="two-thirds column alpha">
-		<div class="main">
+		<main id="main-content" class="main">
 			<? while ( have_posts() ) : the_post(); ?> <!--  the Loop -->
 				<article id="post-<? the_ID(); ?>">
 					<div class="title">
@@ -39,7 +39,7 @@
 			<? /* Only load comments on single post*/ ?>
 			<? if(! is_page() || is_single()) : comments_template( '', true ); endif; ?>
 
-		</div>  <!-- End Main -->
+		</main>  <!-- End Main -->
 	</div>  <!-- End two-thirds column -->
 </div><!-- End Content -->
 

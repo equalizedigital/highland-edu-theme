@@ -23,7 +23,7 @@ $parallax_title_2       = get_theme_mod( 'hightlight_text_two' );
                 <div class="sixteen columns alpha">
                     <div id="primary" class="full-width">
                         <div id="content">
-                            <div class="main">
+                            <main id="main-content" class="main">
                                 <? the_post(); ?>
                                 <article id="post-<? the_ID(); ?>" <? post_class(); ?> role="article">
                                     <div class="entry-content">
@@ -57,7 +57,7 @@ $parallax_title_2       = get_theme_mod( 'hightlight_text_two' );
                                         ?>
                                     </div><!-- .entry-content -->
                                 </article><!-- #post-<? the_ID(); ?> -->
-                            </div><!-- #main -->
+                            </main><!-- #main -->
                         </div><!-- #content -->
                     </div><!-- #primary -->
                 </div>
