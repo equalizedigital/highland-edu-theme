@@ -9,6 +9,7 @@
     get_template_part( 'sub-header', 'index' ); //the  header stuffs
 	get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 ?>
+<main id="main-content">
 
 	<div class="super-container title-holder">
 		<div class="container">
@@ -129,4 +130,5 @@
     </div>
 </div>
 
+</main>
 <? get_footer(); ?>
