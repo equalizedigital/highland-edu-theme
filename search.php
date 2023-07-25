@@ -8,13 +8,14 @@
 get_template_part( 'sub-header', 'index' ); //the  header stuffs
 	get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 ?>
+<main id="main-content">
 <div class="super-container interior-page">
 	<div class="container">
 		<div class="sixteen columns alpha">
 			<div id="primary" class="full-width">
 				<div id="content">
 					<div class="two-thirds column alpha">
-						<div class="main">
+						<main class="main" id="main-content">
 							<? if ( have_posts() ) : ?>
 								<h2 class="page-title"><? printf( __( 'Search Results for: %s', 'mb' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 								<? get_search_form(); ?>
@@ -26,11 +27,12 @@ get_template_part( 'sub-header', 'index' ); //the  header stuffs
 									<? get_search_form(); ?>
 								</div><!-- #post-0 -->
 							<? endif; ?>
-						</div><!-- #main -->
+						</main><!-- #main -->
 					</div><!-- two-thirds -->
 				</div><!-- #content -->
 			</div><!-- #primary -->
 		</div>
 	</div>
 </div>
+</main>
 <? get_footer(); ?>

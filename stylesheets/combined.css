@@ -87,10 +87,24 @@ legend span{font-weight:normal;font-size:13px;color:#444;}
 .search-icon a{z-index: 10000;}
 .title-holder{background-image:url(../images/header_bg.jpg);max-height:260px;text-align:center;padding:80px 0;}
 .title-holder h1{color:#FFF;text-transform:uppercase;}
-.top-menu-holder{background:#8b8989;margin:25px 0;}
+.top-menu-holder{background:#8b8989;margin:0 0 25px 0;}
+@media only screen and (min-width: 1024px) {
+    div[role="banner"] {
+        padding-top: 25px;
+    }
+}
 .menu-dark{background:#787474;}
 .menu-orng{background:#ff6200;}
 .top-nav-holder{z-index:2005;}
+/* on desktop */
+@media screen and (min-width: 1090px) {
+    .top-nav-holder{display: flex!important;justify-content: flex-end;}
+}
+@media only screen and (max-width: 1450px) {
+    #access {
+        float:right;
+    }
+}
 .menu-item i._before, .rtl .menu-item i._after {margin-right: 0 !important;}
 .menu-item i._mi {font-size: 1.75em !important;}
 ul#menu-topnav{float:right;margin-bottom:0;margin-left:0;}
@@ -109,8 +123,11 @@ ul#menu-topnav ul:hover > a{color:#FFF;}
 ul#menu-topnav li:hover > ul{display:block;}
 ul#menu-topnav li:hover > a{color:#FFF;text-decoration:underline;text-decoration-thickness:2px;}
 #top_nav ul#menu-topnav li.mobile-only { display: none; }
-.slicknav_menu{display:none;}
-.slicknav_btn{z-index: 10000;}
+.slicknav_menu{display:none; background-color: black !important; }
+.slicknav_btn{z-index: 10000;background-color: #FF6A2A !important;}
+.slicknav_icon-bar {
+    background-color: black !important;
+}
 .slicknav_nav {padding-top: 60px !important;}
 .slicknav_nav a {position: relative;z-index: 10000;}
 .menu-wrapper{background:#ddd;}
@@ -1228,7 +1245,7 @@ img{max-width:100%;height:auto !important;vertical-align:bottom;}
         font-size: 18px;
     }
 }
-@media only screen and (max-width:1024px){.logo{padding-left:60px;}
+@media only screen and (max-width:1090px){.logo{padding-left:60px;}
     #menu-topnav li:first-child,
     #menu-topnav li:nth-child(2),
     #menu-topnav li:nth-child(3){display:none;}
@@ -1289,8 +1306,8 @@ img{max-width:100%;height:auto !important;vertical-align:bottom;}
         line-height: 28px;
     }
 }
-@media only screen and (min-width:769px) and (max-width:1024px){}
-@media only screen and (max-width:768px){.highlights a{width: 33.3333%;
+@media only screen and (min-width:769px) and (max-width:1090px){}
+@media only screen and (max-width:1090px){.highlights a{width: 33.3333%;
     min-height: 280px;
     float: left;}
     .highlights-holder a:nth-child(5){display:block;margin:0 auto;}
@@ -1546,4 +1563,79 @@ img{max-width:100%;height:auto !important;vertical-align:bottom;}
 .floating-label input:not(:placeholder-shown) + label {
     transform: translateY(-10px);
     opacity: 0.7;
+}
+/*
+* Modal
+*/
+.simple-modal-wrapper.loading .simple-modal-content {
+    display: none;
+}
+.simple-modal-wrapper.loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin: -25px 0 0 -25px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+/* animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+body.simple-modal-open {
+    overflow: hidden;
+}
+.simple-modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+}
+.simple-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    max-width: 100%;
+    max-height: 100%;
+}
+.simple-modal-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    font-size: 22px;
+}
+@media screen and (min-width: 1090px) {
+    .simple-modal-content {
+        min-width: 700px;
+    }
+}
+.slicknav_nav .slicknav_row:hover {
+    color: black !important;
 }

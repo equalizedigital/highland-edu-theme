@@ -14,7 +14,7 @@
 	<div id="primary" class="full-width">
 		<div id="content">
             <div class="two-thirds column alpha">
-				<div class="main"> 
+				<main id="main-content" class="main"> 
 					<? the_post(); 
 						if(has_post_thumbnail()){
 							the_post_thumbnail('featured-image', array('class' => "header-image"));    	
@@ -142,7 +142,7 @@
 							?>
                         </div><!-- .entry-content -->
                     </article><!-- #post-<?php the_ID(); ?> -->
-				</div><!-- #main -->
+				</main><!-- #main -->
             </div><!-- two-thirds -->
             <? get_sidebar(); ?>  
 		</div><!-- #content -->
