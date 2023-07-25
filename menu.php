@@ -76,9 +76,6 @@ defined('ABSPATH') OR exit;
     </div>
 </div>
                             
-<div class="social-butterfly sb-inner" aria-label="social media" role="complimentary">
-    <?php get_template_part( 'social','butterfly'); ?>
-</div>
 <?
 
     global $alert_list;
