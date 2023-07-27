@@ -121,7 +121,8 @@ function mobile_only_nav_item($menu_item) {
 // add checkbox to menu item edit screen
 add_action('wp_nav_menu_item_custom_fields', 'mobile_only_nav_item_custom_fields', 10, 2);
 function mobile_only_nav_item_custom_fields($item_id, $item) {
-    $mobile_only = $data_object->mobile_only;
+    $mobile_only = get_post_meta($item_id, '_menu_item_mobile_only', true);
+    $header_item = get_post_meta($item_id, '_menu_item_header_item', true);
     ?>
     <p class="field-mobile-only description description-wide">
         <label for="edit-menu-item-mobile-only-<?php echo $item_id; ?>">
