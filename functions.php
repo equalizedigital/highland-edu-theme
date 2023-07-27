@@ -108,6 +108,7 @@ include('includes/upload_functions.php');
 include('includes/form_functions.php');
 include('includes/cpt_functions.php'); 	//-- use for custom post types
 include('includes/menus.php');
+include('includes/block-editor.php');
 
 
 /**
