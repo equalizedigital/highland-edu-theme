@@ -1639,3 +1639,9 @@ body.simple-modal-open {
 .slicknav_nav .slicknav_row:hover {
     color: black !important;
 }
+
+.menu-item-heading {
+    font-size: 17px;
+    color: white;
+    padding-bottom: 0;
+}
