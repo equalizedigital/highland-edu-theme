@@ -18,12 +18,12 @@ body {
  * Make sure links are accessible
  * @link https://webaim.org/resources/linkcontrastchecker/
  */
-a {
+.entry-content a {
   border-bottom: 2px solid transparent;
   color: #265793;
   text-decoration: none;
 }
-a:hover {
+.entry-content a:hover {
   border-bottom: 2px solid #d91e18;
 }
 strong {
