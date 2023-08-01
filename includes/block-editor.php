@@ -15,7 +15,7 @@ function eqd_setup_theme_supported_features() {
 				'color' => '#265793',
 			),
 			array(
-				'name'  => esc_attr__( 'Oragne', 'eqd' ),
+				'name'  => esc_attr__( 'Orange', 'eqd' ),
 				'slug'  => 'orange',
 				'color' => '#ff6e38',
 			),
