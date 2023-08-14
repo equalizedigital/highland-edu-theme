@@ -18,7 +18,7 @@ $white: #fff;
 $text_dark: #333;
 $text_light: #fff;
 
-$gutenberg_colors: ( 'blue', 'orange', 'gray', 'red', 'white', 'black' );
+$gutenberg_colors: ( 'blue', 'dark-blue', 'brown', 'orange', 'light-orange', 'gray', 'mid-gray', 'light-gray', 'white' );
 
 
 $base-font: 'Raleway', sans-serif;
@@ -43,11 +43,14 @@ $breakpoints: (
 
 $brand_colors: (
 	'blue'  : $blue,
-	'orange': $orange,
+	'dark-blue'  : $dark-blue,
+	'brown'  : $brown,
+	'orange'  : $orange,
+	'light-orange'  : $light-orange,
 	'gray'  : $gray,
-	'red'   : $red,
-	'white' : $white,
-	'black' : $text_dark,
+	'mid-gray'  : $mid-gray,
+	'light-gray'  : $light-gray,
+	'white'  : $white,
 );
 
 /* Functions
@@ -292,14 +295,14 @@ body {
  * Make sure links are accessible
  * @link https://webaim.org/resources/linkcontrastchecker/
  */
-.entry-content a {
+.entry-content a:not(.wp-block-button__link) {
 	border-bottom: 2px solid transparent;
 	color: $blue;
 	text-decoration: none;
 	@extend %transition;
 
 	&:hover {
-		border-bottom: 2px solid $red;
+		border-bottom: 2px solid $orange;
 	}
 
 	svg {

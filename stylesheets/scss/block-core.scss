@@ -38,7 +38,13 @@
 		}
 	}
 }
-
+.wp-block-button__link {
+	border-radius: 25px;
+	background-color: $blue;
+	&:hover {
+		background-color: $dark-blue;
+	}
+}
 .wp-block-button {
 
 	&.is-style-outline {
@@ -52,21 +58,24 @@
 			}
 
 			&:not(.has-background) {
-				background: white;
-				border-color: brand-color( 'blue' );
-
+				background: $white;
+				border-color: $orange;
+				color: $dark-blue;
 				&:hover {
-					background: brand-color( 'blue', 'darken' );
+					background: $orange;
+					color: #000;
 				}
 			}
 
 			@each $name in $gutenberg_colors {
 				&.has-#{$name}-background-color {
-					background: white;
-					border-color: brand-color( $name );
-
-					&:hover {
-						background: brand-color( $name, 'bg' );
+					border-color: $orange;
+					&:not(.has-text-color) {
+						@if $name == 'blue' or $name == 'dark-blue' or $name == 'brown' {
+							color: $white;
+						} else {
+							color: $dark-blue;
+						}
 					}
 				}
 			}

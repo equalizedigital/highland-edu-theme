@@ -21,7 +21,6 @@ p{margin:0 0 20px 0;}
 p img{margin:0;}
 p.lead{font-size:21px;line-height:27px;color:#777;}
 em{font-style:italic;}
-strong, b{font-weight:bold;color:#333;}
 small{font-size:80%;}
 blockquote, blockquote p{font-size:17px;line-height:24px;color:#777;font-style:italic;}
 blockquote{margin:0 0 20px;padding:9px 20px 0 19px;border-left:1px solid #ddd;}
@@ -1191,7 +1190,7 @@ h1.dog-title {
 .row,
 .clearfix{zoom:1;}
 .clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0;}
-img{max-width:100%;height:auto !important;vertical-align:bottom;}
+/* img{max-width:100%;height:auto !important;vertical-align:bottom;} */
 @media only screen and (max-width:1600px){
     .sidebar .menu li:first-child a {font-size: 18px;padding: 20px;}
     .sidebar .menu li a {font-size: 16px;padding: 8px 25px;}
