@@ -12,22 +12,42 @@ function eqd_setup_theme_supported_features() {
 			array(
 				'name'  => esc_attr__( 'Blue', 'eqd' ),
 				'slug'  => 'blue',
-				'color' => '#265793',
+				'color' => '#285598',
+			),
+			array(
+				'name'  => esc_attr__( 'Dark Blue', 'eqd' ),
+				'slug'  => 'dark-blue',
+				'color' => '#193662',
+			),
+			array(
+				'name'  => esc_attr__( 'Brown', 'eqd' ),
+				'slug'  => 'brown',
+				'color' => '#603813',
 			),
 			array(
 				'name'  => esc_attr__( 'Orange', 'eqd' ),
 				'slug'  => 'orange',
-				'color' => '#ff6e38',
+				'color' => '#ff6200',
+			),
+			array(
+				'name'  => esc_attr__( 'Light Orange', 'eqd' ),
+				'slug'  => 'light-orange',
+				'color' => '#FFDCC7',
 			),
 			array(
 				'name'  => esc_attr__( 'Gray', 'eqd' ),
 				'slug'  => 'gray',
-				'color' => '#8b8989',
+				'color' => '#787474',
 			),
 			array(
-				'red'   => esc_attr__( 'Red', 'eqd' ),
-				'slug'  => 'red',
-				'color' => '#d91e18',
+				'name'  => esc_attr__( 'Light Gray', 'eqd' ),
+				'slug'  => 'light-gray',
+				'color' => '#EBEBEB',
+			),
+			array(
+				'name'  => esc_attr__( '8b8989', 'eqd' ),
+				'slug'  => 'mid-gray',
+				'color' => '#8b8989',
 			),
 			array(
 				'name'  => esc_attr__( 'White', 'eqd' ),

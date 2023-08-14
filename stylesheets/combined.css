@@ -1639,3 +1639,16 @@ body.simple-modal-open {
 .slicknav_nav .slicknav_row:hover {
     color: black !important;
 }
+body.hide-h1-visually .entry-content{
+    padding: 0;
+}
+body.hide-h1-visually .title-holder{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
