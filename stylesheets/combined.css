@@ -1650,23 +1650,23 @@ body.simple-modal-open {
 * Soliloquy slider
 */
 
-.soliloquy-container .soliloquy-caption {
-    position: relative;
+#main-content .soliloquy-container .soliloquy-caption {
+    /* position: relative; */
     background: #193662;
 }
 
-.soliloquy-container a {
+#main-content .soliloquy-container a {
     color: #fff;
     text-decoration: underline;
 }
 
-.soliloquy-container a:focus,
-.soliloquy-container a:hover {
+#main-content .soliloquy-container a:focus,
+#main-content .soliloquy-container a:hover {
     outline-color: #fff;
     text-decoration: none;
 }
 
-.soliloquy-container .soliloquy-pager {
+#main-content .soliloquy-container .soliloquy-pager {
     width: auto;
     margin: 0 auto;
     text-align: center;
@@ -1677,6 +1677,6 @@ body.simple-modal-open {
     padding: 10px;
 }
 
-.soliloquy-container .soliloquy-pager-item a {
+#main-content .soliloquy-container .soliloquy-pager-item a {
     border: none;
 }
