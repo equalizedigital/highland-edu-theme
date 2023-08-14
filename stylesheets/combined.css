@@ -1645,3 +1645,38 @@ body.simple-modal-open {
     color: white;
     padding-bottom: 0;
 }
+
+/*
+* Soliloquy Slider
+*/
+
+.soliloquy-container .soliloquy-caption {
+    position: relative;
+    background: #193662;
+}
+
+.soliloquy-container a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.soliloquy-container a:focus,
+.soliloquy-container a:hover {
+    outline-color: #fff;
+    text-decoration: none;
+}
+
+.soliloquy-container .soliloquy-pager {
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+    bottom: auto;
+    position: relative;
+    height: 35px;
+    background: #091831;
+    padding: 10px;
+}
+
+.soliloquy-container .soliloquy-pager-item a {
+    border: none;
+}
