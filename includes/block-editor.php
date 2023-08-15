@@ -45,7 +45,7 @@ function eqd_setup_theme_supported_features() {
 				'color' => '#EBEBEB',
 			),
 			array(
-				'name'  => esc_attr__( '8b8989', 'eqd' ),
+				'name'  => esc_attr__( 'Mid gray', 'eqd' ),
 				'slug'  => 'mid-gray',
 				'color' => '#8b8989',
 			),

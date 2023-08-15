@@ -408,6 +408,9 @@ h1.wp-block-heading {
 	font-weight: 700;
 	line-height: 35px;
 	font-family: $alt-font;
+	@include media("<=mobile_menu") {
+		line-height: 1
+	}
 }
 
 h2.wp-block-heading {
@@ -417,6 +420,9 @@ h2.wp-block-heading {
 	font-weight: 700;
 	line-height: 23px;
 	font-family: $alt-font;
+	@include media("<=mobile_menu") {
+		line-height: 1
+	}
 }
 
 h3.wp-block-heading {
@@ -425,6 +431,9 @@ h3.wp-block-heading {
 	font-style: normal;
 	font-weight: 700;
 	line-height: 20px;
+	@include media("<=mobile_menu") {
+		line-height: 1
+	}
 }
 
 h4.wp-block-heading, h5.wp-block-heading, h6.wp-block-heading {
@@ -433,6 +442,9 @@ h4.wp-block-heading, h5.wp-block-heading, h6.wp-block-heading {
 	font-style: normal;
 	font-weight: 700;
 	line-height: 12px;
+	@include media("<=mobile_menu") {
+		line-height: 1
+	}
 }
 
 /* Focus State
