@@ -1662,8 +1662,9 @@ body.simple-modal-open {
 
 #main-content .soliloquy-container a:focus,
 #main-content .soliloquy-container a:hover {
-    outline-color: #fff;
+    outline:1px solid #fff;
     text-decoration: none;
+    border-bottom: 0;
 }
 
 #main-content .soliloquy-container .soliloquy-pager {
