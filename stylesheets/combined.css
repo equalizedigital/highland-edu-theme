@@ -1687,7 +1687,10 @@ body.simple-modal-open {
   .tribe-common .tribe-common-c-btn-border-small, .tribe-common a.tribe-common-c-btn-border-small {
     border: 1px solid var(--tec-color-border-default) !important;
   }
-
+  .tribe-events-calendar-list .tribe-event-categories li{
+    display: inline-block;
+    margin-right: 8px;
+  }
 .tribe-events-calendar-list .tribe-event-categories li a{
     background-color: #285598;
     padding: 3px 9px;
