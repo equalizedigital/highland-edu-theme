@@ -1651,8 +1651,19 @@ body.simple-modal-open {
 */
 
 #main-content .soliloquy-container .soliloquy-caption {
-    /* position: relative; */
     background: #193662;
+}
+/* on mobile */
+@media screen and (max-width: 1024px) {
+    .soliloquy-container .soliloquy-caption .soliloquy-caption-inside{
+        min-height: 50px;
+    }
+    #main-content .soliloquy-container .soliloquy-caption {
+        position: relative;
+    }
+    .soliloquy-container .soliloquy-caption, .soliloquy-container .soliloquy-controls-auto, .soliloquy-container .soliloquy-pager{
+        display: block !important;
+    }
 }
 
 #main-content .soliloquy-container a {
