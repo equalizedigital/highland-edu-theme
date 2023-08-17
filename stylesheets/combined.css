@@ -1725,6 +1725,6 @@ body.simple-modal-open {
     background: #fff !important;
 }
 .single .tec-events-c-view-box-border {
-    border: none;
-    padding: 0;
+    border: none !important;
+    padding: 0 !important;
 }
