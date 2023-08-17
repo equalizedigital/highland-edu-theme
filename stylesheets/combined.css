@@ -122,7 +122,9 @@ ul#menu-topnav ul a{font-style:italic;font-weight:500;line-height:1em;padding:5p
 ul#menu-topnav ul:hover > a{color:#FFF;}
 ul#menu-topnav li:hover > ul{display:block;}
 ul#menu-topnav li:hover > a{color:#FFF;text-decoration:underline;text-decoration-thickness:2px;}
-#top_nav ul#menu-topnav li.mobile-only { display: none; }
+@media only screen and (max-width:968px) {
+    #top_nav ul#menu-topnav li.mobile-only { display: none; }
+}
 .slicknav_menu{display:none; background-color: black !important; }
 .slicknav_btn{z-index: 10000;background-color: #FF6A2A !important;}
 .slicknav_icon-bar {
