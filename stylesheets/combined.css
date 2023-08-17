@@ -1712,3 +1712,19 @@ body.simple-modal-open {
 .tribe-events-calendar-list .tribe-event-categories li a:hover {
     border: none;
 }
+#tribe-events #legend li, .tribe-events #legend li {
+    font-size: 15px;
+    float: left;
+}
+
+.tribe-events-calendar-list__event-title a {
+    color: var(--tec-color-text-events-title) !important;
+}
+
+.tribe-events-calendar-list__event-title {
+    background: #fff !important;
+}
+.single .tec-events-c-view-box-border {
+    border: none;
+    padding: 0;
+}
