@@ -114,6 +114,7 @@ ul#menu-topnav li a{font-family:'Raleway', sans-serif;font-size:18px;line-height
 ul#menu-topnav li ul li a{color:#fff;}
 ul#menu-topnav li a:hover{color:#aaa;}
 ul#menu-topnav ul.sub-menu{box-shadow:0px 3px 3px rgba(0, 0, 0, 0.2);-moz-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.2);-webkit-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.2);display:none;position:absolute;width:170px;z-index:99999;margin:0 0;padding:0 0;text-align:left;background:#777;}
+ul#menu-topnav ul.sub-menu.active {display: block;}
 ul#menu-topnav ul.sub-menu li{min-width:170px;margin:0 0;border-bottom:#666 solid 1px;border-left:#666 solid 1px !important;border-right:#999 solid 1px !important;padding:10px 0;background:#777;}
 ul#menu-topnav ul.sub-menu li:first-child{border-top:#666 solid 1px !important;}
 ul#menu-topnav ul.sub-menu li a{line-height: 1.5em;}
@@ -122,7 +123,7 @@ ul#menu-topnav ul a{font-style:italic;font-weight:500;line-height:1em;padding:5p
 ul#menu-topnav ul:hover > a{color:#FFF;}
 ul#menu-topnav li:hover > ul{display:block;}
 ul#menu-topnav li:hover > a{color:#FFF;text-decoration:underline;text-decoration-thickness:2px;}
-@media only screen and (max-width:968px) {
+@media only screen and (min-width:968px) {
     #top_nav ul#menu-topnav li.mobile-only { display: none; }
 }
 .slicknav_menu{display:none; background-color: black !important; }
