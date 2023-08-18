@@ -17,6 +17,8 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 						if ( is_archive() ) {
 							$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 							echo $term->name . ' Events';
+						} elseif( is_singular( 'tribe_venue' ) ) {
+							echo get_the_title( get_queried_object_id() );
 						} else {
 							echo 'Campus Calendar';
 						}
