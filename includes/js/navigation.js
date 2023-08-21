@@ -54,7 +54,6 @@ toggleItemButton.forEach(function (button) {
 var toggleMegaMenu = document.querySelectorAll('.toggle-mega-menu');
 toggleMegaMenu.forEach(function (button) {
     let controls = button.getAttribute('aria-controls');
-    console.log(controls);
     button.addEventListener('mouseenter', function () {
         button.setAttribute('aria-expanded', 'true');
         document.getElementById(controls).classList.add('active');
@@ -120,5 +119,62 @@ toggleMegaMenu.forEach(function (button) {
                 }
             }
         }
+    });
+});
+
+//toggle-button
+var toggleButton = document.querySelectorAll('.toggle-button');
+toggleButton.forEach(function (button) {
+    // this click
+    button.addEventListener('click', function () {
+        if (button.getAttribute('aria-expanded') === 'false') {
+            button.setAttribute('aria-expanded', 'true');
+            button.nextElementSibling.classList.add('active');
+        } else {
+            button.setAttribute('aria-expanded', 'false');
+            button.nextElementSibling.classList.remove('active');
+        }
+    });
+    // hide the menu when the user clicks outside
+    document.addEventListener('click', function (event) {
+        if (event.target.closest('.toggle-button') === null) {
+            button.setAttribute('aria-expanded', 'false');
+            button.nextElementSibling.classList.remove('active');
+        }
+    });
+    button.addEventListener('keyup', function (event) {
+        // Hide the menu when press scape key or tab while last item is focused
+        if (event.keyCode === 27 ) {
+            this.setAttribute('aria-expanded', 'false');
+            button.nextElementSibling.classList.remove('active');
+        }
+    });
+    // escape key on the menu
+    button.nextElementSibling.addEventListener('keyup', function (event) {
+        // Hide the menu when press scape key or tab while last item is focused
+        if (event.keyCode === 27) {
+            button.setAttribute('aria-expanded', 'false');
+            this.classList.remove('active');
+            button.focus();
+        }
+    });
+    // add active class and aria on hover
+    button.addEventListener('mouseenter', function () {
+        button.setAttribute('aria-expanded', 'true');
+        button.nextElementSibling.classList.add('active');
+    });
+    // remove active class and aria on hover out
+    button.addEventListener('mouseleave', function () {
+        setTimeout(function () {
+            button.setAttribute('aria-expanded', 'false');
+            button.nextElementSibling.classList.remove('active');
+        }, 1000);
+    });
+    // when menu lose focus close it
+    button.nextElementSibling.addEventListener('focusout', function () {
+        setTimeout(function () {
+            button.setAttribute('aria-expanded', 'false');
+            button.nextElementSibling.classList.remove('active');
+        }, 1000);
     });
 });
