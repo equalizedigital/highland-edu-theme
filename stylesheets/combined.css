@@ -1485,7 +1485,7 @@ img{max-width:100%;height:auto !important;vertical-align:bottom;}
     border: 0;
     color: rgba(255,255,255,1);
     cursor: pointer;
-    opacity: 0;
+    /* opacity: 0; */
     display: inline-block;
   }
   ul#menu-topnav li a.link-icon {
