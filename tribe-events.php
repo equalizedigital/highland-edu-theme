@@ -13,7 +13,16 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 			<div class="container">
 				<div class="sixteen columns alpha omega primary-nav-holder">
 					<h1>
-					Campus Calendar
+						<?php
+						if ( is_archive() ) {
+							$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+							echo $term->name . ' Events';
+						} elseif( is_singular( 'tribe_venue' ) ) {
+							echo get_the_title( get_queried_object_id() );
+						} else {
+							echo 'Campus Calendar';
+						}
+						?>
 					</h1>
 				</div><!-- menu-holder -->
 			</div>

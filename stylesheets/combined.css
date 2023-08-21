@@ -1687,4 +1687,44 @@ body.simple-modal-open {
   .tribe-common .tribe-common-c-btn-border-small, .tribe-common a.tribe-common-c-btn-border-small {
     border: 1px solid var(--tec-color-border-default) !important;
   }
-  
+  .tribe-events-calendar-list .tribe-event-categories li{
+    display: inline-block;
+    margin-right: 8px;
+  }
+.tribe-events-calendar-list .tribe-event-categories li a{
+    background-color: #285598;
+    padding: 3px 9px;
+    border-radius: 30px;
+    border: none;
+}
+.tribe-events-calendar-list .tribe-event-categories li a:hover {
+    background-color: #193662;
+    color: white;
+}
+.tribe-events-calendar-list .tribe-event-categories li a:focus {
+    outline: 2px solid #285598;
+    outline-offset: 2px;
+}
+
+.tribe-events-calendar-list .tribe-event-categories li a {
+    color: #fff;
+}
+.tribe-events-calendar-list .tribe-event-categories li a:hover {
+    border: none;
+}
+#tribe-events #legend li, .tribe-events #legend li {
+    font-size: 15px;
+    float: left;
+}
+
+.tribe-events-calendar-list__event-title a {
+    color: var(--tec-color-text-events-title) !important;
+}
+
+.tribe-events-calendar-list__event-title {
+    background: #fff !important;
+}
+.single .tec-events-c-view-box-border {
+    border: none !important;
+    padding: 0 !important;
+}

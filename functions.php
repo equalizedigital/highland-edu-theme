@@ -139,3 +139,17 @@ function tablepress_add_scope( $output, $table, $render_options ) {
 }
 add_filter( 'tablepress_table_output', 'tablepress_add_scope', 10, 3 );
 
+/**
+ * Inject the list of categories after the title.
+ *
+ * @return void
+ */
+function categories_after_title() {
+	global $post;
+	?>
+	<ul class='tribe-event-categories'>
+		<?php echo tribe_get_event_taxonomy( $post->ID ); ?>
+	</ul>
+	<?php
+}
+add_action( 'tribe_template_before_include:events/v2/list/event/venue', 'categories_after_title' );
