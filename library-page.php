@@ -75,7 +75,13 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
                                                         <!-- BEGIN: General Custom Search Box-->
                                                         <form action="https://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0" onsubmit="ebscoPreProcess(this)">
                                                             <!-- Dropdown menu to prepend the selected value below to the user's search term -->
-                                                            <select onchange="#" size="1" name="search_prefix" style="width: 100px"><option selected="selected" value="">Keyword</option><option value="TI ">Title</option><option value="AU ">Author</option></select><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
+                                                            <label for="search_prefix">Search By:</label>
+                                                            <select onchange="#" size="1" name="search_prefix" style="width: 100px" id="search_prefix">
+                                                            <option selected="selected" value="">Keyword</option>
+                                                            <option value="TI ">Title</option>
+                                                            <option value="AU ">Author</option>
+                                                            </select>
+                                                            <input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
                                                             <!-- target an EDS profile -->
                                                             <input name="site" value="eds-live" type="hidden"><input name="profile" value="eds" type="hidden">
                                                             <!-- Auth type -->
