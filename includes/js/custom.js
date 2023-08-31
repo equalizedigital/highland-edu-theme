@@ -183,4 +183,19 @@ jQuery(document).ready(function($) {
         $(this).find('[role="menuitem"]').removeAttr('role');
         $(this).find('[role="menubar"]').removeAttr('role');
     });
+    $('.slicknav_btn').each(function() {
+        $(this).removeAttr('aria-haspopup');
+        $(this).attr('aria-controls', 'menu-main-menu');
+        $(this).attr('aria-expanded', 'false');
+        $(this).on( 'click keydown', function(e){
+            if (e.type == 'keydown' && e.keyCode != 32 && e.keyCode != 13) {
+                return;
+            }
+            if ( $(this).attr('aria-expanded') == 'false' ) {
+                $(this).attr('aria-expanded', 'true');
+            } else {
+                $(this).attr('aria-expanded', 'false');
+            }
+        });
+    });
 });
