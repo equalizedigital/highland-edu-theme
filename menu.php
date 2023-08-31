@@ -5,7 +5,7 @@ defined('ABSPATH') OR exit;
  * @subpackage WP-Skeleton
  */
 ?>
-<a id="hide_me" href="#content">Skip to Content</a>
+<a id="hide_me" href="#main-content">Skip to Content</a>
 
 <div role="banner">
     <div class="logo">
@@ -18,20 +18,23 @@ defined('ABSPATH') OR exit;
         <div class="super-container top-menu-holder">
             <div class="container">
                 <div class="sixteen columns top-nav-holder" id="top_nav">
+                    <!--  the Menu -->
+                    <nav class="menu-topnav-container" aria-label="Header Utilities">
+                    <? 
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'topnav',
+                            'walker' => new topNavWalker(),
+                            'container' => false,
+                        ),
+                    ); ?>
+                    </nav>
                     <!-- Search Icom -->    
                     <div class="search-icon">
                         <a href="<? echo get_permalink(5461); ?>">
                             <img src="<? bloginfo('template_url'); ?>/images/search_icon.png" alt="Search"/>
                         </a>
                     </div>
-                    <!--  the Menu -->
-                    <? 
-                    wp_nav_menu(
-                        array(
-                            'theme_location' => 'topnav',
-                            'walker' => new topNavWalker()
-                        ),
-                    ); ?>
                 </div>
             </div>
         </div>
@@ -39,21 +42,33 @@ defined('ABSPATH') OR exit;
         <div class="super-container bot-menu-holder">
             <div class="container primary-nav-wrapper">
                 <div class="sixteen columns alpha omega primary-nav-holder">
-                    <div id="access">
+                    <nav id="access" aria-label="Main Navigation">
+                        <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
+                        <ul class="menu-main-menu">
+                            <li>
+                                <button class="toggle-mega-menu" aria-expanded="false" aria-controls="admissions-subs" id="admissions-subs-actuator">Admissions<span class="caret-icon" aria-hidden="true"></span></button>
+                            </li>
+                            <li>
+                                <button class="toggle-mega-menu" aria-expanded="false" aria-controls="academics-subs">Academics<span class="caret-icon" aria-hidden="true"></span></button>
+                            </li>
+                            <li>
+                                <a target="_blank" rel="noopener" href="https://highlandcougars.com/">Athletics</a>
+                            </li>
+                            <li>
+                            <button class="toggle-mega-menu" aria-expanded="false" aria-controls="campus-subs">Campus &amp; Community<span class="caret-icon" aria-hidden="true"></span></button>
+                            </li>
+                            <li>
+                                <button class="toggle-mega-menu" aria-expanded="false" aria-controls="arts-subs">Arts &amp; Theatre<span class="caret-icon" aria-hidden="true"></span></button>
+                            </li>
+                        </ul>
                         <?
-                        wp_nav_menu(array('theme_location' => 'primary'));
-                        wp_nav_menu( array( 'menu' => 'main-nav-1', 'menu_id' => 'admissions-subs-actuator', 'menu_class' => 'menu-main-menu', 'container' => false, 'walker' => new admissionsWalker() ) );
-                        wp_nav_menu( array( 'menu' => 'main-nav-2', 'menu_id' => 'academics-subs-actuator', 'menu_class' => 'menu-main-menu', 'container' => false, 'walker' => new academicsWalker() ) );
-                        wp_nav_menu( array( 'menu' => 'main-nav-3', 'menu_id' => 'athletics-subs-actuator', 'menu_class' => 'menu-main-menu', 'container' => false ) );
-                        wp_nav_menu( array( 'menu' => 'main-nav-4', 'menu_id' => 'campus-subs-actuator', 'menu_class' => 'menu-main-menu', 'container' => false, 'walker' => new campusWalker() ) );
-                        wp_nav_menu( array( 'menu' => 'main-nav-5', 'menu_id' => 'arts-subs-actuator', 'menu_class' => 'menu-main-menu', 'container' => false, 'walker' => new artsWalker() ) );
                         get_template_part('submenu', 'admissions');
                         get_template_part('submenu', 'academics');
                         //get_template_part('submenu', 'athletics');
                         get_template_part('submenu', 'campus');
                         get_template_part('submenu', 'arts');
                         ?>
-                    </div><!-- access -->
+                    </nav><!-- access -->
                 </div><!-- menu-holder -->
             </div>
         </div>
@@ -61,9 +76,6 @@ defined('ABSPATH') OR exit;
     </div>
 </div>
                             
-<div class="social-butterfly sb-inner" aria-label="social media" role="complimentary">
-    <?php get_template_part( 'social','butterfly'); ?>
-</div>
 <?
 
     global $alert_list;
