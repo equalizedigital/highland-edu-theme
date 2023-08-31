@@ -183,18 +183,18 @@
             </nav>
             <script type="text/javascript">
                 jQuery(document).ready(function() {
-                    jQuery(".show-children").on('click', function(event){
+                    jQuery(".show-children a").on('click', function(event){
                         event.preventDefault();
                         // aria
                         var clicked_li = jQuery(this).attr("aria-controls");
                         var close_li = jQuery(this).attr("aria-expanded");
                         if(close_li == "true"){
                             jQuery("."+clicked_li).slideUp();
-                            jQuery(this).removeClass("list-open");
+                            jQuery(this).parent().removeClass("list-open");
                             jQuery(this).attr("aria-expanded", "false");
                         } else {
                             jQuery("."+clicked_li).slideDown(300);
-                            jQuery(this).addClass("list-open");
+                            jQuery(this).parent().addClass("list-open");
                             jQuery(this).attr("aria-expanded", "true");
                         }
                     });

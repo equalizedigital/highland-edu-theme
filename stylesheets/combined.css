@@ -344,7 +344,7 @@ ul.bootpag li, ul.bootpag li.prev.disabled, ul.bootpag li.next.disabled{width:au
     outline: 2px solid black !important;
     outline-offset: 2px;
 }
-.sidebar .menu li[aria-expanded="true"] a {
+.sidebar .menu li a[aria-expanded="true"] {
     background: #0d4e95;
     color: #fff !important;
 }
