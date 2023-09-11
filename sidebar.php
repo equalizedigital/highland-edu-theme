@@ -173,7 +173,7 @@
                                 <li class="grandchild li-<? echo $child; ?>"><a href="<? echo get_the_permalink($child); ?>" tabindex="0"><h2>- <? echo get_the_title($child); ?> Home</h2></a><?
                             } else { ?>
                                 <li class="child">
-                                <a href="<? echo get_the_permalink($child); ?>" tabindex="0"><h2><? echo get_the_title($child); ?></h2></a>
+                                <a href="<? echo get_the_permalink($child); ?>" tabindex="0"><? echo get_the_title($child); ?></a>
                                 </li><?
                             }
                         }
