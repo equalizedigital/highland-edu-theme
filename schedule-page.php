@@ -16,7 +16,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 			<div class="sixteen columns alpha omega">
 				<div id="primary" class="full-width">
 					<div id="content">
-						<div class="main">
+						<main id="main-content" class="main">
 							<article id="post-<? the_ID(); ?>" <? post_class(); ?> role="article">
 								<header class="entry-header">
 									<h1 class="entry-title"><? the_title(); ?></h1>
@@ -81,7 +81,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 									</div>
 								</div><!-- .entry-content -->
 							</article><!-- #post-<? the_ID(); ?> -->
-						</div><!-- #main -->
+						</main><!-- #main -->
 					</div><!-- #content -->
 				</div><!-- #primary -->
 			</div>

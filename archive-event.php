@@ -9,6 +9,7 @@
     get_template_part( 'sub-header', 'index' ); //the  header stuffs
 	get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 ?>
+<main id="main-content">
 
 	<div class="super-container title-holder">
 		<div class="container">
@@ -26,7 +27,7 @@
 			<div id="primary" class="full-width">
 				<div id="content">
 	                <div class="two-thirds column alpha">
-	                    <div class="main">
+                    <main class="main" id="main-content">
 
 	                  <div class="event-feed">
                         <?
@@ -121,7 +122,7 @@
                         ?>
                       </div>
                         </div><!-- #main -->
-                    </div><!-- two-thirds -->
+                    </main><!-- two-thirds -->
                     <? get_sidebar(); ?>
                 </div><!-- #content -->
             </div><!-- #primary -->
@@ -129,4 +130,5 @@
     </div>
 </div>
 
+</main>
 <? get_footer(); ?>
