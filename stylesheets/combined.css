@@ -126,7 +126,7 @@ ul#menu-topnav li:hover > a{color:#FFF;text-decoration:underline;text-decoration
 @media only screen and (min-width:968px) {
     #top_nav ul#menu-topnav li.mobile-only { display: none; }
 }
-.slicknav_menu{display:none; background-color: black !important; }
+.slicknav_menu{display:none; background-color: #0d4e95 !important; }
 .slicknav_btn{z-index: 10000;background-color: #FF6A2A !important;}
 .slicknav_icon-bar {
     background-color: black !important;
