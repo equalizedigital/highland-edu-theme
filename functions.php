@@ -4,6 +4,7 @@ defined('ABSPATH') OR exit;
  * @package WordPress
  * @subpackage WP-Skeleton
  */
+define( 'THEME_VERSION', '1.0.0' );
 
 // drag and drop menu support
 //unregister_nav_menu( $location ); <-- registered menus be unregistered (load theme once) if eliminating
@@ -108,6 +109,7 @@ include('includes/upload_functions.php');
 include('includes/form_functions.php');
 include('includes/cpt_functions.php'); 	//-- use for custom post types
 include('includes/menus.php');
+include('includes/acf.php');
 
 
 /**
