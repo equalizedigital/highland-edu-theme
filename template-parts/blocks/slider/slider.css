@@ -1,5 +1,9 @@
+:root {
+    --swiper-pagination-bullet-horizontal-gap: 5px;
+}
+
 .hl-slider .slide-caption {
-    background-color: rgba(255,255,255,.8);
+    background-color: rgba(255,255,255,.95);
     padding: 2em;
     text-align: left;
     overflow: visible;
@@ -23,17 +27,33 @@
     bottom: 10px;
     top: unset;
 }
+.hl-slider .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: black;
+}
 .hl-slider .swiper-pagination-bullet {
-    background-color: #285598;
+    background-color: #747474;
+    opacity: 1;
+}
+.hl-slider .swiper-pagination-bullet:focus {
+    outline: 1px solid black;
+    outline-offset: 2px;
 }
 .hl-slider .button {
     background-color: #FF6200;
-    color: #fff !important;
+    color: black !important;
     border: none;
     text-decoration: none;
     padding: .5em 1em;
     font-size: 1em;
-    text-transform: uppercase;
+    border-radius: 25px;
+}
+.hl-slider .button:hover {
+    background-color: #193662;
+    color: white !important;
+}
+.hl-slider .button:focus {
+    outline: 2px solid #193662;
+    outline-offset: 2px;
 }
 .hl-slider.alignfull {
     margin-left: calc(50% - 50vw);
@@ -52,9 +72,18 @@
     z-index: 15;
     cursor: pointer;
 }
+.hl-slider .hl-button-control:hover {
+    background-color: #193662;
+    color: white !important;
+}
+.hl-slider .hl-button-control:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
 
 /* mobile */
 @media (max-width: 767px) {
+
     .hl-slider h2.heading {
         font-size: 1em;
         line-height: 1.2em;
@@ -67,20 +96,26 @@
         max-width: 80%;
     }
     .hl-slider .slide-caption {
+        position: relative;
         width: 100%;
-        padding: 1em;
+        padding: 1em 1em 2em;
     }
     .hl-slider .button {
         padding: .3em .5em;
         font-size: .8em;
     }
     .hl-slider .swiper-pagination {
-        left: 50%;
-        margin-left: -50%;
-        width: 100%;
+        left: 0;
+        text-align: left;
+        margin-left:0;
+        padding-left: 1em;
     }
     .hl-slider .hl-button-control{
         right: 1em;
         bottom: 1em;
+    }
+    .hl-slider .hl-button-control:focus {
+        outline: 2px solid #193662;
+        outline-offset: 2px;
     }
 }

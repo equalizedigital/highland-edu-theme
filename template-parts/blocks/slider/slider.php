@@ -35,10 +35,10 @@ if ( have_rows( 'hl_slider' ) ) :
             endif;
             ?>
             <div class="slide-caption">
-                <h2 class="heading"><?php the_sub_field( 'hl_slide_heading' ); ?></h2>
+                <h2 class="heading" tabindex="0"><?php the_sub_field( 'hl_slide_heading' ); ?></h2>
                 <p class="lead"><?php the_sub_field( 'hl_slide_text' ); ?></p>
                 <?php if ( get_sub_field( 'hl_button_link' ) ) : ?>
-                    <a class="button" href="<?php the_sub_field( 'hl_button_link' ); ?>" role="button"><?php the_sub_field( 'hl_button_text' ); ?></a>
+                    <a class="button" href="<?php echo esc_url( get_sub_field( 'hl_button_link' ) ); ?>"><?php the_sub_field( 'hl_button_text' ); ?></a>
                 <?php endif; ?>
             </div>
         </div>
@@ -47,13 +47,9 @@ if ( have_rows( 'hl_slider' ) ) :
     ?>
     </div><!-- /.swiper-wrapper -->
     <div class="swiper-pagination"></div>
-    <button class="hl-button-control pause">
+    <button class="hl-button-control" aria-pressed="false">
         <span class="screen-reader-text"><?php esc_html_e( 'Pause', 'mstar' ); ?></span>
         <span class="dashicons dashicons-controls-pause"></span>
-    </button>
-    <button class="hl-button-control play">
-        <span class="screen-reader-text"><?php esc_html_e( 'Play', 'mstar' ); ?></span>
-        <span class="dashicons dashicons-controls-play"></span>
     </button>
 </div><!-- /.swiper -->
 <?php
