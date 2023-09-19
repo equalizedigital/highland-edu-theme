@@ -60,6 +60,11 @@
     margin-right: calc(50% - 50vw);
     width: 100vw;
 }
+.acf-block-preview .hl-slider.alignfull {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
 .hl-slider .hl-button-control{
     background-color: #FF6200;
     color: #fff !important;
@@ -80,7 +85,9 @@
     outline: 2px solid white;
     outline-offset: 2px;
 }
-
+.hl-slider h2.heading:focus {
+    outline: 0;
+}
 /* mobile */
 @media (max-width: 767px) {
 
@@ -106,6 +113,7 @@
     }
     .hl-slider .swiper-pagination {
         left: 0;
+        bottom: 0;
         text-align: left;
         margin-left:0;
         padding-left: 1em;

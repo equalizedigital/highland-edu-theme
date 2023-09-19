@@ -9,6 +9,11 @@ let args =  {
         clickable: true,
     },
     on: {
+        slideChangeTransitionEnd: function () {
+            const currentSlide = document.querySelector('.swiper-slide-active');
+            const currentSlideH2 = currentSlide.querySelector('h2');
+            currentSlideH2.focus();
+        },
         afterInit: function ( hl_slider ) {
             const button = document.querySelectorAll('.button');
             // on tab jump to the current active bullet
@@ -23,9 +28,6 @@ let args =  {
             });
             const pagination = document.querySelectorAll('.swiper-pagination-bullet');
             pagination.forEach(function (item, index) {
-                item.addEventListener('click', function () {
-                    item.closest('.hl-slider').querySelector('.swiper-slide-next h2').focus();
-                });
                 item.addEventListener('keydown', function (event) {
                     if (event.keyCode === 32) {
                         event.preventDefault();
