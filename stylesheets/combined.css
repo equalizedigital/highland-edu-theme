@@ -21,7 +21,6 @@ p{margin:0 0 20px 0;}
 p img{margin:0;}
 p.lead{font-size:21px;line-height:27px;color:#777;}
 em{font-style:italic;}
-strong, b{font-weight:bold;color:#333;}
 small{font-size:80%;}
 blockquote, blockquote p{font-size:17px;line-height:24px;color:#777;font-style:italic;}
 blockquote{margin:0 0 20px;padding:9px 20px 0 19px;border-left:1px solid #ddd;}
@@ -155,7 +154,7 @@ a.tour{background:#ff6200;}
 .entry-content{padding:20px 25px;}
 
 .title{padding-bottom:15px;}
-.full-width{padding-left:10px;}
+/* .full-width{padding-left:10px;} */
 .story-header{text-align:center;text-transform:uppercase;padding-bottom:50px;}
 .stories-holder{background:#193662;overflow:auto;}
 .stories-holder img{float:left;padding-right:60px;}
@@ -1212,7 +1211,7 @@ h1.dog-title {
 .row,
 .clearfix{zoom:1;}
 .clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0;}
-img{max-width:100%;height:auto !important;vertical-align:bottom;}
+/* img{max-width:100%;height:auto !important;vertical-align:bottom;} */
 @media only screen and (max-width:1600px){
     .sidebar .menu li:first-child a {font-size: 18px;padding: 20px;}
     .sidebar .menu li a {font-size: 16px;padding: 8px 25px;}
@@ -1667,6 +1666,19 @@ body.simple-modal-open {
 }
 .slicknav_nav .slicknav_row:hover {
     color: black !important;
+}
+body.hide-h1-visually .entry-content{
+    padding: 0;
+}
+body.hide-h1-visually .title-holder{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
 }
 
 .menu-item-heading {

@@ -1,0 +1,464 @@
+@import "_include-media";
+
+/* Define variables
+--------------------------------------------- */
+
+$blue: #285598;
+$dark-blue: #193662;
+$brown: #603813;
+
+$orange: #ff6200;
+$light-orange: #FFDCC7;
+
+$gray: #787474;
+$mid-gray: #8b8989;
+$light-gray: #EBEBEB;
+
+$white: #fff;
+$text_dark: #333;
+$text_light: #fff;
+
+$gutenberg_colors: ( 'blue', 'dark-blue', 'brown', 'orange', 'light-orange', 'gray', 'mid-gray', 'light-gray', 'white' );
+
+
+$base-font: 'Raleway', sans-serif;
+$alt-font: 'Open Sans', sans-serif;
+
+$content-width: 1168px;
+$block-margin: 24px;
+
+$grid-width: 1168px;
+$grid-gap: 32px;
+
+$breakpoints: (
+	'phone'  : 360px,
+	'small'  : 768px,
+	'tablet' : 768px, // required for include-media
+	'mobile_menu' : 768px,
+	'medium' : 992px,
+	'large'  : 1200px,
+	'desktop': $grid-width + $grid-gap, // required for include-media
+	'content-width': $content-width + $grid-gap,
+);
+
+$brand_colors: (
+	'blue'  : $blue,
+	'dark-blue'  : $dark-blue,
+	'brown'  : $brown,
+	'orange'  : $orange,
+	'light-orange'  : $light-orange,
+	'gray'  : $gray,
+	'mid-gray'  : $mid-gray,
+	'light-gray'  : $light-gray,
+	'white'  : $white,
+);
+
+/* Functions
+--------------------------------------------- */
+@function brand-color( $key, $variant: null ) {
+	@if map-has-key( $brand_colors, $key ) {
+		$color: map-get( $brand_colors, $key );
+		@if ( 'lighten' == $variant ) {
+			$lighten_key: $key + '_lighten';
+			@if map-has-key( $brand_colors, $lighten_key ) {
+				$color: #{map-get( $brand_colors, $lighten_key )};
+			} @else {
+				$color: lighten( $color, 10% );
+			}
+		}
+		@else if( 'darken' == $variant ) {
+			$darken_key: $key + '_darken';
+			@if map-has-key( $brand_colors, $darken_key ) {
+				$color: #{map-get( $brand_colors, $darken_key )};
+			} @else {
+				$color: darken( $color, 10% );
+			}
+		}
+		@else if( 'bg' == $variant ) {
+			$bg_key: $key + '_bg';
+			@if map-has-key( $brand_colors, $bg_key ) {
+				$color: #{map-get( $brand-colors, $bg_key )};
+			} @else {
+				$color: lighten( $color, 80% );
+			}
+		}
+		@return $color;
+	} @else {
+		@error "The #{$key} color could not be found in $brand_colors";
+	}
+}
+
+/* Define mixins
+--------------------------------------------- */
+%transition {
+	transition: all 0.1s ease-in-out;
+}
+@mixin clearfix() {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+@mixin font-sizes( $base: null, $tablet: null, $medium: null, $large: null ) {
+
+    @if ( $base ) {
+        font-size: $base;
+    }
+
+    @if( $tablet ) {
+        @include media(">=tablet") {
+            font-size: $tablet;
+        }
+    }
+
+    @if( $medium ) {
+        @include media(">=medium") {
+            font-size: $medium;
+        }
+    }
+
+    @if( $large ) {
+        @include media(">=desktop") {
+            font-size: $large;
+        }
+    }
+
+}
+@mixin placeholder-color( $color ) {
+
+	::-moz-placeholder {
+		color: $color;
+		opacity: 1;
+	}
+  
+	::-ms-input-placeholder {
+		color: $color;
+	}
+  
+	::-webkit-input-placeholder {
+		color: $color;
+	}
+  
+	input:focus::-webkit-input-placeholder,
+	input:focus::-moz-placeholder,
+	input:focus:-ms-input-placeholder,
+	textarea:focus::-webkit-input-placeholder,
+	textarea:focus::-moz-placeholder,
+	textarea:focus:-ms-input-placeholder {
+		color:transparent;
+	}
+  
+}
+@mixin form_style {
+	input:not([type=submit]), select, textarea {
+		background-color: $white;
+		border: 1px solid $blue;
+		border-radius: 5px;
+		color: $darkgray;
+		font-size: 18px;
+		line-height: 24px;
+		padding: 12px 16px;
+		width: 100%;
+		font-size: 13px;
+		font-family: $base-font;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 26px;
+	}
+
+	input[type="checkbox"] {
+		width: auto;
+	}
+
+	select {
+		line-height: 50px;
+		height: 50px;
+		padding: 0 16px;
+	}
+
+	textarea {
+		width: 100%;
+	}
+
+	@include placeholder-color( $neutral_400 );
+
+}
+@mixin style( $type: null, $size: null, $base: false ) {
+	@if 'display' == $type  {
+
+		@if $base {
+			color: $text_dark;
+			font-family: $alt-font;
+			font-weight: 700;
+			letter-spacing: 0;
+			line-height: 1.22;
+		}
+
+		@if 1 == $size {
+			@include font-sizes( 49px, 53px, 66px );
+		} @else if 2 == $size {
+			@include font-sizes( 45px, 46px, 53px );
+		} @else if 3 == $size {
+			@include font-sizes( 34px, 38px, 45px );
+		} @else if 4 == $size {
+			@include font-sizes( 30px, 34px, 38px );
+		}
+
+	} @else if 'title' == $type {
+
+		@if $base {
+			color: $text_dark;
+			font-family: $base-font;
+			font-weight: 700;
+			line-height: 1.2;
+		}
+
+		@if 1 == $size {
+			@include font-sizes( 25px, 25px, 25px );
+		} @else if 2 == $size {
+			@include font-sizes( 18px, 18px, 18px );
+		} @else if 3 == $size {
+			@include font-sizes( 15px, 15px, 15px );
+		} @else if 4 == $size {
+			@include font-sizes( 10px, 10px, 10px );
+		} @else if 5 == $size {
+			@include font-sizes( 10px, 10px, 10px );
+		} @else if 6 == $size {
+			@include font-sizes( 10px, 10px, 10px );
+		}
+	} @else if 'subtitle' == $type {
+
+		// Inherit attributes from title
+		@include style( 'title', $size, $base );
+
+		// Custom attributes
+		font-weight: 700;
+
+	} @else if 'body' == $type {
+
+		@if $base {
+			color: $text_dark;
+			font-family: $base-font;
+			font-weight: 400;
+			line-height: 1.5;
+		}
+
+		@if 1 == $size {
+			font-size: 19px;
+		} @else if 2 == $size {
+			font-size: 18px;
+		} @else if 3 == $size {
+			font-size: 17px;
+		} @else if 4 == $size {
+			font-size: 16px;
+		} @else if 5 == $size {
+			font-size: 15px;
+		} @else if 6 == $size {
+			font-size: 14px;
+		} @else if 7 == $size {
+			font-size: 13px;
+		} @else if 8 == $size {
+			font-size: 12px;
+		} @else if 9 == $size {
+			font-size: 11px;
+		}
+
+
+	} @else if 'callout' == $type {
+
+		// Inherit attributes from body
+		@include style( 'body', $size, $base );
+
+		// Custom attributes
+		font-weight: 700;
+		line-height: 1.2;
+
+	} @else if 'footnote' == $type {
+
+		// Inherit attributes from body
+		@include style( 'body', $size, $base );
+
+		// Custom attributes
+		font-weight: 400;
+		line-height: 1.2;
+
+	}
+}
+
+/* Typographical Elements
+--------------------------------------------- */
+body {
+	overflow-x: hidden;
+}
+/**
+ * Make sure links are accessible
+ * @link https://webaim.org/resources/linkcontrastchecker/
+ */
+.entry-content a:not(.wp-block-button__link) {
+	border-bottom: 2px solid transparent;
+	color: $blue;
+	text-decoration: none;
+	@extend %transition;
+
+	&:hover {
+		border-bottom: 2px solid $orange;
+	}
+
+	svg {
+		@extend %transition;
+	}
+}
+
+strong {
+	font-weight: 700;
+}
+
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+code,
+pre {
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+	font-size: 12px;
+}
+
+code {
+	padding: 2px 4px;
+	white-space: nowrap;
+}
+
+pre {
+	display: block;
+	padding: 9.5px;
+	margin: 0 0 10px;
+	line-height: 18px;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: pre;
+	white-space: pre-wrap;
+}
+
+pre code {
+	padding: 0;
+	color: inherit;
+	white-space: pre;
+	white-space: pre-wrap;
+	background-color: transparent;
+	border: 0;
+}
+
+cite {
+	font-style: normal;
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+/* Paragraph
+--------------------------------------------- */
+
+p {
+	margin: 0 0 16px;
+	padding: 0;
+
+	&.large,
+	&.has-large-font-size {
+		@include style( 'body', 3 );
+	}
+
+	&.has-normal-font-size {
+		@include style( 'body', 5 );
+	}
+
+	&.small,
+	&.has-small-font-size {
+		@include style( 'body', 7 );
+	}
+}
+
+/* Headings
+--------------------------------------------- */
+h1.wp-block-heading,
+h2.wp-block-heading,
+h3.wp-block-heading,
+h4.wp-block-heading,
+h5.wp-block-heading,
+h6.wp-block-heading {
+	@include style( 'title', null, true );
+	margin: 0 0 16px;
+
+	a {
+		color: $blue;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+h1.wp-block-heading {
+	@include style( 'title', 1 );
+	color: $blue;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 35px;
+	font-family: $alt-font;
+	@include media("<=mobile_menu") {
+		line-height: 1
+	}
+}
+
+h2.wp-block-heading {
+	@include style( 'title', 2 );
+	color: $blue;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 23px;
+	font-family: $alt-font;
+	@include media("<=mobile_menu") {
+		line-height: 1
+	}
+}
+
+h3.wp-block-heading {
+	@include style( 'title', 3 );
+	color: $blue;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 20px;
+	@include media("<=mobile_menu") {
+		line-height: 1
+	}
+}
+
+h4.wp-block-heading, h5.wp-block-heading, h6.wp-block-heading {
+	@include style( 'title', 4 );
+	color: $blue;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 12px;
+	@include media("<=mobile_menu") {
+		line-height: 1
+	}
+}
+
+/* Focus State
+--------------------------------------------- */
+
+button:focus-within,
+button:focus,
+.button:focus-within,
+.button:focus,
+a:focus-within,
+a:focus,
+a:focus-within,
+a:focus,
+input:focus {
+	outline: 2px solid $blue;
+	outline-offset: 2px;
+}

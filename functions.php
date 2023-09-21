@@ -1,5 +1,6 @@
 <?php 
 defined('ABSPATH') OR exit;
+define( 'THEME_VERSION', '1.1' );
 /**
  * @package WordPress
  * @subpackage WP-Skeleton
@@ -109,6 +110,7 @@ include('includes/upload_functions.php');
 include('includes/form_functions.php');
 include('includes/cpt_functions.php'); 	//-- use for custom post types
 include('includes/menus.php');
+include('includes/block-editor.php');
 include('includes/acf.php');
 
 
@@ -141,6 +143,18 @@ function tablepress_add_scope( $output, $table, $render_options ) {
 }
 add_filter( 'tablepress_table_output', 'tablepress_add_scope', 10, 3 );
 
+
+// body classes filter
+function mstar_body_classes( $classes ) {
+	global $post;
+	$post_id = $post->ID;
+	$hide_h1_visually = get_field('hide_h1_visually', $post_id);
+	if($hide_h1_visually) {
+		$classes[] = 'hide-h1-visually';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'mstar_body_classes' );
 /**
  * Inject the list of categories after the title.
  *

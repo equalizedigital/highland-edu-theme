@@ -84,9 +84,9 @@ defined('ABSPATH') OR exit;
         get_template_part('alert');
     }
 
-    if (is_front_page()) {
-    	get_template_part('slideshow');
-    }
+    // if (is_front_page()) {
+    // 	get_template_part('slideshow');
+    // }
 
     if(is_page(166436)){
         get_template_part('slideshow');

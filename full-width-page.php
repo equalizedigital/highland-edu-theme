@@ -11,9 +11,10 @@
 	get_header();
     get_template_part( 'sub-header', 'index' ); //the  header stuffs
 	get_template_part( 'menu', 'index' ); //the  menu + logo/site title
+	$hide_h1_visually = get_field('hide_h1_visually');
 ?>
 <main id="main-content">
-    <div class="super-container title-holder">
+    <div class="super-container title-holder <?php echo $hide_h1_visually ? 'sr-only' : ''; ?>" >
         <div class="container">
             <div class="sixteen columns alpha omega primary-nav-holder">
                 <header>
