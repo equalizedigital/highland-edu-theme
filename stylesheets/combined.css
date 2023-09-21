@@ -1769,3 +1769,6 @@ body.hide-h1-visually .title-holder{
     border: none !important;
     padding: 0 !important;
 }
+.home .tribe-common a.tribe-events-widget-events-list__event-title-link, .home .tribe-common a.tribe-events-widget-events-list__event-title-link:active, .home .tribe-common a.tribe-events-widget-events-list__event-title-link:focus, .home .tribe-common a.tribe-events-widget-events-list__event-title-link:hover, .home .tribe-common a.tribe-events-widget-events-list__event-title-link:visited{
+    color: #285598;
+}
