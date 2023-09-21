@@ -1,0 +1,129 @@
+:root {
+    --swiper-pagination-bullet-horizontal-gap: 5px;
+}
+
+.hl-slider .slide-caption {
+    background-color: rgba(255,255,255,.95);
+    padding: 2em;
+    text-align: left;
+    overflow: visible;
+    left: 0%;
+    right: 0%;
+    text-shadow: none;
+    bottom: 0;
+    top: unset;
+    position: absolute;
+    width: 33%;
+}
+.hl-slider .swiper-pagination {
+    position: absolute;
+    left: 29%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+    list-style: none;
+    bottom: 10px;
+    top: unset;
+}
+.hl-slider .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: black;
+}
+.hl-slider .swiper-pagination-bullet {
+    background-color: #747474;
+    opacity: 1;
+}
+.hl-slider .swiper-pagination-bullet:focus {
+    outline: 1px solid black;
+    outline-offset: 2px;
+}
+.hl-slider .button {
+    background-color: #FF6200;
+    color: black !important;
+    border: none;
+    text-decoration: none;
+    padding: .5em 1em;
+    font-size: 1em;
+    border-radius: 25px;
+}
+.hl-slider .button:hover {
+    background-color: #193662;
+    color: white !important;
+}
+.hl-slider .button:focus {
+    outline: 2px solid #193662;
+    outline-offset: 2px;
+}
+.hl-slider.alignfull {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: 100vw;
+}
+.acf-block-preview .hl-slider.alignfull {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+.hl-slider .hl-button-control{
+    background-color: #FF6200;
+    color: #fff !important;
+    border: none;
+    text-decoration: none;
+    padding: .5em;
+    position: absolute;
+    right: 2em;
+    bottom: 2em;
+    z-index: 15;
+    cursor: pointer;
+}
+.hl-slider .hl-button-control:hover {
+    background-color: #193662;
+    color: white !important;
+}
+.hl-slider .hl-button-control:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+.hl-slider h2.heading:focus {
+    outline: 0;
+}
+/* mobile */
+@media (max-width: 767px) {
+
+    .hl-slider h2.heading {
+        font-size: 1em;
+        line-height: 1.2em;
+        padding-bottom: 5px;
+    }
+    .hl-slider .lead {
+        font-size: .8em;
+        line-height: 1em;
+        margin-bottom: 1em;
+        max-width: 80%;
+    }
+    .hl-slider .slide-caption {
+        position: relative;
+        width: 100%;
+        padding: 1em 1em 2em;
+    }
+    .hl-slider .button {
+        padding: .3em .5em;
+        font-size: .8em;
+    }
+    .hl-slider .swiper-pagination {
+        left: 0;
+        bottom: 0;
+        text-align: left;
+        margin-left:0;
+        padding-left: 1em;
+    }
+    .hl-slider .hl-button-control{
+        right: 1em;
+        bottom: 1em;
+    }
+    .hl-slider .hl-button-control:focus {
+        outline: 2px solid #193662;
+        outline-offset: 2px;
+    }
+}
