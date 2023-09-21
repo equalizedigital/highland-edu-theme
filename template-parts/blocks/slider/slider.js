@@ -1,4 +1,4 @@
-let args =  {
+let args = {
     loop: true,
     speed: 1000,
     autoplay: {
@@ -9,12 +9,7 @@ let args =  {
         clickable: true,
     },
     on: {
-        slideChangeTransitionEnd: function () {
-            const currentSlide = document.querySelector('.swiper-slide-active');
-            const currentSlideH2 = currentSlide.querySelector('h2');
-            currentSlideH2.focus();
-        },
-        afterInit: function ( hl_slider ) {
+        afterInit: function (hl_slider) {
             const button = document.querySelectorAll('.button');
             // on tab jump to the current active bullet
             button.forEach(function (item, index) {
@@ -26,6 +21,7 @@ let args =  {
                     }
                 });
             });
+
             const pagination = document.querySelectorAll('.swiper-pagination-bullet');
             pagination.forEach(function (item, index) {
                 item.addEventListener('keydown', function (event) {
@@ -34,7 +30,16 @@ let args =  {
                         item.click();
                     }
                 });
+
+                // Add click event to focus on h2 when pagination bullet is clicked
+                item.addEventListener('click', function() {
+                    const h2Element = hl_slider.slides[index].querySelector('h2');
+                    if (h2Element) {
+                        h2Element.focus();
+                    }
+                });
             });
+
             const controlBtn = document.querySelector('.hl-button-control');
             controlBtn.addEventListener('click', function () {
                 if (this.getAttribute('aria-pressed') === 'false') {
@@ -54,6 +59,7 @@ let args =  {
         },
     }
 };
+
 (function($){
 
     /**
