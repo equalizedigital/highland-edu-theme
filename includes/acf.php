@@ -112,7 +112,7 @@ class EQD_ACF_Customizations {
 		}
 		acf_register_block( array(
 			'name'            => 'slider',
-			'title'           => __( 'Slider' ),
+			'title'           => __( 'Accessible Slider' ),
 			'description'     => __( 'A custom slider block.' ),
 			'render_template' => '/template-parts/blocks/slider/slider.php',
 			'enqueue_assets'  => function() {
@@ -123,7 +123,7 @@ class EQD_ACF_Customizations {
 			},
 			'category'        => 'common',
 			'icon'            => 'images-alt2',
-			'keywords'        => array( 'slider' ),
+			'keywords'        => array( 'Slider', 'Accessible', 'Carousel' ),
 			'mode'            => 'edit',
 			'align'           => 'full',
 			'supports'        => array(
