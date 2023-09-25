@@ -13,7 +13,7 @@ if ( ! empty( $block['align'] ) ) {
 
 if ( have_rows( 'hl_slider' ) ) :
 	?>
-<div id="<?php echo esc_attr( $block_id ); ?>" class="<?php echo esc_attr( $class_name ); ?>">
+<div id="<?php echo esc_attr( $block_id ); ?>" class="<?php echo esc_attr( $class_name ); ?>" role="region" aria-label="carousel">
   <div class="swiper-wrapper">
     <?php
     while ( have_rows( 'hl_slider' ) ) :
