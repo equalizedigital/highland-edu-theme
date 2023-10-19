@@ -1,11 +1,6 @@
 <?php 
 defined('ABSPATH') OR exit;
 define( 'THEME_VERSION', '1.1' );
-/**
- * @package WordPress
- * @subpackage WP-Skeleton
- */
-define( 'THEME_VERSION', '1.0.0' );
 
 // drag and drop menu support
 //unregister_nav_menu( $location ); <-- registered menus be unregistered (load theme once) if eliminating
@@ -87,6 +82,7 @@ function mstar_jquery_enqueue() {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('navigation', get_template_directory_uri().'/includes/js/navigation.js', array(), '1.0.0', true );
 	wp_enqueue_script('customjs', get_template_directory_uri().'/includes/js/custom.js', array('jquery'), '1.0.0', true );
+	wp_enqueue_style('global', get_template_directory_uri().'/stylesheets/global.min.css', array(), '1.0.0', 'all' );
 }
 
 
@@ -181,19 +177,19 @@ add_action( 'tribe_template_before_include:events/v2/list/event/venue', 'categor
  */
 function tribe_remove_organizers_from_events( $default_types ) {
  
-    if (
-        ! is_array( $default_types )
-        || empty( $default_types )
-        || empty( Tribe__Events__Main::ORGANIZER_POST_TYPE )
-    ) {
-        return $default_types;
-    }
+	if (
+		! is_array( $default_types )
+		|| empty( $default_types )
+		|| empty( Tribe__Events__Main::ORGANIZER_POST_TYPE )
+	) {
+		return $default_types;
+	}
  
-    if ( ( $key = array_search( Tribe__Events__Main::ORGANIZER_POST_TYPE, $default_types ) ) !== false ) {
-        unset( $default_types[ $key ] );
-    }
+	if ( ( $key = array_search( Tribe__Events__Main::ORGANIZER_POST_TYPE, $default_types ) ) !== false ) {
+		unset( $default_types[ $key ] );
+	}
  
-    return $default_types;
+	return $default_types;
 }
  
 add_filter( 'tribe_events_register_default_linked_post_types', 'tribe_remove_organizers_from_events' );
@@ -205,5 +201,61 @@ add_action( 'init', 'unregister_tribe_organizer_post_type', 20 );
 
 add_action( 'admin_menu', 'remove_my_submenu', 9999 );
 function remove_my_submenu() {
+	if ( ! class_exists( 'Tribe__Events__Organizer' ) ) {
+		return;
+	}
 	remove_submenu_page('edit.php?post_type=tribe_events', 'edit.php?post_type=' . Tribe__Events__Organizer::POSTTYPE );
 }
+
+function add_id_to_results_per_page($output, $params) {
+	if ( 'results_per_page' == $params['facet']['name']) {
+		$output = str_replace('<select', '<select id="fwp_results_per_page"', $output);
+	}
+	if ( 'instructor_schedule' == $params['facet']['name']) {
+		$output = str_replace('<select', '<select id="fwp_instructor_schedule"', $output);
+	}
+	if ( 'schedule_department' == $params['facet']['name']) {
+		$output = str_replace('<select', '<select id="fwp_schedule_department"', $output);
+	}
+	return $output;
+}
+add_filter('facetwp_facet_html', 'add_id_to_results_per_page', 10, 2);
+
+function convert_days_fullnames( $abbreviations ) {
+	$daysMapping = [
+		'M' => 'Monday',
+		'T' => 'Tuesday',
+		'W' => 'Wednesday',
+		'R' => 'Thursday',
+		'F' => 'Friday',
+		'S' => 'Saturday',
+		'U' => 'Sunday'
+	];
+	$fullNames = [];
+	for ($i = 0; $i < strlen($abbreviations); $i++) {
+		$char = $abbreviations[$i];
+		if (isset($daysMapping[$char])) {
+			$fullNames[] = $daysMapping[$char];
+		}
+	}
+	return implode(', ', $fullNames);
+}
+
+add_filter( 'facetwp_pager_html', 'adjust_pager_accessibility', 10, 2 );
+function adjust_pager_accessibility( $output, $params ) {
+	$output = str_replace( 'Go to next page', 'Go to next page of results', $output );
+	$output = str_replace( 'Go to previous page', 'Go to previous page of results', $output );
+	return $output;
+}
+
+add_filter( 'gettext', function( $translated_text, $text, $domain ) {
+	if ( 'fwp-front' == $domain ) {
+	  if ( 'Go to next page' == $text ) {
+		$text = 'Go to next page of results';
+	  }
+	  if ( 'Go to previous page' == $text ) {
+		$text = 'Go to previous page of results';
+	  }
+	}
+	return $text;
+}, 10, 3 );

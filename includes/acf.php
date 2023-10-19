@@ -130,6 +130,39 @@ class EQD_ACF_Customizations {
 				'align' => array( 'full', 'wide' ),
 			),
 		) );
+		// schedule filters block
+		acf_register_block(
+			array(
+				'name'            => 'schedule-filters',
+				'title'           => __( 'Schedule Filters' ),
+				'description'     => __( 'A custom schedule filters block.' ),
+				'render_template' => '/template-parts/blocks/schedule/schedule-filters.php',
+				'category'        => 'common',
+				'icon'            => 'images-alt2',
+				'keywords'        => array( 'Schedule', 'Filters', 'Accessible' ),
+				'mode'            => 'edit',
+				'align'           => 'full',
+				'supports'        => array(
+					'align' => array( 'full', 'wide' ),
+				),
+			)
+		);
+		acf_register_block(
+			array(
+				'name'            => 'schedule-table',
+				'title'           => __( 'Schedule Table' ),
+				'description'     => __( 'A custom schedule table block.' ),
+				'render_template' => '/template-parts/blocks/schedule/schedule-table.php',
+				'category'        => 'common',
+				'icon'            => 'images-alt2',
+				'keywords'        => array( 'Schedule', 'Table', 'Accessible' ),
+				'mode'            => 'edit',
+				'align'           => 'full',
+				'supports'        => array(
+					'align' => array( 'full', 'wide' ),
+				),
+			)
+		);
 	}
 
 	/**

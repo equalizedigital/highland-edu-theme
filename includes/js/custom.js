@@ -198,4 +198,135 @@ jQuery(document).ready(function($) {
             }
         });
     });
+    function renderMobileTable() {
+        if ( $(window).width() < 1024 ) {
+            $('.schedule-table').each(function() {
+                if ( $(this).find('thead').length ) {
+                    let th = $(this).find('thead th');
+                    let ths = [];
+                    th.each(function( index ) {
+                        ths.push($(this).text());
+                    });
+                    let tr = $(this).find('tbody tr');
+                    let i = 0;
+                    tr.each(function( index ) {
+                        i = 0;
+                        $(this).find('td').each(function(index) {
+                            $(this).prepend(ths[i] + ': ');
+                            i++;
+                        });
+                    });
+                }
+            });
+        }
+    }
+    $('.dropdown-toggle').each(function() {
+        $(this).on('click', function(e) {
+            e.preventDefault();
+            let controls = $(this).attr('aria-controls');
+            if ( $(this).attr('aria-expanded') == 'true' ) {
+                // close dropdown
+                $('#' + controls).attr('aria-hidden', 'true');
+                $(this).attr('aria-expanded', 'false');
+            } else {
+                // close previously opened dropdowns
+                $('.dropdown-toggle-content').attr('aria-hidden', 'true');
+                $('.dropdown-toggle').attr('aria-expanded', 'false');
+                //open dropdown
+                $(this).attr('aria-expanded', 'true');
+                $('#' + controls).attr('aria-hidden', 'false');
+                let tabbable =  $('#' + controls).find('[tabindex]:not([tabindex="-1"]), a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+                let firstTabbable = tabbable.first();
+                firstTabbable.focus();
+                lastTabbable = tabbable.last();
+                lastTabbable.keydown(function(e){
+                    if ( e.keyCode === 9 && !e.shiftKey ) {
+                        e.preventDefault();
+                        firstTabbable.focus();
+                    }
+                });
+                //close dropdown on escape key
+                $(document).on('keydown', function(event) {
+                    if (event.keyCode == 27) {
+                        $('#' + controls).attr('aria-hidden', 'true');
+                        $('#' + controls).find('.dropdown-toggle').attr('aria-expanded', 'false');
+                        let trigger = $('#' + controls);
+                        trigger = trigger.attr('aria-labelledby');
+                        $('#' + trigger).attr('aria-expanded', 'false');
+                        $('#' + trigger).focus();
+                    }
+                });
+                
+            }
+        });
+        // click outside but not on .dropdown-toggle
+        $(document).mouseup(function(e) {
+            let container = $('.dropdown-toggle-content[aria-hidden="false"]');
+            if (!container.is(e.target) && container.has(e.target).length === 0 && !$('.dropdown-toggle').is(e.target) && $('.dropdown-toggle').has(e.target).length === 0) {
+                container.attr('aria-hidden', 'true');
+                container.find('.dropdown-toggle').attr('aria-expanded', 'false');
+                //focus back to dropdown toggle (aria-labelledby)
+                let trigger = container.attr('aria-labelledby');
+                $('#' + trigger).attr('aria-expanded', 'false');
+                $('#' + trigger).focus();
+            }
+        });
+        $('.dropdown-cancel').on('click', function(e) {
+            e.preventDefault();
+            let dropdown = $(this).closest('.dropdown-toggle-content');
+            dropdown.attr('aria-hidden', 'true');
+            dropdown.find('.dropdown-toggle').attr('aria-expanded', 'false');
+            //focus back to dropdown toggle (aria-labelledby)
+            let trigger = dropdown.attr('aria-labelledby');
+            $('#' + trigger).attr('aria-expanded', 'false');
+            $('#' + trigger).focus();
+        });
+        $('.dropdown-apply').on('click', function(e) {
+            e.preventDefault();
+            let dropdown = $(this).closest('.dropdown-toggle-content');
+            dropdown.attr('aria-hidden', 'true');
+            dropdown.find('.dropdown-toggle').attr('aria-expanded', 'false');
+            //focus back to dropdown toggle (aria-labelledby)
+            let trigger = dropdown.attr('aria-labelledby');
+            $('#' + trigger).attr('aria-expanded', 'false');
+            $('#' + trigger).focus();
+            //refresh facetwp
+            FWP.refresh();
+        });
+    });
+    $(document).on('facetwp-loaded', function() {
+        let totalResults = FWP.settings.pager.total_rows;
+        $('.table-sort-results-number').html(totalResults + ' Classes');
+        $("#fwp_results_per_page").on('change', function() {
+            FWP.refresh();
+        });
+        if ( 'undefined' !== typeof FWP_HTTP ) {
+            FWP.auto_refresh = false;
+        }
+        $(document).on('change','.facetwp-type-pager select', function() {
+            FWP.refresh();
+        });
+        $(document).on('click', '.facetwp-checkbox[aria-checked=true]', function(e) {
+            FWP.refresh();
+        });
+        $.each(FWP.settings.num_choices, function(key, val) {
+          var $facet = $('.facetwp-facet-' + key);
+          var $wrap = $facet.closest('.dropdown-content');
+          if ($wrap.length) {
+            var $button = $wrap.parent('.dropdown-toggle-content').attr('aria-labelledby');
+            var $button = $('#' + $button);
+            //disable button if no options
+            if ( val == 0 ) {
+                $button.attr('disabled', 'disabled');
+                $button.addClass('disabled');
+            } else {
+                $button.removeAttr('disabled');
+                $button.removeClass('disabled');
+            }
+          }
+        });
+      });
+    $(document).on('facetwp-loaded', function() {
+        renderMobileTable();
+    });
 });
