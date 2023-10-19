@@ -153,6 +153,10 @@
         td, th {
             border: 1px solid #ccc;
         }
+        tbody th {
+            text-align: left;
+            padding: 10px;
+        }
         td.schedule-table-cell span {
             display: block;
         }

@@ -78,11 +78,11 @@ if ( $my_query->have_posts() ) : ?>
 					}
 					?>
 					<tr class="schedule-table-row">
-						<td class="schedule-table-cell" scope="row">
+						<th class="schedule-table-cell" scope="row">
 							<a href="<?php echo esc_url( get_permalink( $class_id ) ); ?>">
 								<?php echo esc_html( $course_title ); ?>
 							</a>
-						</td>
+						</th>
 						<td class="schedule-table-cell"><?php echo esc_html( $course ); ?></td>
 						<td class="schedule-table-cell">
 							<?php
