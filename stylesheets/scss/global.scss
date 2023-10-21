@@ -12,6 +12,10 @@
             display: none;
         }
     }
+    select {
+        width: 100%;
+        box-sizing: border-box;
+    }
     input[type="text"], input[type="password"], input[type="email"], textarea, select{
         color: #333;
     }
