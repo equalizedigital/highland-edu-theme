@@ -217,6 +217,16 @@ function add_id_to_results_per_page($output, $params) {
 	if ( 'schedule_department' == $params['facet']['name']) {
 		$output = str_replace('<select', '<select id="fwp_schedule_department"', $output);
 	}
+	if ( 'ethnicity_filter' == $params['facet']['name']) {
+		$output = str_replace('<select', '<select id="fwp_ethnicity_filter"', $output);
+	}
+	if ( 'ineterst_filter' == $params['facet']['name']) {
+		$output = str_replace('<select', '<select id="fwp_ineterst_filter"', $output);
+	}
+	if ( 'gpa_filter' == $params['facet']['name']) {
+		$output = str_replace('<select', '<select id="fwp_gpa_filter"', $output);
+	}
+	
 	return $output;
 }
 add_filter('facetwp_facet_html', 'add_id_to_results_per_page', 10, 2);

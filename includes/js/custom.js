@@ -210,7 +210,8 @@ jQuery(document).ready(function($) {
                     let tr = $(this).find('tbody tr');
                     let i = 0;
                     tr.each(function( index ) {
-                        i = 0;
+                        $(this).find('th').prepend(ths[0] + ': ');
+                        i = 1;
                         $(this).find('td').each(function(index) {
                             $(this).prepend(ths[i] + ': ');
                             i++;
@@ -296,7 +297,8 @@ jQuery(document).ready(function($) {
     });
     $(document).on('facetwp-loaded', function() {
         let totalResults = FWP.settings.pager.total_rows;
-        $('.table-sort-results-number').html(totalResults + ' Classes');
+        let label = $('.table-sort-results-number').data('label');
+        $('.table-sort-results-number').html(totalResults + ' ' + label);
         $("#fwp_results_per_page").on('change', function() {
             FWP.refresh();
         });

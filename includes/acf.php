@@ -163,6 +163,39 @@ class EQD_ACF_Customizations {
 				),
 			)
 		);
+		//scholarships block
+		acf_register_block(
+			array(
+				'name'            => 'scholarships-filters',
+				'title'           => __( 'Scholarships Filters' ),
+				'description'     => __( 'A custom scholarships filters block.' ),
+				'render_template' => '/template-parts/blocks/scholarships/scholarships-filters.php',
+				'category'        => 'common',
+				'icon'            => 'images-alt2',
+				'keywords'        => array( 'Scholarships', 'Filters', 'Accessible' ),
+				'mode'            => 'edit',
+				'align'           => 'full',
+				'supports'        => array(
+					'align' => array( 'full', 'wide' ),
+				),
+			)
+		);
+		acf_register_block(
+			array(
+				'name'            => 'scholarships-table',
+				'title'           => __( 'Scholarships Table' ),
+				'description'     => __( 'A custom scholarships table block.' ),
+				'render_template' => '/template-parts/blocks/scholarships/scholarships-table.php',
+				'category'        => 'common',
+				'icon'            => 'images-alt2',
+				'keywords'        => array( 'Scholarships', 'Table', 'Accessible' ),
+				'mode'            => 'edit',
+				'align'           => 'full',
+				'supports'        => array(
+					'align' => array( 'full', 'wide' ),
+				),
+			)
+		);
 	}
 
 	/**
