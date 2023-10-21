@@ -196,6 +196,39 @@ class EQD_ACF_Customizations {
 				),
 			)
 		);
+		//staff block
+		acf_register_block(
+			array(
+				'name'            => 'staff-filters',
+				'title'           => __( 'Staff Filters' ),
+				'description'     => __( 'A custom staff filters block.' ),
+				'render_template' => '/template-parts/blocks/staff/staff-filters.php',
+				'category'        => 'common',
+				'icon'            => 'images-alt2',
+				'keywords'        => array( 'staff', 'Filters', 'Accessible' ),
+				'mode'            => 'edit',
+				'align'           => 'full',
+				'supports'        => array(
+					'align' => array( 'full', 'wide' ),
+				),
+			)
+		);
+		acf_register_block(
+			array(
+				'name'            => 'staff-table',
+				'title'           => __( 'Staff Table' ),
+				'description'     => __( 'A custom staff table block.' ),
+				'render_template' => '/template-parts/blocks/staff/staff-table.php',
+				'category'        => 'common',
+				'icon'            => 'images-alt2',
+				'keywords'        => array( 'staff', 'Table', 'Accessible' ),
+				'mode'            => 'edit',
+				'align'           => 'full',
+				'supports'        => array(
+					'align' => array( 'full', 'wide' ),
+				),
+			)
+		);
 	}
 
 	/**

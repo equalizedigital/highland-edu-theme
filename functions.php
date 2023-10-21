@@ -226,7 +226,9 @@ function add_id_to_results_per_page($output, $params) {
 	if ( 'gpa_filter' == $params['facet']['name']) {
 		$output = str_replace('<select', '<select id="fwp_gpa_filter"', $output);
 	}
-	
+	if ( 'staff_name' == $params['facet']['name'] ) {
+		$output = str_replace('<input type="text" ', '<input type="text" id="fwp_staff_name"', $output);
+	}
 	return $output;
 }
 add_filter('facetwp_facet_html', 'add_id_to_results_per_page', 10, 2);
