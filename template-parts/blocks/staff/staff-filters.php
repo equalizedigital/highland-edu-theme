@@ -12,7 +12,7 @@
 		<div class="name-filter-dropdown dropdown-toggle-content" id="name-filters" aria-labelledby="name-filters-button" aria-hidden="true">
 			<div class="dropdown-content">
 				<label for="fwp_staff_name">Staff Member Last name</label>
-				<?php echo do_shortcode( '[facetwp facet="staff_name"]' ); ?>
+				<?php echo do_shortcode( '[facetwp facet="last_name"]' ); ?>
 			</div>
 			<div class="dropdown-footer">
 				<button class="dropdown-apply" aria-label="Apply Last Name Filters">Apply</button>
