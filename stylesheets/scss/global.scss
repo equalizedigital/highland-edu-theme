@@ -6,6 +6,7 @@
     .facetwp-facet-last_name{
         input[type=text]{
             width: 100%;
+            box-sizing: border-box;
         }
         input[type=button] {
             display: none;
