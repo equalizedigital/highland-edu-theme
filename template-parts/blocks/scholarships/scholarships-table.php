@@ -27,7 +27,7 @@ if ( $my_query->have_posts() ) : ?>
 		<table class="schedule-table">
 			<thead>
 				<tr>
-					<th class="schedule-table-header" scope="row">Scholarship</th>
+					<th class="schedule-table-header" scope="col">Scholarship</th>
 					<th class="schedule-table-header" scope="col">Academic Interest</th>
 					<th class="schedule-table-header" scope="col">Enrollment Status</th>
 					<th class="schedule-table-header" scope="col">Ethnicity</th>

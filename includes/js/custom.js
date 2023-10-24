@@ -327,6 +327,12 @@ jQuery(document).ready(function($) {
             }
           }
         });
+        // delay 100 ms to allow for facetwp to load
+        setTimeout(function() {
+            $(".staff-az .facetwp-link.available").each(function() {
+                $(this).attr('aria-label', 'show only last names starting with ' + $(this).attr('data-id'));
+            });    
+        }, 100);
       });
     $(document).on('facetwp-loaded', function() {
         renderMobileTable();

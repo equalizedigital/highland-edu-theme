@@ -8,11 +8,11 @@ $my_query = new WP_Query(
 		'facetwp'     => true,
 	),
 );
-
-
+?>
+<div class="schedule-results">
+<?php
 if ( $my_query->have_posts() ) : ?>
 
-	<div class="schedule-results">
 		<div class="table-sort">
 			<div class="table-sort-results-number" aria-live="polite" role="region" data-label="Staff Members">
 				<?php echo intval( $my_query->found_posts ); ?> Staff Members
@@ -27,7 +27,7 @@ if ( $my_query->have_posts() ) : ?>
 		<table class="schedule-table">
 			<thead>
 				<tr>
-					<th class="schedule-table-header" scope="row">Name</th>
+					<th class="schedule-table-header" scope="col">Name</th>
 					<th class="schedule-table-header" scope="col">Title</th>
 					<th class="schedule-table-header" scope="col">Location</th>
 					<th class="schedule-table-header" scope="col">Phone</th>
@@ -89,11 +89,6 @@ if ( $my_query->have_posts() ) : ?>
 		<div class="table-pagination">
 			<?php echo do_shortcode( '[facetwp facet="pagination_schedule"]' ); ?>
 		</div>
-	</div>
-	<?php
-else :
-	?>
-	<div class="no-results">
-		<p>Sorry, no results were found.</p>
-	</div>
+
 <?php endif; ?>
+</div>
