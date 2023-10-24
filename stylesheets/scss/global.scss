@@ -3,6 +3,19 @@
     gap: 20px;
     align-items: center;
     margin-bottom: 20px;
+    .facetwp-facet-last_name{
+        input[type=text]{
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type=button] {
+            display: none;
+        }
+    }
+    select {
+        width: 100%;
+        box-sizing: border-box;
+    }
     input[type="text"], input[type="password"], input[type="email"], textarea, select{
         color: #333;
     }
@@ -57,6 +70,40 @@
             position: relative;
             width: 100%;
             box-sizing: border-box;
+        }
+    }
+}
+.staff-az {
+    .facetwp-alpha {
+        color: #777;
+    }
+    .facetwp-alpha {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        padding: 4px 8px;
+        width: 12px;
+        text-align: center;
+        color: #000;
+        font-size: .8em;
+        background: white;
+        border: #999 1px solid;
+        color: #777;
+        cursor: not-allowed;
+        &.available {
+            cursor: pointer;
+            &:hover {
+                background: #285598;
+                color: #fff;
+            }
+
+            background: #E4E4E4;
+            color: black;
+        }
+        &.selected {
+            background: #285598;
+            color: white;
         }
     }
 }
@@ -201,6 +248,7 @@
                 display: block;
                 tr {
                     display: block;
+                    th,
                     td {
                         display: block;
                         padding: 10px;

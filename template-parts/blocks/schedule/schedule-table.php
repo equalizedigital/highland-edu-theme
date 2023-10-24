@@ -1,10 +1,11 @@
 <?php
 $my_query = new WP_Query(
 	array(
-		'post_type' => 'class',
-		'orderby'   => 'title',
-		'order'     => 'ASC',
-		'facetwp'   => true,
+		'post_type'   => 'class',
+		'orderby'     => 'title',
+		'order'       => 'ASC',
+		'post_status' => 'publish',
+		'facetwp'      => true,
 	),
 );
 
@@ -13,7 +14,7 @@ if ( $my_query->have_posts() ) : ?>
 
 	<div class="schedule-results">
 		<div class="table-sort">
-			<div class="table-sort-results-number" aria-live="polite" role="region">
+			<div class="table-sort-results-number" aria-live="polite" role="region" data-label="Classes">
 				<?php echo intval( $my_query->found_posts ); ?> Classes
 			</div>
 			<!-- per page -->
