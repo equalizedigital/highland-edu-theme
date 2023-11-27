@@ -186,6 +186,7 @@ jQuery(document).ready(function($) {
     $('.slicknav_btn').each(function() {
         $(this).removeAttr('aria-haspopup');
         $(this).attr('aria-controls', 'menu-main-menu');
+        $(this).attr('aria-label', 'Toggle Main Menu');
         $(this).attr('aria-expanded', 'false');
         $(this).on( 'click keydown', function(e){
             if (e.type == 'keydown' && e.keyCode != 32 && e.keyCode != 13) {
