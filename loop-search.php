@@ -17,7 +17,7 @@
                 }
             ?>
                         
-        <article id="post-<?php the_ID(); ?>">
+        <div id="post-<?php the_ID(); ?>">
           <div class="title">            
              <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title('<h3>', '</h3>'); ?></a>  <!--Post titles-->
           </div>
@@ -39,7 +39,7 @@
 				}
 			?>
              <hr />
-        </article>
+		</div>
                         
 			
         <?php endwhile; ?><!--  End the Loop -->
