@@ -345,28 +345,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const galleries = document.querySelectorAll('.testing-center-gallery.wp-block-gallery');
 
     galleries.forEach(gallery => {
-        // Check each gallery for captions
-        const hasCaption = gallery.querySelector('.blocks-gallery-caption');
+        // Create a container ul for the content
+        const ul = document.createElement('ul');
 
-        // If there is no caption, process the figures
-        if (!hasCaption) {
-            gallery.querySelectorAll('figure').forEach(figure => {
-                // Create a container div for the content
-                const div = document.createElement('div');
+        // Copy all attributes from the gallery to the ul
+        Array.from(gallery.attributes).forEach(attr => {
+            ul.setAttribute(attr.name, attr.value);
+        });
 
-                // Copy all attributes from the figure to the div
-                Array.from(figure.attributes).forEach(attr => {
-                    div.setAttribute(attr.name, attr.value);
-                });
+        gallery.querySelectorAll('figure').forEach(figure => {
+            // Create an li element
+            const li = document.createElement('li');
 
-                // Move all children of the figure to the div
-                while (figure.firstChild) {
-                    div.appendChild(figure.firstChild);
-                }
-
-                // Replace the figure with the div
-                figure.parentNode.replaceChild(div, figure);
+            // Copy all attributes from the figure to the li
+            Array.from(figure.attributes).forEach(attr => {
+                li.setAttribute(attr.name, attr.value);
             });
-        }
+
+            // Move all children of the figure to the li
+            while (figure.firstChild) {
+                li.appendChild(figure.firstChild);
+            }
+
+            // Append the li to the ul
+            ul.appendChild(li);
+        });
+
+        // Replace the gallery with the ul
+        gallery.parentNode.replaceChild(ul, gallery);
     });
 });
