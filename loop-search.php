@@ -4,7 +4,7 @@
 	 * @subpackage WP-Skeleton
 	 */
 ?>
-
+	<ul id="search_posts">
         <?php
             while ( have_posts() ) : the_post();
                 $is_page_locked_student = get_post_meta(get_the_id(), '_cmb_student_portal_checkbox', true);
@@ -17,7 +17,7 @@
                 }
             ?>
                         
-        <div id="post-<?php the_ID(); ?>">
+        <li id="post-<?php the_ID(); ?>">
           <div class="title">            
              <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title('<h3>', '</h3>'); ?></a>  <!--Post titles-->
           </div>
@@ -39,11 +39,11 @@
 				}
 			?>
              <hr />
-		</div>
+		</li>
                         
 			
         <?php endwhile; ?><!--  End the Loop -->
-
+		</ul>
         <?php /* Display navigation to next/previous pages when applicable */ ?>
   
         <?php if (  $wp_query->max_num_pages > 1 ) : ?>
