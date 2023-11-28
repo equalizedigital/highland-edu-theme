@@ -94,9 +94,11 @@
                         <?php
                         if (!$parents) {
                             ?>
-                            <a class="parent" href="<? echo $link; ?>" tabindex="0">
-                                <h2><? echo $parent_title; ?></h2>
-                            </a>
+                            <h2>
+                                <a class="parent" href="<? echo $link; ?>" tabindex="0">
+                                    <? echo $parent_title; ?>
+                                </a>
+                            </h2>
                             <?php
                         } else {?>
                             <a class="parent segundo" href="<? echo $link; ?>" tabindex="0">
