@@ -338,3 +338,35 @@ jQuery(document).ready(function($) {
         renderMobileTable();
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all gallery blocks with the specific class
+    const galleries = document.querySelectorAll('.testing-center-gallery.wp-block-gallery');
+
+    galleries.forEach(gallery => {
+        // Check each gallery for captions
+        const hasCaption = gallery.querySelector('.blocks-gallery-caption');
+
+        // If there is no caption, process the figures
+        if (!hasCaption) {
+            gallery.querySelectorAll('figure').forEach(figure => {
+                // Create a container div for the content
+                const div = document.createElement('div');
+
+                // Copy all attributes from the figure to the div
+                Array.from(figure.attributes).forEach(attr => {
+                    div.setAttribute(attr.name, attr.value);
+                });
+
+                // Move all children of the figure to the div
+                while (figure.firstChild) {
+                    div.appendChild(figure.firstChild);
+                }
+
+                // Replace the figure with the div
+                figure.parentNode.replaceChild(div, figure);
+            });
+        }
+    });
+});
