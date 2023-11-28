@@ -1775,9 +1775,6 @@ body.hide-h1-visually .title-holder{
 .testing-center-gallery {
     list-style: none;
 }
-.testing-center-gallery li{
-    width: 33.3%;
-}
 .testing-center-gallery li img{
     width: 100%;
 }
