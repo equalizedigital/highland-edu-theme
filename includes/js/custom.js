@@ -340,38 +340,38 @@ jQuery(document).ready(function($) {
 });
 
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     // Select all gallery blocks with the specific class
-//     const galleries = document.querySelectorAll('.testing-center-gallery.wp-block-gallery');
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all gallery blocks with the specific class
+    const galleries = document.querySelectorAll('.testing-center-gallery.wp-block-gallery');
 
-//     galleries.forEach(gallery => {
-//         // Create a container ul for the content
-//         const ul = document.createElement('ul');
+    galleries.forEach(gallery => {
+        // Create a container ul for the content
+        const ul = document.createElement('ul');
 
-//         // Copy all attributes from the gallery to the ul
-//         Array.from(gallery.attributes).forEach(attr => {
-//             ul.setAttribute(attr.name, attr.value);
-//         });
+        // Copy all attributes from the gallery to the ul
+        Array.from(gallery.attributes).forEach(attr => {
+            ul.setAttribute(attr.name, attr.value);
+        });
 
-//         gallery.querySelectorAll('figure').forEach(figure => {
-//             // Create an li element
-//             const li = document.createElement('li');
+        gallery.querySelectorAll('.wp-block-image').forEach(figure => {
+            // Create an li element
+            const li = document.createElement('li');
 
-//             // Copy all attributes from the figure to the li
-//             Array.from(figure.attributes).forEach(attr => {
-//                 li.setAttribute(attr.name, attr.value);
-//             });
+            // Copy all attributes from the figure to the li
+            Array.from(figure.attributes).forEach(attr => {
+                li.setAttribute(attr.name, attr.value);
+            });
 
-//             // Move all children of the figure to the li
-//             while (figure.firstChild) {
-//                 li.appendChild(figure.firstChild);
-//             }
+            // Move all children of the figure to the li
+            while (figure.firstChild) {
+                li.appendChild(figure.firstChild);
+            }
 
-//             // Append the li to the ul
-//             ul.appendChild(li);
-//         });
+            // Append the li to the ul
+            ul.appendChild(li);
+        });
 
-//         // Replace the gallery with the ul
-//         gallery.parentNode.replaceChild(ul, gallery);
-//     });
-// });
+        // Replace the gallery with the ul
+        gallery.parentNode.replaceChild(ul, gallery);
+    });
+});
