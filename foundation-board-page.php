@@ -64,7 +64,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
                                 foreach ($the_photoless as $photoless){ ?>
                                     <div class="team-object photoless">
                                         <?
-                                            echo '<h3>'.$photoless['name'].'</h3>';
+                                            echo '<h2>'.$photoless['name'].'</h2>';
                                             echo '<p>'.$photoless['title'].'</p>';
                                         ?>
                                     </div><?
