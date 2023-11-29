@@ -47,7 +47,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
                                             <?
                                                 $title 	= get_post_meta($post->ID,'_cmb_title', true);
                                                 echo $thumbnail;
-                                                echo '<h3>'.get_the_title().'</h3>';
+                                                echo '<h2>'.get_the_title().'</h2>';
                                                 echo '<p>'.$title.'</p>';
                                             ?>
                                         </li><?
