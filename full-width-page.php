@@ -17,9 +17,7 @@
     <div class="super-container title-holder <?php echo $hide_h1_visually ? 'sr-only' : ''; ?>" >
         <div class="container">
             <div class="sixteen columns alpha omega primary-nav-holder">
-                <header>
-                    <h1><? the_title(); ?></h1>
-                </header><!-- access -->
+				<h1><? the_title(); ?></h1>
             </div><!-- menu-holder -->
         </div>
     </div>
