@@ -337,4 +337,8 @@ jQuery(document).ready(function($) {
     $(document).on('facetwp-loaded', function() {
         renderMobileTable();
     });
+    $('.map-wrap').each(function() {
+        $(this).attr('role', 'region');
+        $(this).attr('aria-label', 'map');
+    });
 });
