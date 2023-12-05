@@ -144,7 +144,7 @@ ul#menu-topnav li:hover > a{color:#FFF;text-decoration:underline;text-decoration
 .slicknav_icon-bar {
     background-color: black !important;
 }
-.slicknav_nav {padding-top: 60px !important;}
+.slicknav_nav {padding-top: 100px !important;}
 .slicknav_nav a {position: relative;z-index: 10000;}
 .menu-wrapper{background:#ddd;}
 .portal-menu-holder{background:#fd6c35;margin-bottom:50px;}
