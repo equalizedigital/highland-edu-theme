@@ -38,19 +38,19 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
                             $loop = new WP_Query($args);
 
                             if($loop->have_posts()){
-                                echo '<h2 class="team-header">'.$term->name.'</h2>';
                                 $the_photoless = array();
+                                echo "<ul class='team-list'>";
                                 while($loop->have_posts()) : $loop->the_post();
                                     if ( has_post_thumbnail() ) {
                                         $thumbnail = get_the_post_thumbnail($post->ID, 'staff-thumb', array('class' => 'staff-thumb')); ?>
-                                        <div class="team-object">
+                                        <li class="team-object">
                                             <?
                                                 $title 	= get_post_meta($post->ID,'_cmb_title', true);
                                                 echo $thumbnail;
-                                                echo '<h3>'.get_the_title().'</h3>';
+                                                echo '<h2>'.get_the_title().'</h2>';
                                                 echo '<p>'.$title.'</p>';
                                             ?>
-                                        </div><?
+                                        </li><?
                                     }
                                     else {
                                         $pl_array = array();
@@ -64,12 +64,13 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
                                 foreach ($the_photoless as $photoless){ ?>
                                     <div class="team-object photoless">
                                         <?
-                                            echo '<h3>'.$photoless['name'].'</h3>';
+                                            echo '<h2>'.$photoless['name'].'</h2>';
                                             echo '<p>'.$photoless['title'].'</p>';
                                         ?>
                                     </div><?
                                 }
                                 echo '<div class="clear"></div>';
+                                echo "</ul>";
                             }
                         ?>
                         <?php the_content(); ?>
