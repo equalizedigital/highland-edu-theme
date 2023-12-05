@@ -584,7 +584,14 @@ body .gform_wrapper ul li.gfield {
 .gform_hide_lbl label { display: none !important; }
 #label_17_41_1 { display: inline-block !important; }
 .gform_tbl_end { padding-bottom: 25px; }
-
+ul#search_posts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul#search_posts li {
+    margin: 0;
+}
 ul.search-list li a{font-family:'Source Sans Pro', sans-serif;font-size:18px;line-height:54px;font-weight:400;display:block;cursor:pointer;color:#494949;text-transform:lowercase;text-decoration:none;}
 u.search-list li a:hover{text-decoration:underline;}
 ul.search-list li a.no-results{opacity:.5;text-decoration:none;cursor:not-allowed;}
