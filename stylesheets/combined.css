@@ -83,7 +83,7 @@ legend span{font-weight:normal;font-size:13px;color:#444;}
 .logo a{text-decoration:none;}
 .menu-holder{min-height:164px;}
 .search-icon{position: relative;float:right;z-index: 10000;}
-.search-icon a{z-index: 10000;}
+.search-icon a{z-index: 10000;display: block;}
 .title-holder{background-image:url(../images/header_bg.jpg);max-height:260px;text-align:center;padding:80px 0;}
 .title-holder h1{color:#FFF;text-transform:uppercase;}
 .top-menu-holder{background:#8b8989;margin:0 0 25px 0;}
@@ -175,6 +175,10 @@ a.tour{background:#ff6200;}
 .apply-online h2{font-family:'Raleway', sans-serif;font-size:62px;line-height:60px;letter-spacing:-0.15px;font-weight:800;color:#FFF;text-transform:uppercase;padding:0 35px;border-left:#ff6200 solid 10px;margin-bottom:22px;}
 .button-holder a{font-family:'Raleway', sans-serif;font-size:24px;line-height:60px;letter-spacing:-.15px;font-weight:800;text-transform:uppercase;text-decoration:none;color:#FFF;padding:13px 40px;border-radius:25px;}
 .map-button-holder .button-holder a{margin:35px;}
+.button-holder a:focus{
+    outline: 2px solid #285598;
+    outline-offset: 2px;
+}
 .orng-btn{background:#ff6200;}
 .blue-btn{background:#285598;}
 .drk-blue-btn{background:#193662;}
@@ -292,6 +296,9 @@ a.tour{background:#ff6200;}
 #menu-left-footer-menu a,
 #menu-right-footer-menu a{font-family:'Raleway', sans-serif;font-size:16px;line-height:28px;letter-spacing:.5px;font-weight:500;color:#666;text-decoration:none;}
 .footer-apply-area{background:#285598;padding:40px 0;}
+footer .parallax-area .button-holder a:focus {
+    outline-color: white !important;
+}
 .footer-apply-online p{font-family:'Raleway', sans-serif;font-size:62px;line-height:60px;letter-spacing:-0.15px;font-weight:800;text-transform:uppercase;color:#FFF;border-left:7px solid #ff6200;padding:0 5% 0 25px;margin-bottom:0;float:left;}
 .staff-search input[type="text"]{margin:0;padding:0 0 0 10px;font-size:15px;float:left;width:65%;}
 .staff-search input[type="submit"], .reset-holder input[type="button"]{float:left;color:#FFF;background:#ff6200;;height:40px !important;width:20%;margin:0 0 0 2%;padding:0 5px;font-size:13px;border:none;}
@@ -1719,6 +1726,10 @@ body.hide-h1-visually .title-holder{
     line-height: 26px;
     padding: 12px 26px;
     text-decoration: none;
+  }
+  .tribe-events-view.tribe-common .view-more-button:focus {
+    outline: 2px solid #285598;
+    outline-offset: 2px;
   }
   .post-type-archive-tribe_events .tribe-events .tribe-events-c-search__button:focus,
   .post-type-archive-tribe_events .tribe-events .tribe-events-c-search__button:hover,
