@@ -271,3 +271,24 @@ add_filter( 'gettext', function( $translated_text, $text, $domain ) {
 	}
 	return $text;
 }, 10, 3 );
+
+add_filter( 'render_block', 'replace_figure_with_div_in_image_block', 10, 2 );
+
+function replace_figure_with_div_in_image_block( $block_content, $block ) {
+    // Check if it's an image block
+    if ( 'core/image' !== $block['blockName'] ) {
+        return $block_content;
+    }
+
+    // Check if the block's innerHTML contains a <figcaption> element
+    if ( strpos( $block['innerHTML'], '<figcaption' ) === false ) {
+        // Replace opening <figure> tag with <div>
+        $block_content = preg_replace('/<figure([^>]*)>/', '<div$1>', $block_content);
+
+        // Replace closing </figure> tag with </div>
+        $block_content = str_replace('</figure>', '</div>', $block_content);
+		$block_content = '<div class="wp-block-image">' . $block_content . '</div>';
+    }
+
+    return $block_content;
+}

@@ -174,9 +174,9 @@ jQuery(document).ready(function($) {
         }
     });
     $('.slicknav_row').each(function() {
-        $(this).attr('aria-label', 'Toggle Main Menu');
+        // $(this).attr('aria-label', 'Toggle Main Menu');
         $(this).removeAttr('aria-haspopup');
-        $(this).attr('aria-controls', 'menu-main-menu');
+        // $(this).attr('aria-controls', 'menu-main-menu');
     });
     $('.slicknav_menu').each(function() {
         $(this).find('[role="menu"]').removeAttr('role');
@@ -186,6 +186,7 @@ jQuery(document).ready(function($) {
     $('.slicknav_btn').each(function() {
         $(this).removeAttr('aria-haspopup');
         $(this).attr('aria-controls', 'menu-main-menu');
+        $(this).attr('aria-label', 'Toggle Main Menu');
         $(this).attr('aria-expanded', 'false');
         $(this).on( 'click keydown', function(e){
             if (e.type == 'keydown' && e.keyCode != 32 && e.keyCode != 13) {
@@ -337,4 +338,39 @@ jQuery(document).ready(function($) {
     $(document).on('facetwp-loaded', function() {
         renderMobileTable();
     });
+    $('.map-wrap').each(function() {
+        $(this).attr('role', 'region');
+        $(this).attr('aria-label', 'map');
+    });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Select the figure element
+    const figure = document.querySelector('.wp-block-gallery.testing-center-gallery');
+
+    if (figure) {
+        // Create a new ul element
+        const ul = document.createElement('ul');
+        ul.className = figure.className; // Copy the class from figure to ul
+
+        // Iterate over each direct child div with class .wp-block-image in the figure
+        figure.querySelectorAll(':scope > .wp-block-image').forEach(div => {
+            // Create a new li element
+            const li = document.createElement('li');
+            li.className = div.className; // Copy the class from div to li
+
+            // Move all children from div to li
+            while (div.firstChild) {
+                li.appendChild(div.firstChild);
+            }
+
+            // Append the li to the ul
+            ul.appendChild(li);
+        });
+
+        // Replace the figure with the ul
+        figure.parentNode.replaceChild(ul, figure);
+    }
+});
+

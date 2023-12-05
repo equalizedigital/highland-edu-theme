@@ -126,7 +126,7 @@ ul#menu-topnav li:hover > a{color:#FFF;text-decoration:underline;text-decoration
     #top_nav ul#menu-topnav li.mobile-only { display: none; }
 }
 .slicknav_menu{display:none; background-color: #0d4e95 !important; }
-.slicknav_btn{z-index: 10000;background-color: #FF6A2A !important;}
+.slicknav_btn{z-index: 10000;background-color: #ffab86 !important;}
 .slicknav_btn:focus{
     outline: 1px solid white !important;
 }
@@ -362,6 +362,12 @@ ul.bootpag li, ul.bootpag li.prev.disabled, ul.bootpag li.next.disabled{width:au
 .sidebar .menu li li:first-child a:hover{background:#f4f7fa;}
 .sidebar .menu li a{display:block;text-decoration:none;padding:10px 25px;line-height:23px;font-size:18px;font-weight:500;color:#0D4EA5;}
 .sidebar .menu li a:hover{background:#0d4e95;color:#fff;}
+.sidebar .menu li .parent {
+    display: flex;
+}
+.sidebar .menu li h2 {
+    padding: 0;
+}
 .sidebar .menu li:first-child a:focus{
     outline: 2px solid black !important;
     outline-offset: 2px;
@@ -579,7 +585,14 @@ body .gform_wrapper ul li.gfield {
 .gform_hide_lbl label { display: none !important; }
 #label_17_41_1 { display: inline-block !important; }
 .gform_tbl_end { padding-bottom: 25px; }
-
+ul#search_posts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul#search_posts li {
+    margin: 0;
+}
 ul.search-list li a{font-family:'Source Sans Pro', sans-serif;font-size:18px;line-height:54px;font-weight:400;display:block;cursor:pointer;color:#494949;text-transform:lowercase;text-decoration:none;}
 u.search-list li a:hover{text-decoration:underline;}
 ul.search-list li a.no-results{opacity:.5;text-decoration:none;cursor:not-allowed;}
@@ -1780,4 +1793,10 @@ ul.team-list {
 }
 ul.team-list li{
     margin: 0;
+}
+.testing-center-gallery {
+    list-style: none;
+}
+.testing-center-gallery li img{
+    width: 100%;
 }
