@@ -25,12 +25,10 @@
                         <div class="two-thirds column alpha">
                             <main class="main" id="main-content">
                                 <? the_post(); ?>
-                                <article id="post-<? the_ID(); ?>" <? post_class(); ?> role="article">
-                                    <div class="entry-content">
-                                        <? the_content(); ?>
-                                        <? edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
-                                    </div><!-- .entry-content -->
-                                </article><!-- #post-<? the_ID(); ?> -->
+                                <div class="entry-content">
+                                    <? the_content(); ?>
+                                    <? edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
+                                </div><!-- .entry-content -->
                             </main><!-- #main -->
                         </div><!-- two-thirds -->
                         <? get_sidebar(); ?>
