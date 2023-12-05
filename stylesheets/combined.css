@@ -1785,3 +1785,9 @@ body.hide-h1-visually .title-holder{
 .home .tribe-common a.tribe-events-widget-events-list__event-title-link, .home .tribe-common a.tribe-events-widget-events-list__event-title-link:active, .home .tribe-common a.tribe-events-widget-events-list__event-title-link:focus, .home .tribe-common a.tribe-events-widget-events-list__event-title-link:hover, .home .tribe-common a.tribe-events-widget-events-list__event-title-link:visited{
     color: #285598;
 }
+.testing-center-gallery {
+    list-style: none;
+}
+.testing-center-gallery li img{
+    width: 100%;
+}
