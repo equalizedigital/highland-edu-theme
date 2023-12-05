@@ -362,6 +362,12 @@ ul.bootpag li, ul.bootpag li.prev.disabled, ul.bootpag li.next.disabled{width:au
 .sidebar .menu li li:first-child a:hover{background:#f4f7fa;}
 .sidebar .menu li a{display:block;text-decoration:none;padding:10px 25px;line-height:23px;font-size:18px;font-weight:500;color:#0D4EA5;}
 .sidebar .menu li a:hover{background:#0d4e95;color:#fff;}
+.sidebar .menu li .parent {
+    display: flex;
+}
+.sidebar .menu li h2 {
+    padding: 0;
+}
 .sidebar .menu li:first-child a:focus{
     outline: 2px solid black !important;
     outline-offset: 2px;
