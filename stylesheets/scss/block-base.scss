@@ -426,7 +426,7 @@ h2.wp-block-heading {
 }
 
 h3.wp-block-heading {
-	@include style( 'title', 3 );
+	@include style( 'title', 2 );
 	color: $blue;
 	font-style: normal;
 	font-weight: 700;
