@@ -1800,11 +1800,11 @@ ul.team-list li{
 .testing-center-gallery li img{
     width: 100%;
 }
-body .entry-content a:not(.wp-block-button__link) {
+body .entry-content a:not(.wp-block-button__link):not(.button) {
     text-decoration: underline;
     text-decoration-color: #285598;
     border: none !important;
 }
-body .entry-content a:not(.wp-block-button__link):hover {
+body .entry-content a:not(.wp-block-button__link):not(.button):hover {
     text-decoration: none;
 }
