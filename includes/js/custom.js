@@ -174,9 +174,9 @@ jQuery(document).ready(function($) {
         }
     });
     $('.slicknav_row').each(function() {
-        $(this).attr('aria-label', 'Toggle Main Menu');
+        // $(this).attr('aria-label', 'Toggle Main Menu');
         $(this).removeAttr('aria-haspopup');
-        $(this).attr('aria-controls', 'menu-main-menu');
+        // $(this).attr('aria-controls', 'menu-main-menu');
     });
     $('.slicknav_menu').each(function() {
         $(this).find('[role="menu"]').removeAttr('role');
