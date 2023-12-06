@@ -92,6 +92,20 @@ legend span{font-weight:normal;font-size:13px;color:#444;}
         padding-top: 25px;
     }
 }
+@media only screen and (max-width: 1400px) {
+    #menu-topnav select {
+        width: auto;
+    }
+    #access a,
+    #access button,
+    #menu-topnav button,
+    #menu-topnav a {
+        font-size: 14px !important;
+    }
+    .menu-item i._mi {
+        display: none !important;
+    }
+}
 .menu-dark{background:#787474;}
 .menu-orng{background:#ff6200;}
 .top-nav-holder{z-index:2005;}
@@ -133,7 +147,7 @@ ul#menu-topnav li:hover > a{color:#FFF;text-decoration:underline;text-decoration
 .slicknav_icon-bar {
     background-color: black !important;
 }
-.slicknav_nav {padding-top: 60px !important;}
+.slicknav_nav {padding-top: 100px !important;}
 .slicknav_nav a {position: relative;z-index: 10000;}
 .menu-wrapper{background:#ddd;}
 .portal-menu-holder{background:#fd6c35;margin-bottom:50px;}
