@@ -102,6 +102,9 @@ legend span{font-weight:normal;font-size:13px;color:#444;}
     #menu-topnav a {
         font-size: 14px !important;
     }
+    .menu-item i._mi {
+        display: none !important;
+    }
 }
 .menu-dark{background:#787474;}
 .menu-orng{background:#ff6200;}
