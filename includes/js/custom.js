@@ -332,8 +332,15 @@ jQuery(document).ready(function($) {
         setTimeout(function() {
             $(".staff-az .facetwp-link.available").each(function() {
                 $(this).attr('aria-label', 'show only last names starting with ' + $(this).attr('data-id'));
+                $(this).attr('role', 'button');
             });    
         }, 100);
+        $(".staff-az .facetwp-link.available").each(function() {
+            $(this).attr('aria-current', 'false');
+        });
+        $(".staff-az .facetwp-link.available.selected").each(function() {
+            $(this).attr('aria-current', 'true');
+        });
       });
     $(document).on('facetwp-loaded', function() {
         renderMobileTable();
