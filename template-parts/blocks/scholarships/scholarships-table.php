@@ -116,7 +116,15 @@ if ( $my_query->have_posts() ) : ?>
 							<?php
 							$scholarship_residence = get_the_terms( $sholarship_id, 'scholarship_residence' );
 							if ( ! empty( $scholarship_residence ) && ! is_wp_error( $scholarship_residence ) ) {
-								echo implode( ' - ', wp_list_pluck( $scholarship_residence, 'name' ) );//phpcs:ignore
+								if ( count( $scholarship_residence ) > 1 ) {
+									$residence_list = array();
+									foreach ( $scholarship_residence as $residence ) {
+										$residence_list[] = $residence->name;
+									}
+									echo '<ul class="sep-list"><li>' . implode( '</li><li>', $residence_list ) . '</li></ul>';
+								} else {
+									echo esc_html( $scholarship_residence[0]->name );
+								}
 							} else {
 								echo 'N/A';
 							}
