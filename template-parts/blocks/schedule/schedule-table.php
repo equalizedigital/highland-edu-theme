@@ -49,10 +49,9 @@ if ( $my_query->have_posts() ) : ?>
 					$course               = get_post_meta( $class_id, '_cmb_course', true );
 					$course_title         = empty( $course_number ) ? $course_title : $course_title . ' - ' . $course_number;
 					$start_date_timestamp = get_post_meta( $class_id, '_cmb_class_start_date', true );
-					$start_date           = date( 'M d, Y', $start_date_timestamp );//phpcs:ignore
+					$start_date           = $start_date_timestamp ? date( 'M d, Y', $start_date_timestamp ) : 'N/A';//phpcs:ignore
 					$end_date_timestamp   = get_post_meta( $class_id, '_cmb_class_end_date', true );
-					$end_date             = date( 'M d, Y', $end_date_timestamp );//phpcs:ignore
-					$full_date            = $start_date . ' - ' . $end_date;
+					$end_date             = $end_date_timestamp ? date( 'M d, Y', $end_date_timestamp ) : 'N/A';//phpcs:ignore					$full_date            = $start_date . ' - ' . $end_date;
 					$enrolled             = get_post_meta( $class_id, '_cmb_enrolled', true );
 					$max_enrolled         = get_post_meta( $class_id, '_cmb_enrollment_max', true );
 					$remaining_seats      = intval( $max_enrolled ) - intval( $enrolled );
