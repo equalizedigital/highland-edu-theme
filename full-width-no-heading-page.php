@@ -20,12 +20,10 @@
 			<div class="sixteen columns alpha">
 				<div id="primary" class="full-width">
 					<? the_post(); ?>
-					<article id="post-<? the_ID(); ?>" <? post_class(); ?> role="article">
-						<div class="entry-content">
-							<? the_content(); ?>
-							<? edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
-						</div><!-- .entry-content -->
-					</article><!-- #post-<? the_ID(); ?> -->
+					<div class="entry-content">
+						<? the_content(); ?>
+						<? edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
+					</div><!-- .entry-content -->
 				</div><!-- #primary -->
 			</div>
 		</div>
