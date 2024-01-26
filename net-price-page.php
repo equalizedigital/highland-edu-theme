@@ -12,7 +12,7 @@ get_header();
 get_template_part( 'sub-header', 'index' ); //the  header stuffs
 get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 ?>
-
+<main id="main-content">
 	<div class="super-container interior-page">
 		<div class="container">
 			<div class="two-thirds column alpha">
@@ -1558,5 +1558,5 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 			numberoflivingstatus = 2;
 		}; SetupConstants(); var showWelcomeMessage = true; openInstitutionNameWindow();
 	</script>
-
+</main>	
 <? get_footer(); ?>
