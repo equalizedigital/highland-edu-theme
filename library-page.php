@@ -104,7 +104,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 
 
                                                     <div   class="simpleTabsContent" role="tabpanel" aria-labelledby="prairie-cat-tab" id="tabber57_div_1" aria-hidden="true">
-                                                        <form action="http://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0;" onsubmit="ebscoPreProcess(this)">
+                                                        <form action="https://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0;" onsubmit="ebscoPreProcess(this)">
                                                             <!-- Dropdown menu to prepend the selected value below to the user's search term -->
                                                             <label for="saerch_prefix_cat">Search By:</label>
                                                             <select onchange="#" size="1" name="search_prefix" style="width: 100px" id="saerch_prefix_cat"><option selected="selected" value="">Keyword</option><option value="TI ">Title</option><option value="AU ">Author</option></select><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
@@ -131,7 +131,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
                                                             <!-- Limiter: Institutional Repositories Only -->
                                                             <input name="cli3" value="FC1" type="hidden"><input name="clv3" type="hidden" value='N'><input  style='display:none' name="IR_only_checkbox" id="IR_only_checkbox" onclick="limittoIR(this.form)" type="checkbox"><label  style='display:none' for="IR_only_checkbox">Institutional Repositories Only</label>
                                                             <div class="clear"></div>
-                                                            <a href="https://search.prairiecat.info" target="_blank">PrairieCat</a>
+                                                            <a href="https://highland-prcat.na2.iiivega.com/" target="_blank">PrairieCat</a>
                                                         </form>
                                                     </div>
 

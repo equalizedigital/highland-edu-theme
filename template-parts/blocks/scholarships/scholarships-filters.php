@@ -40,18 +40,18 @@
 			</div>
 		</div>
 	</div>
-	<div class="schedule-filter ethnicity-filter">
-		<button class="ethnicity-filter-button dropdown-toggle"
-		aria-label="Ethnicity Filters"
+	<div class="schedule-filter fafsa-filter">
+		<button class="fafsa-filter-button dropdown-toggle"
+		aria-label="fafsa Filters"
 		aria-expanded="false"
-		aria-controls="ethnicity-filters"
-		id="ethnicity-filters-button"
-		>Ethnicity</button>
-		<div class="ethnicity-filter-dropdown dropdown-toggle-content" id="ethnicity-filters" aria-labelledby="ethnicity-filters-button" aria-hidden="true">
+		aria-controls="fafsa-filters"
+		id="fafsa-filters-button"
+		>fafsa</button>
+		<div class="fafsa-filter-dropdown dropdown-toggle-content" id="fafsa-filters" aria-labelledby="fafsa-filters-button" aria-hidden="true">
 			<div class="dropdown-content">
-			<label for="fwp_ethnicity_filter">Ethnicity</label>
+			<label for="fwp_fafsa_filter">fafsa</label>
 			<?php
-			echo do_shortcode( '[facetwp facet="ethnicity_filter"]' );
+			echo do_shortcode( '[facetwp facet="fafsa_filter"]' );
 			?>
 			</div>
 			<div class="dropdown-footer">
