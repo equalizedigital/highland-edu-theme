@@ -2,6 +2,10 @@
 	<div class="schedule-filter schedule-label">
 		<h2>Filter Scholarships</h2>
 	</div>
+
+	
+
+
 	<div class="schedule-filter interest-filter">
 		<button class="interest-filter-button dropdown-toggle"
 		aria-label="Academic Interest Filters"
@@ -40,19 +44,18 @@
 			</div>
 		</div>
 	</div>
-	<div class="schedule-filter fafsa-filter">
-		<button class="fafsa-filter-button dropdown-toggle"
-		aria-label="fafsa Filters"
+
+	<div class="schedule-filter keyword-filter">
+		<button class="keyword-filter-button dropdown-toggle"
+		aria-label="keyword Filters"
 		aria-expanded="false"
-		aria-controls="fafsa-filters"
-		id="fafsa-filters-button"
-		>fafsa</button>
-		<div class="fafsa-filter-dropdown dropdown-toggle-content" id="fafsa-filters" aria-labelledby="fafsa-filters-button" aria-hidden="true">
+		aria-controls="keyword-filters"
+		id="keyword-filters-button"
+		>Keyword Search</button>
+		<div class="keyword-filter-dropdown dropdown-toggle-content" id="keyword-filters" aria-labelledby="keyword-filters-button" aria-hidden="true">
 			<div class="dropdown-content">
-			<label for="fwp_fafsa_filter">fafsa</label>
-			<?php
-			echo do_shortcode( '[facetwp facet="fafsa_filter"]' );
-			?>
+			<label for="fwp_keyword_filter">Keyword Search</label>
+			<?php echo do_shortcode( '[facetwp facet="keyword_search"]' ); ?>
 			</div>
 			<div class="dropdown-footer">
 				<button class="dropdown-apply" aria-label="Apply Location Filters">Apply</button>
@@ -60,6 +63,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<div class="schedule-filter gpa-filter">
 		<button class="gpa-filter-button dropdown-toggle"
 		aria-label="GPA filters"
