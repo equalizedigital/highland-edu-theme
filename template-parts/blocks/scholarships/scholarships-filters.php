@@ -3,7 +3,24 @@
 		<h2>Filter Scholarships</h2>
 	</div>
 
-	
+	<div class="schedule-filter keyword-filter">
+		<button class="keyword-filter-button dropdown-toggle"
+		aria-label="keyword Filters"
+		aria-expanded="false"
+		aria-controls="keyword-filters"
+		id="keyword-filters-button"
+		>Keyword Search</button>
+		<div class="keyword-filter-dropdown dropdown-toggle-content" id="keyword-filters" aria-labelledby="keyword-filters-button" aria-hidden="true">
+			<div class="dropdown-content">
+			<label for="fwp_keyword_filter">Keyword Search</label>
+			<?php echo do_shortcode( '[facetwp facet="keyword_search"]' ); ?>
+			</div>
+			<div class="dropdown-footer">
+				<button class="dropdown-apply" aria-label="Apply Location Filters">Apply</button>
+				<button class="dropdown-cancel" aria-label="Cancel Location Filters">Cancel</button>
+			</div>
+		</div>
+	</div>
 
 
 	<div class="schedule-filter interest-filter">
@@ -45,17 +62,17 @@
 		</div>
 	</div>
 
-	<div class="schedule-filter keyword-filter">
-		<button class="keyword-filter-button dropdown-toggle"
-		aria-label="keyword Filters"
+	<div class="schedule-filter fasfa-filter">
+		<button class="fasfa-filter-button dropdown-toggle"
+		aria-label="fasfa Filters"
 		aria-expanded="false"
-		aria-controls="keyword-filters"
-		id="keyword-filters-button"
-		>Keyword Search</button>
-		<div class="keyword-filter-dropdown dropdown-toggle-content" id="keyword-filters" aria-labelledby="keyword-filters-button" aria-hidden="true">
+		aria-controls="fasfa-filters"
+		id="fasfa-filters-button"
+		>Fasfa</button>
+		<div class="fasfa-filter-dropdown dropdown-toggle-content" id="fasfa-filters" aria-labelledby="fasfa-filters-button" aria-hidden="true">
 			<div class="dropdown-content">
-			<label for="fwp_keyword_filter">Keyword Search</label>
-			<?php echo do_shortcode( '[facetwp facet="keyword_search"]' ); ?>
+			<label for="fwp_fasfa_filter">Fasfa</label>
+			<?php echo do_shortcode( '[facetwp facet="fafsa_filter"]' ); ?>
 			</div>
 			<div class="dropdown-footer">
 				<button class="dropdown-apply" aria-label="Apply Location Filters">Apply</button>
