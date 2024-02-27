@@ -219,3 +219,26 @@ function mstar_embed_defaults($embed_size){
     return $embed_size;
 }
 add_filter('embed_defaults', 'mstar_embed_defaults');
+
+function fwp_add_facet_labels() {
+    ?>
+      <script>
+        (function($) {
+          $(document).on('facetwp-loaded', function() {
+            $('.facetwp-facet').each(function() {
+             // Check if the element exists
+if (document.querySelector('.facetwp-search')) {
+    // Set the name attribute to 'fwp_keyword_filter'
+    document.querySelector('.facetwp-search').setAttribute('name', 'fwp_keyword_filter');
+} else {
+    console.log('.facetwp-search not found');
+}
+
+            });
+          });
+        })(jQuery);
+      </script>
+    <?php
+  }
+   
+  add_action( 'wp_head', 'fwp_add_facet_labels', 100 );

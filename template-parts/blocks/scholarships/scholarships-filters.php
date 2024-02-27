@@ -68,10 +68,10 @@
 		aria-expanded="false"
 		aria-controls="fasfa-filters"
 		id="fasfa-filters-button"
-		>Fasfa</button>
+		>FAFSA</button>
 		<div class="fasfa-filter-dropdown dropdown-toggle-content" id="fasfa-filters" aria-labelledby="fasfa-filters-button" aria-hidden="true">
 			<div class="dropdown-content">
-			<label for="fwp_fasfa_filter">Fasfa</label>
+			<label for="fwp_fasfa_filter">FAFSA</label>
 			<?php echo do_shortcode( '[facetwp facet="fafsa_filter"]' ); ?>
 			</div>
 			<div class="dropdown-footer">
@@ -129,3 +129,11 @@
 		?>
 	</div>
 </div>
+
+
+<style>
+.facetwp-facet-keyword_search i.facetwp-icon{
+    display: none;
+}
+
+</style>
