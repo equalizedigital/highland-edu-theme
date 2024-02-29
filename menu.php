@@ -21,13 +21,14 @@ defined('ABSPATH') OR exit;
                     <!--  the Menu -->
                     <nav class="menu-topnav-container" aria-label="Header Utilities">
                     <? 
-                    wp_nav_menu(
-                        array(
-                            'theme_location' => 'topnav',
-                            'walker' => new topNavWalker(),
-                            'container' => false,
-                        ),
-                    ); ?>
+                    // wp_nav_menu(
+                    //     array(
+                    //         'theme_location' => 'topnav',
+                    //         'walker' => new topNavWalker(),
+                    //         'container' => false,
+                    //     ),
+                    // ); 
+                    ?>
                     </nav>
                     <!-- Search Icom -->    
                     <div class="search-icon">
@@ -43,7 +44,8 @@ defined('ABSPATH') OR exit;
             <div class="container primary-nav-wrapper">
                 <div class="sixteen columns alpha omega primary-nav-holder">
                     <nav id="access" aria-label="Main Navigation">
-                        <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
+                        <?php 
+                        // wp_nav_menu(array('theme_location' => 'primary')); ?>
                         <ul class="menu-main-menu">
                             <li>
                                 <button class="toggle-mega-menu" aria-expanded="false" aria-controls="admissions-subs" id="admissions-subs-actuator">Admissions<span class="caret-icon" aria-hidden="true"></span></button>
@@ -62,11 +64,11 @@ defined('ABSPATH') OR exit;
                             </li>
                         </ul>
                         <?
-                        get_template_part('submenu', 'admissions');
-                        get_template_part('submenu', 'academics');
+                        // get_template_part('submenu', 'admissions');
+                        // get_template_part('submenu', 'academics');
                         //get_template_part('submenu', 'athletics');
-                        get_template_part('submenu', 'campus');
-                        get_template_part('submenu', 'arts');
+                        // get_template_part('submenu', 'campus');
+                        // get_template_part('submenu', 'arts');
                         ?>
                     </nav><!-- access -->
                 </div><!-- menu-holder -->

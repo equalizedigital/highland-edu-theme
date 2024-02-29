@@ -38,7 +38,8 @@ defined('ABSPATH') OR exit;
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/includes/slick/slick.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/includes/slick/slick-theme.css">
 	<link rel="stylesheet" href="<? echo get_template_directory_uri(); ?>/stylesheets/combined.css">-->
-	<link rel="stylesheet" href="<? echo get_template_directory_uri(); ?>/stylesheets/combined.css?v=<? echo filemtime( get_stylesheet_directory().'/stylesheets/combined.css'); ?>">
+	<!-- <link rel="stylesheet" href="<? echo get_template_directory_uri(); ?>/stylesheets/combined.css?v=<? echo filemtime( get_stylesheet_directory().'/stylesheets/combined.css'); ?>"> -->
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/dist/css/combined.css">
 
     <!-- Favicons
     ================================================== -->

