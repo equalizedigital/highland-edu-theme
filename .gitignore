@@ -1,2 +1,12 @@
-error_log
-.DS_Store
+# Exclude these files from the git repo
+.sass-cache/
+#.codekit-config.json
+#config.codekit
+#config.codekit3
+vendor/
+node_modules/
+
+# Hidden system files
+*.DS_Store
+*[Tt]humbs.db
+*.Trashes
