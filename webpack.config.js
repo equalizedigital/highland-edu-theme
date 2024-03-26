@@ -5,8 +5,7 @@ module.exports = {
 	devtool: "source-map", // optional
 	watch: true, // optional
 	entry: {
-		combined: "./stylesheets/scss/global.scss",
-		blockEditor: "./stylesheets/scss/block-editor.scss",
+		main: "./stylesheets/scss/main.scss",
 	},
 	resolve: {
 		alias: {
