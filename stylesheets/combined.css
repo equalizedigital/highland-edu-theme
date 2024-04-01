@@ -1734,6 +1734,52 @@ body.hide-h1-visually .title-holder{
     padding-bottom: 0;
 }
 
+/*
+* Soliloquy slider
+*/
+
+#main-content .soliloquy-container .soliloquy-caption {
+    background: #193662;
+}
+/* on mobile */
+@media screen and (max-width: 1024px) {
+    .soliloquy-container .soliloquy-caption .soliloquy-caption-inside{
+        min-height: 50px;
+    }
+    #main-content .soliloquy-container .soliloquy-caption {
+        position: relative;
+    }
+    .soliloquy-container .soliloquy-caption, .soliloquy-container .soliloquy-controls-auto, .soliloquy-container .soliloquy-pager{
+        display: block !important;
+    }
+}
+
+#main-content .soliloquy-container a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#main-content .soliloquy-container a:focus,
+#main-content .soliloquy-container a:hover {
+    outline:1px solid #fff;
+    text-decoration: none;
+    border-bottom: 0;
+}
+
+#main-content .soliloquy-container .soliloquy-pager {
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+    bottom: auto;
+    position: relative;
+    height: 35px;
+    background: #091831;
+    padding: 10px;
+}
+
+#main-content .soliloquy-container .soliloquy-pager-item a {
+    border: none;
+
 /* Tribe Events */
 .post-type-archive-tribe_events .tribe-events .tribe-events-c-search__button:focus,
 .post-type-archive-tribe_events .tribe-events .tribe-events-c-search__button:hover,
