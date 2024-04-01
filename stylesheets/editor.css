@@ -1,0 +1,50 @@
+
+/*
+* Block: team member
+*/
+
+ul.team-block {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 30px;
+
+}
+ul.team-block li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ul.team-block li:nth-child(3n) {
+    margin-right: 0;
+}
+ul.team-block .team-block__member-name {
+    font-size: 18px;
+    padding: 0;
+}
+ul.team-block .team-block__member-position {
+    margin-bottom: 10px;
+    width: 100%;
+}
+ul.team-block .team-block__member-name,
+ul.team-block .team-block__member-email {
+    width: 100%;
+}
+/* less 1024px */
+@media (max-width: 1024px) {
+    ul.team-block {
+        display: block;
+        margin-bottom: 20px;
+    }
+    ul.team-block li {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}

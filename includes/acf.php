@@ -7,12 +7,33 @@
  * @since       1.0.0
  * @license     GPL-2.0+
  */
+
 class EQD_ACF_Customizations {
 
 	public function __construct() {
 
 		// Only allow fields to be edited on development
 		//add_action( 'acf/init', array( $this, 'show_admin' ) );
+
+		// Register options page
+		add_action( 'init', array( $this, 'register_options_page' ) );
+		// register blocks
+		add_action( 'acf/init', array( $this, 'register_blocks' ) );
+
+	}
+
+	/**
+	 * Register Options Page
+	 *
+	 */
+	public function register_options_page() {
+		if ( function_exists( 'acf_add_options_page' ) ) {
+			acf_add_options_page( array(
+				'title'      => __( 'Site Options', 'core-functionality' ),
+				'capability' => 'manage_options',
+				'parent_slug' => 'themes.php'
+			) );
+		}
 		// Save and sync fields in functionality plugin
 		add_filter( 'acf/settings/save_json', array( $this, 'get_local_json_path' ) );
 		add_filter( 'acf/settings/load_json', array( $this, 'add_local_json_path' ) );
@@ -250,6 +271,19 @@ class EQD_ACF_Customizations {
 			if ( ! isset($_GET['page'] ) ) {
 				wp_redirect(admin_url());
 			}
+		}
+	}
+	public function register_blocks() {
+		if ( function_exists( 'acf_register_block_type' ) ) {
+			acf_register_block_type( array(
+				'name'            => 'eqd-team-block',
+				'title'           => __( 'Team members', 'core-functionality' ),
+				'description'     => __( 'A custom block for displaying team members', 'core-functionality' ),
+				'render_template' => 'template-parts/blocks/team-block.php',
+				'category'        => 'layout',
+				'icon'            => 'admin-users',
+				'keywords'        => array( 'team', 'teams', 'admin' ),
+			) );
 		}
 	}
 }
