@@ -12,6 +12,7 @@
     get_template_part( 'sub-header', 'index' ); //the  header stuffs
 	get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 ?>
+<main id="main-content">
     <div class="super-container interior-page">
 		<div id="primary" class="full-width no-padding">
 			<div id="content" class="no-padding">
@@ -25,4 +26,5 @@
 			</div><!-- #content -->
 		</div><!-- #primary -->
 	</div>
+</main><!-- #main-content -->
 <? get_footer(); ?>

@@ -1,0 +1,35 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    color: #666; /* Like the main theme text color */
+}
+.editor-styles-wrapper {
+    color: #666; /* Like the main theme text color */
+}
+ol, ul {
+    margin: 0;
+    padding: 0;
+}
+.wp-block {
+    max-width: 1168px;
+}
+.wp-block[data-align='wide'] {
+    max-width: 1000px
+}
+.wp-block[data-align='full'] {
+    max-width: none;
+}
+
+.wp-block-button__link {
+    background-color: #265793;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #265793;
+}
+
+a:hover {
+    border-bottom: 2px solid #d91e18;
+}
+a, a:hover, a:focus {
+    color: #000;
+    text-decoration: none;
+}

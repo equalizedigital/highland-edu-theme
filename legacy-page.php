@@ -13,7 +13,7 @@
     get_template_part( 'menu-legacy', 'index' ); //the  menu + logo/site title
 ?>
 
-<main>
+<main id="main-content">
     <section id="hero">
         <div class="super-container"><?php
             $hero_image_data = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'full');

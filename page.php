@@ -9,6 +9,7 @@
     get_template_part( 'sub-header', 'index' ); //the  header stuffs
 	get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 ?>
+<main id="main-content">
 	<div class="super-container title-holder">
 		<div class="container">
 			<div class="sixteen columns alpha omega primary-nav-holder">
@@ -22,17 +23,11 @@
                 <div id="primary" class="full-width">
                     <div id="content">
                         <div class="two-thirds column alpha">
-                    		<main>
-                            <div class="main">
-                                <? the_post(); ?>
-                                <article id="post-<? the_ID(); ?>" <? post_class(); ?> role="article">
-                                    <div class="entry-content">
-                                        <? the_content(); ?>
-                                        <? edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
-                                    </div><!-- .entry-content -->
-                                </article><!-- #post-<? the_ID(); ?> -->
-                            </div><!-- #main -->
-                            </main>
+                            <? the_post(); ?>
+                            <div class="entry-content">
+                                <? the_content(); ?>
+                                <? edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
+                            </div><!-- .entry-content -->
                         </div><!-- two-thirds -->
                         <? get_sidebar(); ?>
                     </div><!-- #content -->
@@ -40,5 +35,6 @@
             </div>
         </div>
     </div>
+</main>
 
 <? get_footer(); ?>
