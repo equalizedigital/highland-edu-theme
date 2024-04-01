@@ -326,7 +326,7 @@ footer .footer-logos .button-holder a:focus {
 .footer-apply-online p{font-family:'Raleway', sans-serif;font-size:62px;line-height:60px;letter-spacing:-0.15px;font-weight:800;text-transform:uppercase;color:#FFF;border-left:7px solid #ff6200;padding:0 5% 0 25px;margin-bottom:0;float:left;}
 .staff-search input[type="text"]{margin:0;padding:0 0 0 10px;font-size:15px;float:left;width:65%;}
 .staff-search input[type="submit"], .reset-holder input[type="button"]{float:left;color:#FFF;background:#ff6200;;height:40px !important;width:20%;margin:0 0 0 2%;padding:0 5px;font-size:13px;border:none;}
-.search-options-overlay{float:left;width:100%;font-weight:700;color:#ff6200;display:none;}
+.search-options-overlay{float:left;width:100%;font-weight:700;color:#666;display:none;}
 .search-options-overlay.disabled{display:block;}
 .the-selectors{height:40px!important;width:80%;}
 .ajax-loading{display:none;width:250px;height:150px;color:#444;position:absolute;z-index:1000;right:50%;margin-right:-125px;text-align:center;font-size:25px;}
@@ -339,7 +339,7 @@ ul.bootpag li, ul.bootpag li.prev.disabled, ul.bootpag li.next.disabled{backgrou
 ul.bootpag li, ul.bootpag li.prev.disabled, ul.bootpag li.next.disabled{width:auto !important;height:auto !important;}
 #display-results, #results-template{display:none;}
 .find-col{width:33.3333333%;float:left;}
-#srch-step-two label{padding:10px 0 0 0;color:#ff6200;font-size:16px;}
+#srch-step-two label{padding:10px 0 0 0;color:#666;font-size:16px;}
 .ajax-entries{margin:0;padding:0;line-height:0;}
 .ajax-entries li{margin:0;list-style:none;border-top:1px #b8b6b6 solid;padding:8px 0 18px 10px;background:#efefef;font-size:15px;line-height:18px;}
 .ajax-entries li:nth-child(even){background:#FFF;}
@@ -1602,6 +1602,11 @@ h1.dog-title {
 }
 .toggle-mega-menu:focus .caret-icon {
     opacity: 1;
+}
+
+ul.bootpag li.active a {
+    color: #FFF;
+    background: #333 !important;
 }
 .sidebar .menu li:first-child a h2 {
     color: #fff;
