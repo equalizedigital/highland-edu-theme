@@ -57,22 +57,22 @@
                     <div class="social-icons-wrapper">
                         <ul class="social-icons">
                             <li>
-                                <a href="https://www.facebook.com/highlandcommunitycollege" target="_blank" aria-label="Facebook">
+                                <a href="https://www.facebook.com/highlandcommunitycollege" aria-label="Facebook">
                                     <img src="<? bloginfo('template_url'); ?>/images/fb.png" alt="Facebook" />
                                 </a>
                             </li>
                             <li>
-                                <a href="https://twitter.com/highlandcollege" target="_blank" aria-label="Twitter Link">
+                                <a href="https://twitter.com/highlandcollege" aria-label="Twitter Link">
                                     <img src="<? bloginfo('template_url'); ?>/images/twtr.png" alt="Twitter" />
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.youtube.com/channel/UCGWiarYnk5KB4QOMkv5rAnw" target="_blank" aria-label="YouTube">
+                                <a href="https://www.youtube.com/channel/UCGWiarYnk5KB4QOMkv5rAnw" aria-label="YouTube">
                                     <img src="<? bloginfo('template_url'); ?>/images/yt.png" alt="YouTube" />
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/explore/locations/1720635/highland-community-college/?hl=en" target="_blank" aria-label="Instagram">
+                                <a href="https://www.instagram.com/explore/locations/1720635/highland-community-college/?hl=en" aria-label="Instagram">
                                     <img src="<? bloginfo('template_url'); ?>/images/instagram.png" alt="Instagram" />
                                 </a>
                             </li>
