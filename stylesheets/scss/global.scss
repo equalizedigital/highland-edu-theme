@@ -1,0 +1,300 @@
+.schedule-filters {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+    .facetwp-facet-last_name{
+        input[type=text]{
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type=button] {
+            display: none;
+        }
+    }
+    select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    input[type="text"], input[type="password"], input[type="email"], textarea, select{
+        color: #333;
+    }
+    .schedule-label h2{
+        margin: 0;
+        padding: 0;
+        font-size: 1em;
+    }
+    .facetwp-facet-reset_schedule{
+        margin: 0;
+    }
+    .facetwp-reset {
+        text-decoration: underline;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        color: #285598;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+    .dropdown-toggle {
+        cursor: pointer;
+        padding: 12px 26px !important;
+        color: #fff;
+        background-color: #285598;
+        padding: 0;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        &:hover{
+            background-color: #193662;
+        }
+        &[disabled] {
+            cursor: not-allowed;
+            background-color: #ccc;
+            &:hover{
+                background-color: #ccc;
+            }
+        }
+    }
+    // on mobile
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        .schedule-filter {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .dropdown-toggle-content {
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+}
+.staff-az {
+    .facetwp-alpha {
+        color: #777;
+    }
+    .facetwp-alpha {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        padding: 4px 8px;
+        width: 12px;
+        text-align: center;
+        color: #000;
+        font-size: .8em;
+        background: white;
+        border: #999 1px solid;
+        color: #777;
+        cursor: not-allowed;
+        &.available {
+            cursor: pointer;
+            &:hover {
+                background: #285598;
+                color: #fff;
+            }
+
+            background: #E4E4E4;
+            color: black;
+        }
+        &.selected {
+            background: #285598;
+            color: white;
+        }
+    }
+}
+.dropdown-toggle-content{
+    &[aria-hidden="true"] {
+        display: none;
+    }
+    .facetwp-facet {
+        margin: 0;
+    }
+    label,
+    legend{
+        font-size: 1em;
+    }
+    z-index: 999;
+    width: 300px;
+    position: absolute;
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    border: 1px solid #ccc;
+    .dropdown-footer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .dropdown-apply {
+        cursor: pointer;
+        padding: 12px 26px !important;
+        color: #fff;
+        background-color: #285598;
+        padding: 0;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        &:hover{
+            background-color: #193662;
+        }
+    }
+    .dropdown-cancel {
+        text-decoration: underline;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        color: #285598;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+}
+.schedule-results {
+    .table-sort-results-number {
+        padding: 0;
+    }  
+    .table-sort-results-number,
+    label {
+        font-size: 1em;
+    }
+    .table-sort {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        .table-sort-per-page {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            label, .facetwp-facet{
+                padding: 0;
+                margin: 0;
+            }
+            select{
+                width: auto;
+            }
+        }
+    }
+    .schedule-table {
+        width: 100%;
+        overflow-x:auto !important;
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 1px solid #ccc;
+        a {
+            color: #285598 !important;
+            text-decoration: underline !important;
+            border: none !important;
+            &:hover{
+                color: #193662 !important;
+                text-decoration: none !important;
+            }
+        }
+        td, th {
+            border: 1px solid #ccc;
+        }
+        tbody th {
+            text-align: left;
+            padding: 10px;
+        }
+        td.schedule-table-cell span {
+            display: block;
+        }
+        thead {
+            background-color: #e4e4e4;
+            tr {
+                th {
+                    padding: 10px;
+                    text-align: left;
+                    font-weight: 600;
+                    font-size: 1em;
+                    border-bottom: 1px solid #ccc;
+                }
+            }
+        }
+        tbody {
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            tr {
+                td {
+                    padding: 10px;
+                    border-bottom: 1px solid #ccc;
+                    font-size: 1em;
+                    a {
+                        color: #000;
+                        text-decoration: none;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        // on mobile stack the table
+        @media (max-width: 1024px) {
+            display: block;
+            thead {
+                display: none;
+            }
+            tbody {
+                display: block;
+                tr {
+                    display: block;
+                    th,
+                    td {
+                        display: block;
+                        padding: 10px;
+                        border: none;
+                        border-bottom: 1px solid #ccc;
+                        position: relative;
+                        &:before {
+                            content: attr(data-label);
+                            position: absolute;
+                            left: 0;
+                            width: 50%;
+                            padding-left: 10px;
+                            font-size: 1em;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .table-pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        .facetwp-facet {
+            margin: 0;
+        }
+        .facetwp-page {
+            &.active {
+                border-bottom: 2px solid #285598;
+            }
+        }
+        .facetwp-page.prev,
+        .facetwp-page.next {
+            color: #fff;
+            background-color: #285598;
+            padding: 0;
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            &:hover{
+                background-color: #193662;
+            }
+        }
+    }
+}

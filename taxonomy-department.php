@@ -18,7 +18,7 @@
                 <div id="primary" class="full-width">
                     <div id="content">
                         <div class="two-thirds column alpha omega">
-                            <div class="main">
+                            <main id="main-content" class="main">
                                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
                                     <?php
                                         $queried_object = get_queried_object();
@@ -59,7 +59,7 @@
                                         ?>
                                     </div><!-- .entry-content -->
                                 </article><!-- #post-<?php the_ID(); ?> -->
-                            </div><!-- #main -->
+                            </main><!-- #main -->
                         </div>
                         <? get_sidebar('academics'); ?>
                     </div><!-- #content -->

@@ -10,7 +10,7 @@
 
 include('meta-tate.php');
 
-$cpt_holder[]	= array('Event', 'Events', 'event', array( 'title', 'editor', 'thumbnail', 'revisions' ), true, true, 'dashicons-calendar', array() );
+// $cpt_holder[]	= array('Event', 'Events', 'event', array( 'title', 'editor', 'thumbnail', 'revisions' ), true, true, 'dashicons-calendar', array() );
 $cpt_holder[]	= array('Class', 'Classes', 'class', array( 'title', 'editor', 'thumbnail', 'revisions' ), true, true, 'dashicons-book', array() );
 $cpt_holder[]	= array('Call to Action', 'Call to Action', 'call-to-action', array( 'title', 'revisions' ), true, true, 'dashicons-megaphone', array() );
 $cpt_holder[]	= array('Program Info', 'Program Info', 'program-info', array( 'title', 'editor', 'thumbnail', 'revisions' ), true, true, 'dashicons-calendar', array() );

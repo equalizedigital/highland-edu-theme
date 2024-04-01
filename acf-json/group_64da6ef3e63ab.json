@@ -1,0 +1,44 @@
+{
+    "key": "group_64da6ef3e63ab",
+    "title": "Full width options",
+    "fields": [
+        {
+            "key": "field_64da6f13b2466",
+            "label": "Hide the H1 baner visually",
+            "name": "hide_h1_visually",
+            "type": "true_false",
+            "instructions": "Hide the H1 visually but keep it for screen reader users.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "full-width-page.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1692038282
+}
