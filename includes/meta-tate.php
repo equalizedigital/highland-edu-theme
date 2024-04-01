@@ -460,20 +460,20 @@
 			//'default' => cmb2_set_checkbox_default_for_new_post( true ),
 		));*/
         //Homepage Options
-        $cmb_news_hp = new_cmb2_box(array(
-            'id' => $prefix . 'news_options_hp',
-            'title' => 'Show Home Page',
-            'object_types' => array('news'), // post type
-            'context' => 'side',
-            'priority' => 'high',
-            'show_names' => true, // Show field names on the left
-        ));
-        $cmb_news_hp->add_field(array(
-            'desc' => '<strong>Display on the Home Page!</strong>',
-            'id' => $prefix . 'home_news_checkbox',
-            'type' => 'checkbox',
-            //'default' => cmb2_set_checkbox_default_for_new_post( true ),
-        ));
+        // $cmb_news_hp = new_cmb2_box(array(
+        //     'id' => $prefix . 'news_options_hp',
+        //     'title' => 'Show Home Page',
+        //     'object_types' => array('news'), // post type
+        //     'context' => 'side',
+        //     'priority' => 'high',
+        //     'show_names' => true, // Show field names on the left
+        // ));
+        // $cmb_news_hp->add_field(array(
+        //     'desc' => '<strong>Display on the Home Page!</strong>',
+        //     'id' => $prefix . 'home_news_checkbox',
+        //     'type' => 'checkbox',
+        //     //'default' => cmb2_set_checkbox_default_for_new_post( true ),
+        // ));
 
 
         //Event Options

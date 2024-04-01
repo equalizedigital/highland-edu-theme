@@ -38,7 +38,7 @@
                             } else {
                                 ?>
                                 <div class="two-thirds column alpha">
-                                    <div class="main content">
+                                    <main id="main-content" class="main content">
                                         <div class="entry-content">
 
                                             <?php
@@ -90,7 +90,7 @@
                                             </div><!-- .navigation -->
 
                                         </div>
-                                    </div><!-- #main -->
+                                    </main><!-- #main -->
                                 </div><!-- two-thirds -->
                                 <?php get_sidebar(); ?>
                                 <?php
