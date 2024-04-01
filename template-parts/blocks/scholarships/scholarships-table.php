@@ -52,7 +52,15 @@ if ( $my_query->have_posts() ) : ?>
 							<?php
 							$interests = get_the_terms( $sholarship_id, 'academic_interest' );
 							if ( ! empty( $interests ) && ! is_wp_error( $interests ) ) {
-								echo implode( ' - ', wp_list_pluck( $interests, 'name' ) );//phpcs:ignore
+								if ( count( $interests ) > 1 ) {
+									$interests_list = array();
+									foreach ( $interests as $interest ) {
+										$interests_list[] = $interest->name;
+									}
+									echo '<ul class="sep-list"><li>' . implode( '</li><li>', $interests_list ) . '</li></ul>';
+								} else {
+									echo esc_html( $interests[0]->name );
+								}
 							} else {
 								echo 'N/A';
 							}
@@ -72,7 +80,15 @@ if ( $my_query->have_posts() ) : ?>
 							<?php
 							$scholarship_ethnicity = get_the_terms( $sholarship_id, 'scholarship_ethnicity' );
 							if ( ! empty( $scholarship_ethnicity ) && ! is_wp_error( $scholarship_ethnicity ) ) {
-								echo implode( ' - ', wp_list_pluck( $scholarship_ethnicity, 'name' ) );//phpcs:ignore
+								if ( count( $scholarship_ethnicity ) > 1 ) {
+									$ethnicity_list = array();
+									foreach ( $scholarship_ethnicity as $ethnicity ) {
+										$ethnicity_list[] = $ethnicity->name;
+									}
+									echo '<ul class="sep-list"><li>' . implode( '</li><li>', $ethnicity_list ) . '</li></ul>';
+								} else {
+									echo esc_html( $scholarship_ethnicity[0]->name );
+								}
 							} else {
 								echo 'N/A';
 							}
@@ -82,7 +98,15 @@ if ( $my_query->have_posts() ) : ?>
 							<?php
 							$scholarship_gpa = get_the_terms( $sholarship_id, 'scholarship_gpa' );
 							if ( ! empty( $scholarship_gpa ) && ! is_wp_error( $scholarship_gpa ) ) {
-								echo implode( ' - ', wp_list_pluck( $scholarship_gpa, 'name' ) );//phpcs:ignore
+								if ( count( $scholarship_gpa ) > 1 ) {
+									$gpa_list = array();
+									foreach ( $scholarship_gpa as $gpa ) {
+										$gpa_list[] = $gpa->name;
+									}
+									echo '<ul class="sep-list"><li>' . implode( '</li><li>', $gpa_list ) . '</li></ul>';
+								} else {
+									echo esc_html( $scholarship_gpa[0]->name );
+								}
 							} else {
 								echo 'N/A';
 							}
@@ -92,7 +116,15 @@ if ( $my_query->have_posts() ) : ?>
 							<?php
 							$scholarship_residence = get_the_terms( $sholarship_id, 'scholarship_residence' );
 							if ( ! empty( $scholarship_residence ) && ! is_wp_error( $scholarship_residence ) ) {
-								echo implode( ' - ', wp_list_pluck( $scholarship_residence, 'name' ) );//phpcs:ignore
+								if ( count( $scholarship_residence ) > 1 ) {
+									$residence_list = array();
+									foreach ( $scholarship_residence as $residence ) {
+										$residence_list[] = $residence->name;
+									}
+									echo '<ul class="sep-list"><li>' . implode( '</li><li>', $residence_list ) . '</li></ul>';
+								} else {
+									echo esc_html( $scholarship_residence[0]->name );
+								}
 							} else {
 								echo 'N/A';
 							}
