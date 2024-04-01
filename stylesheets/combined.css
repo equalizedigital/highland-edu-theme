@@ -1603,13 +1603,11 @@ h1.dog-title {
 .toggle-mega-menu:focus .caret-icon {
     opacity: 1;
 }
-<<<<<<< HEAD
 
 ul.bootpag li.active a {
     color: #FFF;
     background: #333 !important;
 }
-=======
 .sidebar .menu li:first-child a h2 {
     color: #fff;
     font-size: 22px;
@@ -1915,4 +1913,3 @@ ul.sep-list li::after {
 ul.sep-list li:last-child::after {
     content: "";
 }
->>>>>>> main
