@@ -17,8 +17,9 @@ get_template_part( 'sub-header', 'index' ); //the  header stuffs
 					<div class="two-thirds column alpha">
 						<main class="main" id="main-content">
 							<? if ( have_posts() ) : ?>
-								<h2 class="page-title"><? printf( __( 'Search Results for: %s', 'mb' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+								<h2 class="sr-only">Search Form</h2>
 								<? get_search_form(); ?>
+								<h2 class="sr-only">Results</h2>
 								<? get_template_part( 'loop', 'search' ); ?>
 							<? else : ?>
 								<div id="post-0" class="post no-results not-found">

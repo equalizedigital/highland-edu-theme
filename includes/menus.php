@@ -107,7 +107,7 @@ class artsWalker extends Walker_Nav_Menu {
 add_filter('wp_setup_nav_menu_item', 'mobile_only_nav_item');
 function mobile_only_nav_item($menu_item) {
     if (isset($menu_item->ID)) {
-        $mobile_only = get_post_meta($menu_item->ID, '_menu_item_mobile_only', true);
+        $mobile_only = get_post_meta($menu_item->ID, '_menu_item_mobile_only', true) === '1' ? true : false;
         $menu_item->mobile_only = $mobile_only;
     }
     // is header item

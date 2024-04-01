@@ -75,7 +75,13 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
                                                         <!-- BEGIN: General Custom Search Box-->
                                                         <form action="https://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0" onsubmit="ebscoPreProcess(this)">
                                                             <!-- Dropdown menu to prepend the selected value below to the user's search term -->
-                                                            <select onchange="#" size="1" name="search_prefix" style="width: 100px"><option selected="selected" value="">Keyword</option><option value="TI ">Title</option><option value="AU ">Author</option></select><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
+                                                            <label for="search_prefix">Search By:</label>
+                                                            <select onchange="#" size="1" name="search_prefix" style="width: 100px" id="search_prefix">
+                                                            <option selected="selected" value="">Keyword</option>
+                                                            <option value="TI ">Title</option>
+                                                            <option value="AU ">Author</option>
+                                                            </select>
+                                                            <input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
                                                             <!-- target an EDS profile -->
                                                             <input name="site" value="eds-live" type="hidden"><input name="profile" value="eds" type="hidden">
                                                             <!-- Auth type -->
@@ -98,9 +104,10 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 
 
                                                     <div   class="simpleTabsContent" role="tabpanel" aria-labelledby="prairie-cat-tab" id="tabber57_div_1" aria-hidden="true">
-                                                        <form action="http://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0;" onsubmit="ebscoPreProcess(this)"><p />
+                                                        <form action="http://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0;" onsubmit="ebscoPreProcess(this)">
                                                             <!-- Dropdown menu to prepend the selected value below to the user's search term -->
-                                                            <select onchange="#" size="1" name="search_prefix" style="width: 100px"><option selected="selected" value="">Keyword</option><option value="TI ">Title</option><option value="AU ">Author</option></select><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
+                                                            <label for="saerch_prefix_cat">Search By:</label>
+                                                            <select onchange="#" size="1" name="search_prefix" style="width: 100px" id="saerch_prefix_cat"><option selected="selected" value="">Keyword</option><option value="TI ">Title</option><option value="AU ">Author</option></select><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
                                                             <!-- target an EDS profile -->
                                                             <input name="site" value="eds-live" type="hidden"><input name="profile" value="eds" type="hidden">
                                                             <!-- Auth type -->
@@ -133,7 +140,8 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
                                                         <!-- Begin form which will construct a link into EDS https://support.epnet.com/knowledge_base/detail.php?id=2747#linksearch -->
                                                         <form action="https://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0" onsubmit="ebscoPreProcess(this); limittoeBooks(this)">
                                                             <!-- Dropdown menu to prepend the selected value below to the user's search term -->
-                                                            <select onchange="#" size="1" name="search_prefix" style="width: 100px"><option selected="selected" value="">Keyword</option><option value="TI ">Title</option><option value="AU ">Author</option></select><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
+                                                            <label for="search_prefix_ebooks">Search By:</label>
+                                                            <select onchange="#" size="1" name="search_prefix" style="width: 100px" id="search_prefix_ebooks"><option selected="selected" value="">Keyword</option><option value="TI ">Title</option><option value="AU ">Author</option></select><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
                                                             <!-- target an EDS profile -->
                                                             <input name="site" value="eds-live" type="hidden"><input name="profile" value="eds" type="hidden">
                                                             <!-- Auth type -->
@@ -159,7 +167,8 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
                                                         <!-- Begin form which will construct a link into EDS https://support.epnet.com/knowledge_base/detail.php?id=2747#linksearch -->
                                                         <form action="https://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0" onsubmit="ebscoPreProcess(this); limittoArticles(this)">
                                                             <!-- Dropdown menu to prepend the selected value below to the user's search term -->
-                                                            <select onchange="#" size="1" name="search_prefix" style="width: 100px"><option selected="selected" value="">Keyword</option><option value="TI ">Title</option><option value="AU ">Author</option></select><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
+                                                            <label for="search_prefix_articles">Search By:</label>
+                                                            <select onchange="#" size="1" name="search_prefix" style="width: 100px" id="search_prefix_articles"><option selected="selected" value="">Keyword</option><option value="TI ">Title</option><option value="AU ">Author</option></select><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
                                                             <!-- target an EDS profile -->
                                                             <input name="site" value="eds-live" type="hidden"><input name="profile" value="eds" type="hidden">
                                                             <!-- Auth type -->
@@ -183,7 +192,8 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
                                                         <!-- Begin form which will construct a link into EDS https://support.epnet.com/knowledge_base/detail.php?id=2747#linksearch -->
                                                         <form action="https://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0" onsubmit="ebscoPreProcess(this); limittoVideos(this)">
                                                             <!-- Dropdown menu to prepend the selected value below to the user's search term -->
-                                                            <select onchange="#" size="1" name="search_prefix" style="width: 100px"><option selected="selected" value="">Keyword</option><option value="TI ">Title</option><option value="AU ">Author</option></select><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
+                                                            <label for="search_prefix_videos">Search By:</label>
+                                                            <select onchange="#" size="1" name="search_prefix" style="width: 100px" id="search_prefix_videos"><option selected="selected" value="">Keyword</option><option value="TI ">Title</option><option value="AU ">Author</option></select><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
                                                             <!-- target an EDS profile -->
                                                             <input name="site" value="eds-live" type="hidden"><input name="profile" value="eds" type="hidden">
                                                             <!-- Auth type -->
