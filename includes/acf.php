@@ -38,7 +38,6 @@ class EQD_ACF_Customizations {
 		add_filter( 'acf/settings/save_json', array( $this, 'get_local_json_path' ) );
 		add_filter( 'acf/settings/load_json', array( $this, 'add_local_json_path' ) );
 		// Register options page
-		add_action('acf/init', array( $this, 'register_blocks' ) );
 
 	}
     /**
@@ -250,15 +249,25 @@ class EQD_ACF_Customizations {
 				),
 			)
 		);
+
+		acf_register_block_type( array(
+			'name'            => 'eqd-team-block',
+			'title'           => __( 'Team members', 'core-functionality' ),
+			'description'     => __( 'A custom block for displaying team members', 'core-functionality' ),
+			'render_template' => 'template-parts/blocks/team-block.php',
+			'category'        => 'layout',
+			'icon'            => 'admin-users',
+			'keywords'        => array( 'team', 'teams', 'admin' ),
+		) );
 	}
 
 	/**
 	 * Only allow fields to be edited on local or development
-	 * 
+	 *
 	 * https://www.advancedcustomfields.com/resources/how-to-hide-acf-menu-from-clients/
 	 * https://developer.wordpress.org/reference/functions/wp_get_environment_type/
 	 * https://localwp.com/help-docs/advanced/using-wp_get_environment_type-to-code-for-different-environments/
-	 * 
+	 *
 	 */
 	public function show_admin() {
 		if ( wp_get_environment_type() != 'production' ){
@@ -273,18 +282,6 @@ class EQD_ACF_Customizations {
 			}
 		}
 	}
-	public function register_blocks() {
-		if ( function_exists( 'acf_register_block_type' ) ) {
-			acf_register_block_type( array(
-				'name'            => 'eqd-team-block',
-				'title'           => __( 'Team members', 'core-functionality' ),
-				'description'     => __( 'A custom block for displaying team members', 'core-functionality' ),
-				'render_template' => 'template-parts/blocks/team-block.php',
-				'category'        => 'layout',
-				'icon'            => 'admin-users',
-				'keywords'        => array( 'team', 'teams', 'admin' ),
-			) );
-		}
-	}
+
 }
 new EQD_ACF_Customizations();
