@@ -2,6 +2,27 @@
 	<div class="schedule-filter schedule-label">
 		<h2>Filter Scholarships</h2>
 	</div>
+
+	<div class="schedule-filter keyword-filter">
+		<button class="keyword-filter-button dropdown-toggle"
+		aria-label="keyword Filters"
+		aria-expanded="false"
+		aria-controls="keyword-filters"
+		id="keyword-filters-button"
+		>Keyword Search</button>
+		<div class="keyword-filter-dropdown dropdown-toggle-content" id="keyword-filters" aria-labelledby="keyword-filters-button" aria-hidden="true">
+			<div class="dropdown-content">
+			<label for="fwp_keyword_filter">Keyword Search</label>
+			<?php echo do_shortcode( '[facetwp facet="keyword_search"]' ); ?>
+			</div>
+			<div class="dropdown-footer">
+				<button class="dropdown-apply" aria-label="Apply Location Filters">Apply</button>
+				<button class="dropdown-cancel" aria-label="Cancel Location Filters">Cancel</button>
+			</div>
+		</div>
+	</div>
+
+
 	<div class="schedule-filter interest-filter">
 		<button class="interest-filter-button dropdown-toggle"
 		aria-label="Academic Interest Filters"
@@ -40,19 +61,18 @@
 			</div>
 		</div>
 	</div>
-	<div class="schedule-filter ethnicity-filter">
-		<button class="ethnicity-filter-button dropdown-toggle"
-		aria-label="Ethnicity Filters"
+
+	<div class="schedule-filter fasfa-filter">
+		<button class="fasfa-filter-button dropdown-toggle"
+		aria-label="fasfa Filters"
 		aria-expanded="false"
-		aria-controls="ethnicity-filters"
-		id="ethnicity-filters-button"
-		>Ethnicity</button>
-		<div class="ethnicity-filter-dropdown dropdown-toggle-content" id="ethnicity-filters" aria-labelledby="ethnicity-filters-button" aria-hidden="true">
+		aria-controls="fasfa-filters"
+		id="fasfa-filters-button"
+		>FAFSA</button>
+		<div class="fasfa-filter-dropdown dropdown-toggle-content" id="fasfa-filters" aria-labelledby="fasfa-filters-button" aria-hidden="true">
 			<div class="dropdown-content">
-			<label for="fwp_ethnicity_filter">Ethnicity</label>
-			<?php
-			echo do_shortcode( '[facetwp facet="ethnicity_filter"]' );
-			?>
+			<label for="fwp_fasfa_filter">FAFSA</label>
+			<?php echo do_shortcode( '[facetwp facet="fafsa_filter"]' ); ?>
 			</div>
 			<div class="dropdown-footer">
 				<button class="dropdown-apply" aria-label="Apply Location Filters">Apply</button>
@@ -60,6 +80,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<div class="schedule-filter gpa-filter">
 		<button class="gpa-filter-button dropdown-toggle"
 		aria-label="GPA filters"
@@ -108,3 +129,11 @@
 		?>
 	</div>
 </div>
+
+
+<style>
+.facetwp-facet-keyword_search i.facetwp-icon{
+    display: none;
+}
+
+</style>

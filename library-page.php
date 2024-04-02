@@ -104,7 +104,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 
 
                                                     <div   class="simpleTabsContent" role="tabpanel" aria-labelledby="prairie-cat-tab" id="tabber57_div_1" aria-hidden="true">
-                                                        <form action="http://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0;" onsubmit="ebscoPreProcess(this)">
+                                                        <form action="https://search.ebscohost.com/login.aspx" method="get" target="_blank" style="margin-bottom: 0;" onsubmit="ebscoPreProcess(this)">
                                                             <!-- Dropdown menu to prepend the selected value below to the user's search term -->
                                                             <label for="saerch_prefix_cat">Search By:</label>
                                                             <select onchange="#" size="1" name="search_prefix" style="width: 100px" id="saerch_prefix_cat"><option selected="selected" value="">Keyword</option><option value="TI ">Title</option><option value="AU ">Author</option></select><input name="direct" value="true" type="hidden"><input name="scope" value="site" type="hidden">
@@ -125,13 +125,13 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
                                                             <!-- Limiter: Full Text -->
                                                             <input name="cli0" value="FT" type="hidden"><input name="clv0" type="hidden" value='N'><input  style='display:none' type="checkbox" name="fulltext_checkbox" id="fulltext_checkbox_all" onclick="limittoFullText(this.form)" ><label  style='display:none' for="fulltext_checkbox_all">Full-Text (online)</label>
                                                             <!-- Limiter: Scholarly/Peer-Reviewed -->
-                                                            <input name="cli1" value="RV" type="hidden"><input name="clv1"  type="hidden" value='N'><input  style='display:none' name="scholarly_checkbox" id="scholarly_checkbox_articles" onclick="limittoScholarly(this.form)" type="checkbox"><label  style='display:none' for="scholarly_checkbox_articles">Scholarly (Peer Reviewed)</label>
+                                                            <input name="cli1" value="RV" type="hidden"><input name="clv1"  type="hidden" value='N'><input  style='display:none' name="scholarly_checkbox" id="scholarly_checkbox_articles_peer_reviewed" onclick="limittoScholarly(this.form)" type="checkbox"><label  style='display:none' for="scholarly_checkbox_articles_peer_reviewed">Scholarly (Peer Reviewed)</label>
                                                             <!-- Limiter: Catalog Only -->
                                                             <input name="cli2" value="FC" type="hidden"><input name="clv2" type="hidden" value='Y'><input CHECKED  style='display:none' name="catalog_only_checkbox" id="catalog_only_checkbox" onclick="limittoCatalog(this.form)" type="checkbox"><label  style='display:none' for="catalog_only_checkbox">Catalog Only</label>
                                                             <!-- Limiter: Institutional Repositories Only -->
                                                             <input name="cli3" value="FC1" type="hidden"><input name="clv3" type="hidden" value='N'><input  style='display:none' name="IR_only_checkbox" id="IR_only_checkbox" onclick="limittoIR(this.form)" type="checkbox"><label  style='display:none' for="IR_only_checkbox">Institutional Repositories Only</label>
                                                             <div class="clear"></div>
-                                                            <a href="https://search.prairiecat.info" target="_blank">PrairieCat</a>
+                                                            <a href="https://highland-prcat.na2.iiivega.com/" target="_blank">PrairieCat</a>
                                                         </form>
                                                     </div>
 

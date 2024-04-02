@@ -1,0 +1,19 @@
+{
+    "extends": ["plugin:@wordpress/eslint-plugin/recommended"],
+    "ignorePatterns": ["*min.js", "dist/**"],
+    "env": {
+        "browser": true
+    },
+    "globals": {
+        "jQuery": "readonly"
+    },
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine":"auto"
+            }
+        ]
+    }
+    
+}

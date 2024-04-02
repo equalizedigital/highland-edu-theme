@@ -234,19 +234,7 @@ function mstar_build_taxonomies() {
             'rest_controller_class' => 'WP_REST_Terms_Controller',
 		)
 	);
-	register_taxonomy(
-		'scholarship_ethnicity',
-		'scholarship',
-		array(
-			'hierarchical' => true,
-			'label' => 'Ethnicity',
-			'query_var' => true,
-			'rewrite' => true,
-            'show_in_rest' => true,
-            'rest_base' => 'scholarship-ethnicity',
-            'rest_controller_class' => 'WP_REST_Terms_Controller',
-		)
-	);
+
 	register_taxonomy(
 		'scholarship_gpa',
 		'scholarship',
