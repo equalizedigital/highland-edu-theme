@@ -83,7 +83,7 @@ function mstar_jquery_enqueue() {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('navigation', get_template_directory_uri().'/includes/js/navigation.js', array(), THEME_VERSION, true );
 	wp_enqueue_script('customjs', get_template_directory_uri().'/includes/js/custom.js', array('jquery'), THEME_VERSION, true );
-	// wp_enqueue_style('global', get_template_directory_uri().'/stylesheets/global.min.css', array(), THEME_VERSION, 'all' );
+	wp_enqueue_style('global', get_template_directory_uri().'/stylesheets/global.min.css', array(), THEME_VERSION, 'all' );
 }
 
 add_action( 'enqueue_block_assets', 'mstar_block_admin_editor_styles' );
