@@ -1,4 +1,4 @@
-<?php
+<?
 	function populate_withdrawal_hash($form){
 		$random_hash = md5(uniqid(rand(), true));
 		foreach ($form["fields"] as &$field) {

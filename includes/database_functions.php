@@ -12,9 +12,9 @@
 
 <div class="sixteen columns alpha">
 	<div id="primary" class="full-width">
-		<div id="content">
+		<main id="main-content" class="main">
             <div class="two-thirds column alpha">
-				<main id="main-content" class="main"> 
+				<div class="main"> 
 					<? the_post(); 
 						if(has_post_thumbnail()){
 							the_post_thumbnail('featured-image', array('class' => "header-image"));    	
@@ -142,10 +142,10 @@
 							?>
                         </div><!-- .entry-content -->
                     </article><!-- #post-<?php the_ID(); ?> -->
-				</main><!-- #main -->
+				</div><!-- #main -->
             </div><!-- two-thirds -->
             <? get_sidebar(); ?>  
-		</div><!-- #content -->
+		</main><!-- #content -->
 	</div><!-- #primary -->
 </div>
    

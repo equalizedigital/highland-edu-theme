@@ -1558,5 +1558,5 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 			numberoflivingstatus = 2;
 		}; SetupConstants(); var showWelcomeMessage = true; openInstitutionNameWindow();
 	</script>
-</main>	
+</main><!-- #main-content -->
 <? get_footer(); ?>

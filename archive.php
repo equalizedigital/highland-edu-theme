@@ -38,7 +38,7 @@
                             } else {
                                 ?>
                                 <div class="two-thirds column alpha">
-                                    <main id="main-content" class="main content">
+                                     <main id="main-content" class="main content">
                                         <div class="entry-content">
 
                                             <?php

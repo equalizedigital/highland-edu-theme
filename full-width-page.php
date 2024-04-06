@@ -13,8 +13,8 @@
 	get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 	$hide_h1_visually = get_field('hide_h1_visually');
 ?>
-<main id="main-content">
-    <div class="super-container title-holder <?php echo $hide_h1_visually ? 'sr-only' : ''; ?>" >
+
+<div class="super-container title-holder <?php echo $hide_h1_visually ? 'sr-only' : ''; ?>" >
         <div class="container">
             <div class="sixteen columns alpha omega primary-nav-holder">
 				<h1><? the_title(); ?></h1>
@@ -23,9 +23,10 @@
     </div>
 
     <div class="super-container interior-page">
-		<div class="container">
-			<div class="sixteen columns alpha">
-				<div id="primary" class="full-width">
+	<div class="container">
+	    <div class="sixteen columns alpha">
+			<div id="primary" class="full-width">
+				<main id="main-content">
 					<? the_post(); ?>
 					<article id="post-<? the_ID(); ?>" <? post_class(); ?> role="article">
 						<div class="entry-content">
@@ -33,10 +34,10 @@
 							<? edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
 						</div><!-- .entry-content -->
 					</article><!-- #post-<? the_ID(); ?> -->
-				</div><!-- #primary -->
-			</div>
-		</div>
+				</main><!-- #content -->
+			</div><!-- #primary -->
+	    </div>
 	</div>
-</main>
+</div>
                 
 <? get_footer(); ?>

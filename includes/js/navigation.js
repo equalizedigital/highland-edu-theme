@@ -170,11 +170,17 @@ toggleButton.forEach(function (button) {
             button.nextElementSibling.classList.remove('active');
         }, 1000);
     });
-    // when menu lose focus close it
-    button.nextElementSibling.addEventListener('focusout', function () {
-        setTimeout(function () {
-            button.setAttribute('aria-expanded', 'false');
-            button.nextElementSibling.classList.remove('active');
-        }, 1000);
+    let subElements = button.nextElementSibling.querySelectorAll('li');
+    let lastElment = subElements[subElements.length - 1];
+    button.nextElementSibling.querySelectorAll('li').forEach(function (item) {
+        // focus out last element
+        item.addEventListener('focusout', function (event) {
+            if (event.target.closest('li') === lastElment) {
+                setTimeout(function () {
+                    button.setAttribute('aria-expanded', 'false');
+                    button.nextElementSibling.classList.remove('active');
+                }, 1000);
+            }
+        });
     });
 });

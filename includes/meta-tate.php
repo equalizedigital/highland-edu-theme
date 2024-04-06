@@ -49,6 +49,7 @@
             'object_types' => array('hcc-opportunity'), // Post type
             'context' => 'side',
         ));
+		$form_options = array();
         /*$form_options = array();
         $forms = RGFormsModel::get_forms($active, "title"); // get list of forms
         foreach ($forms as $form) {

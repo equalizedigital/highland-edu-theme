@@ -9,14 +9,14 @@ defined('ABSPATH') OR exit;
     get_template_part( 'sub-header', 'index' ); //the  header stuffs
     get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 ?>
-
+<main id="main-content" class="main">
     <div class="super-container interior-page">
         <div class="container">
             <div class="sixteen columns alpha">
                 <div id="primary" class="full-width">
                     <div id="content">
                         <div class="two-thirds column alpha">
-                            <main id="main-content" class="main">
+                            <div class="main">
                                 <? the_post(); ?>
                                 <article id="post-<? the_ID(); ?>" <? post_class(); ?> role="article">
                                     <header class="entry-header">
@@ -161,7 +161,7 @@ defined('ABSPATH') OR exit;
                                         ?>
                                     </div><!-- .entry-content -->
                                 </article><!-- #post-<? the_ID(); ?> -->
-                            </main><!-- #main -->
+                            </div><!-- #main -->
                         </div><!-- two-thirds -->
                         <? get_sidebar('page'); ?>
                     </div><!-- #content -->
@@ -169,4 +169,5 @@ defined('ABSPATH') OR exit;
             </div>
         </div>
     </div>
+</main>
 <? get_footer(); ?>

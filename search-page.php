@@ -17,9 +17,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 	<div class="super-container title-holder">
 		<div class="container">
 			<div class="sixteen columns alpha omega primary-nav-holder">
-				<header>
-					<h1><? the_title(); ?></h1>
-				</header><!-- access -->
+				<h1><? the_title(); ?></h1>
 			</div><!-- menu-holder -->
 		</div>
 	</div>
@@ -30,14 +28,14 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 				<div id="primary" class="full-width">
 					<div id="content">
 						<div class="two-thirds column alpha">
-							<main id="main-content" class="main">
+							<div class="main">
 								<? the_post(); ?>
 								<article id="post-<? the_ID(); ?>" <? post_class(); ?> role="article">
 									<div class="entry-content">
 										<?php get_search_form(); ?>
 									</div><!-- .entry-content -->
 								</article><!-- #post-<? the_ID(); ?> -->
-							</main><!-- #main -->
+							</div><!-- #main -->
 						</div><!-- two-thirds -->
 						<? get_sidebar(); ?>
 					</div><!-- #content -->

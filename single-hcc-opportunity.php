@@ -9,7 +9,7 @@ get_header();
 get_template_part( 'sub-header', 'index' ); //the  header stuffs
 get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 ?>
-
+<main id="main-content" class="main">
     <div class="super-container title-holder">
         <div class="container">
             <div class="sixteen columns alpha omega primary-nav-holder">
@@ -26,7 +26,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
                 <div id="primary" class="full-width">
                     <div id="content">
                         <div class="two-thirds column alpha">
-                            <main id="main-content" class="main">
+                            <div class="main">
                                 <? the_post(); ?>
                                 <article id="post-<? the_ID(); ?>" <? post_class(); ?> role="article">
                                     <div class="entry-content">
@@ -39,7 +39,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
                                         <? edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
                                     </div><!-- .entry-content -->
                                 </article><!-- #post-<? the_ID(); ?> -->
-                            </main><!-- #main -->
+                            </div><!-- #main -->
                         </div><!-- two-thirds -->
                         <? get_sidebar('hcc-oportunity'); ?>
                     </div><!-- #content -->
@@ -47,5 +47,5 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
             </div>
         </div>
     </div>
-
+</main>
 <? get_footer(); ?>

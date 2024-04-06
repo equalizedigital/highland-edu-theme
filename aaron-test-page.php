@@ -26,7 +26,7 @@
 			<div id="primary" class="full-width">
 				<div id="content">
 	                <div class="two-thirds column alpha">
-	                    <main id="main-content" class="main">
+						<main id="main-content" class="main">
 							<? the_post(); ?>
 	                        <article id="post-<? the_ID(); ?>" <? post_class(); ?> role="article">
 	                            <div class="entry-content">

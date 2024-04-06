@@ -13,6 +13,7 @@ get_template_part( 'sub-header', 'index' ); //the  header stuffs
 get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 ?>
 <main id="main-content">
+
 	<div class="super-container interior-page">
 		<div class="container">
 			<div class="sixteen columns alpha">

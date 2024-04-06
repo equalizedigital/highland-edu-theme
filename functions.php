@@ -1,6 +1,10 @@
-<?php
+<?php 
 defined('ABSPATH') OR exit;
-define( 'THEME_VERSION', '1.1' );
+define('THEME_VERSION', '1.0.2');
+/**
+ * @package WordPress
+ * @subpackage WP-Skeleton
+ */
 
 // drag and drop menu support
 //unregister_nav_menu( $location ); <-- registered menus be unregistered (load theme once) if eliminating
@@ -18,7 +22,7 @@ register_sidebar(array(
   'id' => 'right-sidebar',
   'description' => 'Widgets in this area will be shown on the right-hand side.',
   'before_widget' => '<div id="%1$s">',
-  'after_widget'  => '</div>',
+  'after_widget'  => '</div>',  
   'before_title' => '<h3>',
   'after_title' => '</h3>'
 ));
@@ -55,8 +59,8 @@ add_action('pre_user_query','mstar_pre_user_query');
 function mstar_pre_user_query($user_search) {
 	global $current_user;
 	$username = $current_user->user_login;
-
-	if ($username != 'mstaradmin') {
+	
+	if ($username != 'mstaradmin') { 
 		global $wpdb;
 		$user_search->query_where = str_replace('WHERE 1=1', "WHERE 1=1 AND {$wpdb->users}.user_login != 'mstaradmin'",$user_search->query_where);
 	}
@@ -83,14 +87,13 @@ function mstar_jquery_enqueue() {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('navigation', get_template_directory_uri().'/includes/js/navigation.js', array(), THEME_VERSION, true );
 	wp_enqueue_script('customjs', get_template_directory_uri().'/includes/js/custom.js', array('jquery'), THEME_VERSION, true );
-	// wp_enqueue_style('global', get_template_directory_uri().'/stylesheets/global.min.css', array(), THEME_VERSION, 'all' );
+	wp_enqueue_style('global', get_template_directory_uri().'/stylesheets/global.min.css', array(), THEME_VERSION, 'all' );
 }
 
 add_action( 'enqueue_block_assets', 'mstar_block_admin_editor_styles' );
 function mstar_block_admin_editor_styles() {
-	wp_enqueue_style( 'mstar-block-editor-styles', get_template_directory_uri(). '/stylesheets/editor.css', false, '1.0', 'all' );
+	wp_enqueue_style( 'mstar-block-editor-styles', get_template_directory_uri(). '/stylesheets/editor.css', false, THEME_VERSION, 'all' );
 }
-
 //Adds Customizer functinality
 function mytheme_customize_register( $wp_customize ){
 	require_once( get_stylesheet_directory() . '/includes/customizer.php' );
@@ -99,7 +102,6 @@ add_action( 'customize_register', 'mytheme_customize_register' );
 
 
 
-add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 
 
 include('includes/custom_login_functions.php');
@@ -111,9 +113,70 @@ include('includes/upload_functions.php');
 include('includes/form_functions.php');
 include('includes/cpt_functions.php'); 	//-- use for custom post types
 include('includes/menus.php');
-include('includes/block-editor.php');
 include('includes/acf.php');
+include('includes/block-editor.php');
 
+//include('includes/twitter_loader.php'); 	//-- call within page, not functions!
+//include('includes/facebook_feed.php');  	//-- call within page, not functions!
+//include('includes/fancy_loader.php');   	//-- call within page, not functions!
+
+/**
+ * Helper function to replace the first occurence of a string.
+ *
+ * @param  mixed $search
+ * @param  mixed $replace
+ * @param  mixed $subject
+ * @return void
+ */
+function str_replace_first($search, $replace, $subject) {
+    $search = '/'.preg_quote($search, '/').'/';
+    return preg_replace( $search, $replace, $subject, 1 );
+}
+/**
+ * By default, Gravity Forms isn't accessible. This function adds a fieldset and legend to checkbox fields.
+ *
+ * @param  mixed $content
+ * @param  mixed $field
+ * @param  mixed $value
+ * @param  mixed $lead_id
+ * @param  mixed $form_id
+ * @return void
+ */
+function add_fields_wrapper( $content, $field, $value, $lead_id, $form_id ) {
+	if ( 'checkbox' === $field->type ) {
+		$content = str_replace_first( '<label', '<legend class="reset-legend"><label', $content );
+		$content = str_replace_first( '</label>', '</label></legend>', $content );
+		$content = '<fieldset>' . $content . '</fieldset>';
+	}
+	return $content;
+}
+//add_filter( 'gform_field_content', 'add_fields_wrapper', 10, 5 );
+
+/**
+ * By default, Gravity Forms isn't accessible. This function adds autocomplete attributes to fields.
+ *
+ * @param  mixed $content
+ * @param  mixed $field
+ * @param  mixed $value
+ * @param  mixed $lead_id
+ * @param  mixed $form_id
+ * @return void
+ */
+function acco_add_fields_wrapper( $content, $field, $value, $lead_id, $form_id ) {
+	$lookup = array(
+		2 => 'name',
+		3 => 'tel',
+	);
+	$regex = '/\<(?:input|select|textarea)\s+[^\>]+?(\s*\/?\>){1}/im';
+	if ( preg_match( $regex, $content, $input ) ) {
+		$attribute    = $lookup[ $field->id ];
+		$autocomplete = sprintf( ' autocomplete="%s"', esc_attr( $attribute ) );
+		$element      = str_replace( $input[1], $autocomplete . $input[1], $input[0] );
+		$content      = str_replace( $input[0], $element, $content );
+	}
+	return $content;
+}
+add_filter( 'gform_field_content_5', 'acco_add_fields_wrapper', 10, 5 );
 
 /**
  * Add scope attributes to table headers
@@ -144,18 +207,6 @@ function tablepress_add_scope( $output, $table, $render_options ) {
 }
 add_filter( 'tablepress_table_output', 'tablepress_add_scope', 10, 3 );
 
-
-// body classes filter
-function mstar_body_classes( $classes ) {
-	global $post;
-	$post_id = $post->ID;
-	$hide_h1_visually = get_field('hide_h1_visually', $post_id);
-	if($hide_h1_visually) {
-		$classes[] = 'hide-h1-visually';
-	}
-	return $classes;
-}
-add_filter( 'body_class', 'mstar_body_classes' );
 /**
  * Inject the list of categories after the title.
  *
@@ -182,19 +233,19 @@ add_action( 'tribe_template_before_include:events/v2/list/event/venue', 'categor
  */
 function tribe_remove_organizers_from_events( $default_types ) {
 
-	if (
-		! is_array( $default_types )
-		|| empty( $default_types )
-		|| empty( Tribe__Events__Main::ORGANIZER_POST_TYPE )
-	) {
-		return $default_types;
-	}
+    if (
+        ! is_array( $default_types )
+        || empty( $default_types )
+        || empty( Tribe__Events__Main::ORGANIZER_POST_TYPE )
+    ) {
+        return $default_types;
+    }
 
-	if ( ( $key = array_search( Tribe__Events__Main::ORGANIZER_POST_TYPE, $default_types ) ) !== false ) {
-		unset( $default_types[ $key ] );
-	}
+    if ( ( $key = array_search( Tribe__Events__Main::ORGANIZER_POST_TYPE, $default_types ) ) !== false ) {
+        unset( $default_types[ $key ] );
+    }
 
-	return $default_types;
+    return $default_types;
 }
 
 add_filter( 'tribe_events_register_default_linked_post_types', 'tribe_remove_organizers_from_events' );
@@ -211,6 +262,18 @@ function remove_my_submenu() {
 	}
 	remove_submenu_page('edit.php?post_type=tribe_events', 'edit.php?post_type=' . Tribe__Events__Organizer::POSTTYPE );
 }
+// body classes filter
+function mstar_body_classes( $classes ) {
+	global $post;
+	$post_id = $post->ID;
+	$hide_h1_visually = get_field('hide_h1_visually', $post_id);
+	if($hide_h1_visually) {
+		$classes[] = 'hide-h1-visually';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'mstar_body_classes' );
+
 
 function add_id_to_results_per_page($output, $params) {
 	if ( 'results_per_page' == $params['facet']['name']) {
@@ -297,3 +360,4 @@ function replace_figure_with_div_in_image_block( $block_content, $block ) {
 
     return $block_content;
 }
+?>

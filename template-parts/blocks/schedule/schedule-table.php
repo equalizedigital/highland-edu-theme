@@ -1,11 +1,10 @@
 <?php
 $my_query = new WP_Query(
 	array(
-		'post_type'   => 'class',
-		'orderby'     => 'title',
-		'order'       => 'ASC',
-		'post_status' => 'publish',
-		'facetwp'      => true,
+		'post_type' => 'class',
+		'orderby'   => 'title',
+		'order'     => 'ASC',
+		'facetwp'   => true,
 	),
 );
 
@@ -14,7 +13,7 @@ if ( $my_query->have_posts() ) : ?>
 
 	<div class="schedule-results">
 		<div class="table-sort">
-			<div class="table-sort-results-number" aria-live="polite" role="region" data-label="Classes">
+			<div class="table-sort-results-number" aria-live="polite" role="region">
 				<?php echo intval( $my_query->found_posts ); ?> Classes
 			</div>
 			<!-- per page -->
@@ -51,7 +50,8 @@ if ( $my_query->have_posts() ) : ?>
 					$start_date_timestamp = get_post_meta( $class_id, '_cmb_class_start_date', true );
 					$start_date           = $start_date_timestamp ? date( 'M d, Y', $start_date_timestamp ) : 'N/A';//phpcs:ignore
 					$end_date_timestamp   = get_post_meta( $class_id, '_cmb_class_end_date', true );
-					$end_date             = $end_date_timestamp ? date( 'M d, Y', $end_date_timestamp ) : 'N/A';//phpcs:ignore					$full_date            = $start_date . ' - ' . $end_date;
+					$end_date             = $end_date_timestamp ? date( 'M d, Y', $end_date_timestamp ) : 'N/A';//phpcs:ignore
+					$full_date            = $start_date . ' - ' . $end_date;
 					$enrolled             = get_post_meta( $class_id, '_cmb_enrolled', true );
 					$max_enrolled         = get_post_meta( $class_id, '_cmb_enrollment_max', true );
 					$remaining_seats      = intval( $max_enrolled ) - intval( $enrolled );

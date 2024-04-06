@@ -64,7 +64,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title
 					<div id="content">
 						<div class="two-thirds column alpha">
 							<main class="main" id="main-content">
-								<? the_post(); ?>
+							<? the_post(); ?>
 								<article id="post-<? the_ID(); ?>" <? post_class(); ?> role="article">
 									<div class="entry-content">
 										<div class="sixteen columns alpha omega faq-feed">

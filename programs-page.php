@@ -76,5 +76,4 @@
 	</div>
 </div>
 </main><!-- #main-content -->
-                
 <? get_footer(); ?>

@@ -11,7 +11,7 @@
  * @license   GPL-2.0+
  * @link      https://cmb2.io
  */
-class CMB2_hookup extends CMB2_Hookup_Base {
+class CMB2_Hookup extends CMB2_Hookup_Base {
 
 	/**
 	 * Only allow JS registration once
@@ -54,19 +54,20 @@ class CMB2_hookup extends CMB2_Hookup_Base {
 	protected $options_hookup = null;
 
 	/**
-	 * Constructor
+	 * A functionalized constructor, used for the hookup action callbacks.
 	 *
-	 * @since 2.0.0
-	 * @param CMB2 $cmb The CMB2 object to hookup
+	 * @since  2.2.6
+	 *
+	 * @param  CMB2 $cmb The CMB2 object to hookup.
+	 *
+	 * @return CMB2_Hookup_Base $hookup The hookup object.
 	 */
-	public function __construct( CMB2 $cmb ) {
-		$this->cmb = $cmb;
-		$this->object_type = $this->cmb->mb_object_type();
-	}
+	public static function maybe_init_and_hookup( CMB2 $cmb ) {
+		if ( $cmb->prop( 'hookup' ) ) {
 
-	public function universal_hooks() {
-		foreach ( get_class_methods( 'CMB2_Show_Filters' ) as $filter ) {
-			add_filter( 'cmb2_show_on', array( 'CMB2_Show_Filters', $filter ), 10, 3 );
+			$hookup = new self( $cmb );
+
+			// Hook in the hookup..ilters', $filter ), 10, 3 );
 		}
 
 		if ( is_admin() ) {
@@ -871,6 +872,154 @@ class CMB2_hookup extends CMB2_Hookup_Base {
 
 	/**
 	 * Includes CMB2 JS
+	 *
+	 * @since  2.0.0
+	 */
+	public static function enqueue_cmb_js() {
+
+		/**
+		 * Filter to determine if CMB2'S JS should be enqueued.
+		 *
+		 * @param bool $enqueue_js Default is true.
+		 */
+		if ( ! apply_filters( 'cmb2_enqueue_js', true ) ) {
+			return false;
+		}
+
+		self::register_js();
+		return true;
+	}
+
+}
+ $taxonomy : $tt_id;
+
+		// check permissions.
+		if ( $this->taxonomy_can_save( $taxonomy ) && $this->can_save( 'term' ) ) {
+			$this->cmb->save_fields( $term_id, 'term', $_POST );
+		}
+	}
+
+	/**
+	 * Delete term meta when a term is deleted.
+	 *
+	 * @since 2.2.0
+	 * @param  int    $term_id  Term ID.
+	 * @param  int    $tt_id    Term Taxonomy ID.
+	 * @param  string $taxonomy Taxonomy.
+	 * @return void
+	 */
+	public function delete_term( $term_id, $tt_id, $taxonomy = '' ) {
+		if ( $this->taxonomy_can_save( $taxonomy ) ) {
+
+			$data_to_delete = array();
+			foreach ( $this->cmb->prop( 'fields' ) as $field ) {
+				$data_to_delete[ $field['id'] ] = '';
+			}
+
+			$this->cmb->save_fields( $term_id, 'term', $data_to_delete );
+		}
+	}
+
+	/**
+	 * Determines if the current object is able to be saved.
+	 *
+	 * @since  2.0.9
+	 * @param  string $type Current object type.
+	 * @return bool         Whether object can be saved.
+	 */
+	public function can_save( $type = '' ) {
+
+		$can_save = (
+			$this->cmb->prop( 'save_fields' )
+			// check nonce.
+			&& isset( $_POST[ $this->cmb->nonce() ] )
+			&& wp_verify_nonce( $_POST[ $this->cmb->nonce() ], $this->cmb->nonce() )
+			// check if autosave.
+			&& ! ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+			// get the metabox types & compare it to this type.
+			&& ( $type && in_array( $type, $this->cmb->box_types() ) )
+			// Don't do updates during a switch-to-blog instance.
+			&& ! ( is_multisite() && ms_is_switched() )
+		);
+
+		/**
+		 * Filter to determine if metabox is allowed to save.
+		 *
+		 * @param bool   $can_save Whether the current metabox can save.
+		 * @param object $cmb      The CMB2 instance.
+		 */
+		return apply_filters( 'cmb2_can_save', $can_save, $this->cmb );
+	}
+
+	/**
+	 * Determine if taxonomy of term being modified is cmb2-editable.
+	 *
+	 * @since 2.2.0
+	 *
+	 * @param string $taxonomy Taxonomy of term being modified.
+	 * @return bool             Whether taxonomy is editable.
+	 */
+	public function taxonomy_can_save( $taxonomy ) {
+		if ( empty( $this->taxonomies ) || ! in_array( $taxonomy, $this->taxonomies ) ) {
+			return false;
+		}
+
+		$taxonomy_object = get_taxonomy( $taxonomy );
+		// Can the user edit this term?
+		if ( ! isset( $taxonomy_object->cap ) || ! current_user_can( $taxonomy_object->cap->edit_terms ) ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * Enqueues the 'cmb2-display-styles' if the conditions match (has columns, on the right page, etc).
+	 *
+	 * @since  2.2.2.1
+	 */
+	protected function maybe_enqueue_column_display_styles() {
+		global $pagenow;
+		if (
+			$pagenow
+			&& $this->cmb->has_columns
+			&& $this->cmb->prop( 'cmb_styles' )
+			&& in_array( $pagenow, array( 'edit.php', 'users.php', 'edit-comments.php', 'edit-tags.php' ), 1 )
+			) {
+			self::enqueue_cmb_css( 'cmb2-display-styles' );
+		}
+	}
+
+	/**
+	 * Includes CMB2 styles.
+	 *
+	 * @since 2.0.0
+	 *
+	 * @param string $handle CSS handle.
+	 * @return mixed
+	 */
+	public static function enqueue_cmb_css( $handle = 'cmb2-styles' ) {
+
+		/**
+		 * Filter to determine if CMB2'S css should be enqueued.
+		 *
+		 * @param bool $enqueue_css Default is true.
+		 */
+		if ( ! apply_filters( 'cmb2_enqueue_css', true ) ) {
+			return false;
+		}
+
+		self::register_styles();
+
+		/*
+		 * White list the options as this method can be used as a hook callback
+		 * and have a different argument passed.
+		 */
+		return wp_enqueue_style( 'cmb2-display-styles' === $handle ? $handle : 'cmb2-styles' );
+	}
+
+	/**
+	 * Includes CMB2 JS.
 	 *
 	 * @since  2.0.0
 	 */

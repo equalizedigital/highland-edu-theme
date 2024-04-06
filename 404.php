@@ -16,7 +16,7 @@
 			<div id="primary" class="full-width">
 				<div id="content">
 	                <div class="two-thirds column alpha">
-	                    <main id="main-content" class="main">
+					<main id="main-content" class="main">
 
 				            <article id="post-0" class="error404">
 								<header class="entry-header">
@@ -30,8 +30,8 @@
 
 							</article><!-- #post-0 -->
 
-						</main><!-- #main -->
-	                </div><!-- two-thirds -->
+						</div><!-- #main -->
+					</main><!-- two-thirds -->
 	                <?php get_sidebar(); ?>
 				</div><!-- #content -->
 			</div><!-- #primary -->

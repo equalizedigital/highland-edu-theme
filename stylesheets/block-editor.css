@@ -171,6 +171,11 @@ h2.wp-block-heading {
     line-height: 1;
   }
 }
+.page-template-default h2.wp-block-heading {
+  font-size: 40px;
+  padding-bottom: 0;
+  line-height: 1.2;
+}
 
 h3.wp-block-heading {
   font-size: 18px;
@@ -194,8 +199,11 @@ h3.wp-block-heading {
     line-height: 1;
   }
 }
+.page-template-default h3.wp-block-heading {
+  font-size: 24px;
+}
 
-h4.wp-block-heading, h5.wp-block-heading, h6.wp-block-heading {
+h4.wp-block-heading {
   font-size: 10px;
   color: #285598;
   font-style: normal;
@@ -203,19 +211,49 @@ h4.wp-block-heading, h5.wp-block-heading, h6.wp-block-heading {
   line-height: 12px;
 }
 @media (min-width: 768px) {
-  h4.wp-block-heading, h5.wp-block-heading, h6.wp-block-heading {
+  h4.wp-block-heading {
     font-size: 10px;
   }
 }
 @media (min-width: 992px) {
-  h4.wp-block-heading, h5.wp-block-heading, h6.wp-block-heading {
+  h4.wp-block-heading {
     font-size: 10px;
   }
 }
 @media (max-width: 768px) {
-  h4.wp-block-heading, h5.wp-block-heading, h6.wp-block-heading {
+  h4.wp-block-heading {
     line-height: 1;
   }
+}
+.page-template-default h4.wp-block-heading {
+  font-size: 20px;
+}
+
+h5.wp-block-heading, h6.wp-block-heading {
+  font-size: 10px;
+  color: #285598;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 12px;
+}
+@media (min-width: 768px) {
+  h5.wp-block-heading, h6.wp-block-heading {
+    font-size: 10px;
+  }
+}
+@media (min-width: 992px) {
+  h5.wp-block-heading, h6.wp-block-heading {
+    font-size: 10px;
+  }
+}
+@media (max-width: 768px) {
+  h5.wp-block-heading, h6.wp-block-heading {
+    line-height: 1;
+  }
+}
+.page-template-default h5.wp-block-heading, .page-template-default h6.wp-block-heading {
+  font-size: 18px;
+  color: #787474;
 }
 
 /* Focus State
@@ -540,8 +578,8 @@ img.aligncenter {
 
 @media (max-width: 1199px) {
   .wp-block-image.alignwide figcaption,
-.wp-block-video.alignwide figcaption,
-.wp-block-table.alignwide figcaption {
+  .wp-block-video.alignwide figcaption,
+  .wp-block-table.alignwide figcaption {
     padding-left: 16px;
     padding-right: 16px;
   }

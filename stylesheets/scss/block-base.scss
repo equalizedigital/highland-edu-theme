@@ -423,6 +423,12 @@ h2.wp-block-heading {
 	@include media("<=mobile_menu") {
 		line-height: 1
 	}
+
+	.page-template-default & {
+		font-size: 40px;
+		padding-bottom: 0;
+		line-height: 1.2;
+	}
 }
 
 h3.wp-block-heading {
@@ -434,9 +440,13 @@ h3.wp-block-heading {
 	@include media("<=mobile_menu") {
 		line-height: 1
 	}
+
+	.page-template-default & {
+		font-size: 24px;
+	}
 }
 
-h4.wp-block-heading, h5.wp-block-heading, h6.wp-block-heading {
+h4.wp-block-heading {
 	@include style( 'title', 4 );
 	color: $blue;
 	font-style: normal;
@@ -444,6 +454,26 @@ h4.wp-block-heading, h5.wp-block-heading, h6.wp-block-heading {
 	line-height: 12px;
 	@include media("<=mobile_menu") {
 		line-height: 1
+	}
+
+	.page-template-default & {
+		font-size: 20px;
+	}
+}
+
+h5.wp-block-heading, h6.wp-block-heading {
+	@include style( 'title', 4 );
+	color: $blue;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 12px;
+	@include media("<=mobile_menu") {
+		line-height: 1
+	}
+
+	.page-template-default & {
+		font-size: 18px;
+		color: #787474;
 	}
 }
 

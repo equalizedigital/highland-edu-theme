@@ -4,7 +4,7 @@
 	 * @subpackage WP-Skeleton
 	 */
 ?>
-	<ul id="search_posts">
+		<ul id="search_posts">
         <?php
             while ( have_posts() ) : the_post();
                 $is_page_locked_student = get_post_meta(get_the_id(), '_cmb_student_portal_checkbox', true);

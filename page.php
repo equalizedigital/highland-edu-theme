@@ -23,11 +23,13 @@
                 <div id="primary" class="full-width">
                     <div id="content">
                         <div class="two-thirds column alpha">
-                            <? the_post(); ?>
-                            <div class="entry-content">
-                                <? the_content(); ?>
-                                <? edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
-                            </div><!-- .entry-content -->
+                            <div class="main">
+                                <? the_post(); ?>
+                                <div class="entry-content">
+                                    <? the_content(); ?>
+                                    <? edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
+                                </div><!-- .entry-content -->
+                            </div><!-- #main -->
                         </div><!-- two-thirds -->
                         <? get_sidebar(); ?>
                     </div><!-- #content -->
@@ -36,5 +38,4 @@
         </div>
     </div>
 </main>
-
 <? get_footer(); ?>
