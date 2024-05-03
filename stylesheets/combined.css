@@ -1810,7 +1810,7 @@ body.simple-modal-open {
 }
 
 .tribe-events-calendar-list .tribe-event-categories li a {
-    color: #fff;
+    color: #fff !important;
 }
 .tribe-events-calendar-list .tribe-event-categories li a:hover {
     border: none;
