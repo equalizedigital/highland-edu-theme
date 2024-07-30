@@ -360,4 +360,8 @@ function replace_figure_with_div_in_image_block( $block_content, $block ) {
 
     return $block_content;
 }
-?>
+
+// Remove the admin bar for non-logged-in users.
+add_filter( 'show_admin_bar', function ( $show ) {
+	return is_user_logged_in() ? $show : false;
+} );
