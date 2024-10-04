@@ -1,3 +1,15 @@
+.testimonial-slider-swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    overflow: clip;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+}
+
 .eqd-testimonial-slider {
     background-color: #193662;
     padding: 4.5rem;
@@ -54,6 +66,19 @@
     .eqd-testimonial-slider .slide-content {
         display: flex;
     }
+}
+
+.eqd-slide-button-control {
+    background-color: #ff6200;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: .5em;
+    position: absolute;
+    right: 2em;
+    bottom: 2em;
+    text-decoration: none;
+    z-index: 15;
 }
 
 .slide-ctrl {
@@ -357,4 +382,8 @@
         57.20925% 42.53029%,
         56.87342% 42.46916%
     );
+}
+
+.swiper-pagination {
+    position: relative !important;
 }

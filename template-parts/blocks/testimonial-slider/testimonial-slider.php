@@ -24,7 +24,7 @@ if ( ! empty( $block['className'] ) ) {
 <?php if ( have_rows( 'testimonial_slider' ) ) : ?>
     <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $className ); ?>" role="region" aria-label="carousel">
         <div class="super-container">
-            <div class="swiper container">
+            <div class="testimonial-slider-swiper container">
                 <div class="swiper-wrapper slider">
 					<?php
 					while ( have_rows( 'testimonial_slider' ) ) : the_row();
@@ -42,6 +42,10 @@ if ( ! empty( $block['className'] ) ) {
                                     <img src="<?php echo esc_url( $testimonial_image['sizes']['large'] ); ?>"
                                          alt="<?php echo esc_attr( $testimonial_image_alt ); ?>"/>
                                     <h3 class="name"><?php echo esc_html( $testimonial_name ); ?></h3>
+                                    <button class="eqd-slide-button-control" aria-pressed="false">
+                                        <span class="screen-reader-text">Pause</span>
+                                        <span class="dashicons dashicons-controls-pause"></span>
+                                    </button>
                                     <div class="slide-ctrl play">
                                         <div class="icon" width="120" height="120">
                                             <div class="side left" x="0" y="0" width="120" height="120"
@@ -59,6 +63,7 @@ if ( ! empty( $block['className'] ) ) {
 
 					<?php endwhile; ?>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
