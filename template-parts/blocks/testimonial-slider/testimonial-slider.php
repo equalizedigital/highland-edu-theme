@@ -61,10 +61,6 @@ if ( ! empty( $block['className'] ) ) {
 					<?php endwhile; ?>
                 </div>
                 <div class="swiper-pagination"></div>
-<!--                <button class="eqd-slide-button-control" aria-pressed="false">-->
-<!--                    <span class="screen-reader-text">Pause</span>-->
-<!--                    <span class="dashicons dashicons-controls-pause"></span>-->
-<!--                </button>-->
             </div>
         </div>
     </div>

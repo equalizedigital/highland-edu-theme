@@ -12,7 +12,7 @@
 
 .eqd-testimonial-slider {
     background-color: #193662;
-    padding: 4.5rem;
+    padding: 4.5rem 4.5rem 2.9rem 4.5rem;
     margin: 0;
 }
 
@@ -84,6 +84,16 @@
 .slide-ctrl {
     background-color: transparent;
     border: 0;
+    padding: 0;
+    max-height: 67px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.slide-ctrl:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    opacity: 1;
 }
 
 .slide-ctrl .icon {
