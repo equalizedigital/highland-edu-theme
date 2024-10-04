@@ -12,13 +12,12 @@
 
 .eqd-testimonial-slider {
     background-color: #193662;
-    padding: 4.5rem 4.5rem 2.9rem 4.5rem;
+    padding: 2.5rem 15px 2.5rem 15px;
     margin: 0;
 }
 
 .eqd-testimonial-slider .slide-details {
     text-align: center;
-    width: 33.333333%;
 }
 
 .eqd-testimonial-slider .slide-details img {
@@ -28,26 +27,23 @@
 
 .eqd-testimonial-slider .slide-details .name {
     color: #fff;
-    font-size: 2.25rem;
     letter-spacing: 1px;
     padding: .5rem 0 0;
     font-family: Raleway, sans-serif;
     font-weight: 300;
+    font-size: 1.375rem;
+    line-height: 1.75rem;
 }
 
 .eqd-testimonial-slider .slide-headline {
     font-family: Raleway, sans-serif;
-    font-size: 4rem;
-    line-height: 4.5rem;
     color: #ff6200;
     text-align: center;
     padding-bottom: 2.5rem;
     font-weight: 700;
     letter-spacing: 1px;
-}
-
-.eqd-testimonial-slider .slide-text {
-    width: 66.666667%;
+    font-size: 36px;
+    line-height: 2.5rem;
 }
 
 .eqd-testimonial-slider .slide-text p {
@@ -60,12 +56,6 @@
 
 .eqd-testimonial-slider .slide-content {
     display: block;
-}
-
-@media (min-width: 768px) {
-    .eqd-testimonial-slider .slide-content {
-        display: flex;
-    }
 }
 
 .eqd-slide-button-control {
@@ -395,6 +385,7 @@
 
 .eqd-testimonial-slider .swiper-pagination {
     position: relative !important;
+    margin-top: 18px;
 }
 
 .eqd-testimonial-slider .swiper-pagination-bullet {
@@ -410,4 +401,41 @@
 
 .eqd-testimonial-slider .swiper-pagination-bullet-active {
     background: #fff;
+}
+
+@media (min-width: 768px) {
+    .eqd-testimonial-slider .slide-content {
+        display: flex;
+    }
+
+    .eqd-testimonial-slider {
+        background-color: #193662;
+        padding: 2.5rem 0 2.5rem 0;
+        margin: 0;
+    }
+
+    .eqd-testimonial-slider .slide-details {
+        width: 33.333333%;
+    }
+
+    .eqd-testimonial-slider .slide-text {
+        width: 66.666667%;
+    }
+
+    .eqd-testimonial-slider .slide-headline {
+        font-size: 4rem;
+        line-height: 4.5rem;
+    }
+
+    .eqd-testimonial-slider .slide-details .name {
+        font-size: 2.25rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .eqd-testimonial-slider {
+        background-color: #193662;
+        padding: 4.5rem 4.5rem 2.9rem 4.5rem;
+        margin: 0;
+    }
 }
