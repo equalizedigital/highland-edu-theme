@@ -42,18 +42,15 @@ if ( ! empty( $block['className'] ) ) {
                                     <img src="<?php echo esc_url( $testimonial_image['sizes']['large'] ); ?>"
                                          alt="<?php echo esc_attr( $testimonial_image_alt ); ?>"/>
                                     <h3 class="name"><?php echo esc_html( $testimonial_name ); ?></h3>
-                                    <button class="eqd-slide-button-control" aria-pressed="false">
+                                    <button class="slide-ctrl play" aria-pressed="false">
                                         <span class="screen-reader-text">Pause</span>
-                                        <span class="dashicons dashicons-controls-pause"></span>
-                                    </button>
-                                    <div class="slide-ctrl play">
-                                        <div class="icon" width="120" height="120">
+                                        <div class="icon" width="80" height="80">
                                             <div class="side left" x="0" y="0" width="120" height="120"
                                                  fill="#fff"></div>
                                             <div class="side right" x="0" y="0" width="120" height="120"
                                                  fill="#fff"></div>
                                         </div>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="slide-text">
                                     <p><?php echo wp_kses_post( $testimonial_text ); ?></p>
@@ -64,6 +61,10 @@ if ( ! empty( $block['className'] ) ) {
 					<?php endwhile; ?>
                 </div>
                 <div class="swiper-pagination"></div>
+<!--                <button class="eqd-slide-button-control" aria-pressed="false">-->
+<!--                    <span class="screen-reader-text">Pause</span>-->
+<!--                    <span class="dashicons dashicons-controls-pause"></span>-->
+<!--                </button>-->
             </div>
         </div>
     </div>

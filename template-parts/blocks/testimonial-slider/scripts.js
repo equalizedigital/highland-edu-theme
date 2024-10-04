@@ -1,6 +1,6 @@
 // Function to add event listeners to buttons
 function addButtonEventListeners() {
-    const buttons = document.querySelectorAll('.button');
+    const buttons = document.querySelectorAll('.slide-ctrl');
     buttons.forEach((button) => {
         button.addEventListener('keydown', (event) => {
             if (event.keyCode === 9) {
@@ -35,21 +35,47 @@ function addPaginationEventListeners(testimonialSlider) {
 // Function to handle control button click event
 function handleControlButtonClick(testimonialSlider) {
     const controlBtn = document.querySelector('.eqd-slide-button-control');
-    if (controlBtn) {
-        controlBtn.addEventListener('click', () => {
-            if (controlBtn.getAttribute('aria-pressed') === 'false') {
-                testimonialSlider.autoplay.stop();
-                controlBtn.querySelector('.screen-reader-text').textContent = 'Play';
-                controlBtn.querySelector('.dashicons').classList.replace('dashicons-controls-pause', 'dashicons-controls-play');
-                controlBtn.setAttribute('aria-pressed', 'true');
-            } else {
+
+    document.querySelectorAll('.slide-ctrl').forEach((ctrl) => {
+        ctrl.addEventListener('click', function() {
+
+            if (this.classList.contains('pause')) {
                 testimonialSlider.autoplay.start();
-                controlBtn.querySelector('.screen-reader-text').textContent = 'Pause';
-                controlBtn.querySelector('.dashicons').classList.replace('dashicons-controls-play', 'dashicons-controls-pause');
-                controlBtn.setAttribute('aria-pressed', 'false');
+            } else if (this.classList.contains('play')) {
+                testimonialSlider.autoplay.stop();
             }
+
+            document.querySelectorAll('.slide-ctrl').forEach((ctrl) => {
+                if (ctrl.classList.contains('pause')) {
+                    ctrl.querySelector('.screen-reader-text').textContent = 'Play';
+                    ctrl.setAttribute('aria-pressed', 'true');
+                    ctrl.classList.remove('pause');
+                    ctrl.classList.add('play');
+                } else if (ctrl.classList.contains('play')) {
+                    ctrl.querySelector('.screen-reader-text').textContent = 'Pause';
+                    ctrl.setAttribute('aria-pressed', 'false');
+                    ctrl.classList.remove('play');
+                    ctrl.classList.add('pause');
+                }
+            });
         });
-    }
+    });
+
+    // if (controlBtn) {
+    //     controlBtn.addEventListener('click', () => {
+    //         if (controlBtn.getAttribute('aria-pressed') === 'false') {
+    //             testimonialSlider.autoplay.stop();
+    //             controlBtn.querySelector('.screen-reader-text').textContent = 'Play';
+    //             controlBtn.querySelector('.dashicons').classList.replace('dashicons-controls-pause', 'dashicons-controls-play');
+    //             controlBtn.setAttribute('aria-pressed', 'true');
+    //         } else {
+    //             testimonialSlider.autoplay.start();
+    //             controlBtn.querySelector('.screen-reader-text').textContent = 'Pause';
+    //             controlBtn.querySelector('.dashicons').classList.replace('dashicons-controls-play', 'dashicons-controls-pause');
+    //             controlBtn.setAttribute('aria-pressed', 'false');
+    //         }
+    //     });
+    // }
 }
 
 // Swiper configuration
@@ -58,6 +84,7 @@ const testimonialSliderArgs = {
     speed: 1000,
     autoplay: {
         delay: 5000,
+        disableOnInteraction: false,
     },
     pagination: {
         el: '.swiper-pagination',
@@ -68,6 +95,9 @@ const testimonialSliderArgs = {
             addButtonEventListeners();
             addPaginationEventListeners(testimonialSlider);
             handleControlButtonClick(testimonialSlider);
+        },
+        slideChange: function(testimonialSlider) {
+            // updateControlButtonStates(testimonialSlider);
         },
     },
 };
