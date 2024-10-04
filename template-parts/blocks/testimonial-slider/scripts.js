@@ -60,22 +60,6 @@ function handleControlButtonClick(testimonialSlider) {
             });
         });
     });
-
-    // if (controlBtn) {
-    //     controlBtn.addEventListener('click', () => {
-    //         if (controlBtn.getAttribute('aria-pressed') === 'false') {
-    //             testimonialSlider.autoplay.stop();
-    //             controlBtn.querySelector('.screen-reader-text').textContent = 'Play';
-    //             controlBtn.querySelector('.dashicons').classList.replace('dashicons-controls-pause', 'dashicons-controls-play');
-    //             controlBtn.setAttribute('aria-pressed', 'true');
-    //         } else {
-    //             testimonialSlider.autoplay.start();
-    //             controlBtn.querySelector('.screen-reader-text').textContent = 'Pause';
-    //             controlBtn.querySelector('.dashicons').classList.replace('dashicons-controls-play', 'dashicons-controls-pause');
-    //             controlBtn.setAttribute('aria-pressed', 'false');
-    //         }
-    //     });
-    // }
 }
 
 // Swiper configuration
@@ -95,9 +79,6 @@ const testimonialSliderArgs = {
             addButtonEventListeners();
             addPaginationEventListeners(testimonialSlider);
             handleControlButtonClick(testimonialSlider);
-        },
-        slideChange: function(testimonialSlider) {
-            // updateControlButtonStates(testimonialSlider);
         },
     },
 };

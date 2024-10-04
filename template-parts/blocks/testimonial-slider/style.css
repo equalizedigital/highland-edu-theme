@@ -388,9 +388,7 @@
 }
 
 .eqd-testimonial-slider .swiper-pagination-bullet {
-    background: #285598;
-    /*outline: 2px solid #fff;*/
-    /*outline-offset: 2px;*/
+    background: #fff;
 }
 
 .eqd-testimonial-slider .swiper-pagination-bullet:focus {
@@ -402,6 +400,4 @@
 
 .eqd-testimonial-slider .swiper-pagination-bullet-active {
     background: #fff;
-    /*outline: 2px solid #fff;*/
-    /*outline-offset: 2px;*/
 }
