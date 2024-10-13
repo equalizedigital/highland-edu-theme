@@ -20,6 +20,7 @@ class EQD_ACF_Customizations {
 		// register blocks
 		add_action( 'acf/init', array( $this, 'register_blocks' ) );
 
+		add_action( 'init', array( $this, 'eqd_register_acf_blocks' ) );
 	}
 
 	/**
@@ -81,6 +82,7 @@ class EQD_ACF_Customizations {
 				'align' => array( 'full', 'wide' ),
 			),
 		) );
+
 		if ( function_exists( 'acf_register_block_type' ) ) {
 			acf_register_block_type( array(
 				'name'            => 'eqd-team-block',
@@ -91,6 +93,7 @@ class EQD_ACF_Customizations {
 				'icon'            => 'admin-users',
 				'keywords'        => array( 'team', 'teams', 'admin' ),
 			) );
+
 			// schedule filters block
 			acf_register_block(
 				array(
@@ -192,6 +195,14 @@ class EQD_ACF_Customizations {
 			);
 		}
 		
+	}
+
+	/**
+	 * Register ACF Blocks
+	 * @return void
+	 */
+	public function eqd_register_acf_blocks(): void {
+		register_block_type( get_stylesheet_directory() . '/template-parts/blocks/testimonial-slider' );
 	}
 }
 new EQD_ACF_Customizations();

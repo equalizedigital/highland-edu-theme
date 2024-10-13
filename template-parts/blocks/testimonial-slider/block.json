@@ -1,0 +1,26 @@
+{
+  "name": "eqd-testimonial-slider-block",
+  "title": "Testimonial Slider Block",
+  "description": "A custom testimonial slider block.",
+  "style": [
+    "file:./style.css"
+  ],
+  "script": [
+    "file:./scripts.js"
+  ],
+  "category": "common",
+  "icon": "images-alt2",
+  "keywords": [
+    "testimonial",
+    "quote",
+    "accessible",
+    "carousel"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "testimonial-slider.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}
