@@ -88,6 +88,23 @@ function mstar_jquery_enqueue() {
 	wp_enqueue_script('navigation', get_template_directory_uri().'/includes/js/navigation.js', array(), THEME_VERSION, true );
 	wp_enqueue_script('customjs', get_template_directory_uri().'/includes/js/custom.js', array('jquery'), THEME_VERSION, true );
 	wp_enqueue_style('global', get_template_directory_uri().'/stylesheets/global.min.css', array(), THEME_VERSION, 'all' );
+
+    // Enqueue Swiper CSS
+    wp_enqueue_style(
+        'swiper-css',
+        get_template_directory_uri() . '/includes/swiper/swiper.min.css',
+        array(),
+        '6.8.4'
+    );
+
+    // Enqueue Swiper JS
+    wp_enqueue_script(
+        'swiper-js',
+        get_template_directory_uri() . '/includes/swiper/swiper.min.js',
+        array('jquery'),
+        '6.8.4',
+        true
+    );	    
 }
 
 add_action( 'enqueue_block_assets', 'mstar_block_admin_editor_styles' );
