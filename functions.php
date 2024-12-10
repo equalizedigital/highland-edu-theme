@@ -104,7 +104,7 @@ function mstar_jquery_enqueue() {
         array('jquery'),
         '6.8.4',
         true
-    );	    
+    );	
 }
 
 add_action( 'enqueue_block_assets', 'mstar_block_admin_editor_styles' );

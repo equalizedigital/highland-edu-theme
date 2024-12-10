@@ -51,9 +51,7 @@
                     <img src="<? bloginfo('template_url'); ?>/images/logo.jpg" alt="Highland Community College logo. Located in Northwest Illinois" />
                 </div>
                 <div class="social-holder">
-                    <div class="copy">
-                        <p>&copy; <? echo date('Y'); ?> Highland Community College</p>
-                    </div>
+                   
                     <div class="social-icons-wrapper">
                         <ul class="social-icons">
                             <li>
@@ -62,7 +60,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://twitter.com/highlandcollege" aria-label="Twitter Link">
+                                <a href="https://twitter.com/highlandcollege" aria-label="Twitter">
                                     <img src="<? bloginfo('template_url'); ?>/images/twtr.png" alt="Twitter" />
                                 </a>
                             </li>
@@ -78,7 +76,9 @@
                             </li>
                        </ul>
                     </div>
+					
                 </div>
+				
             </div>
             <div class="footer-menu">
                 <div class="left-menu">
@@ -93,6 +93,9 @@
                 </div>
                 <img src="<? bloginfo('template_url'); ?>/images/support_our_vets.jpg" alt="Supporting our veterans." />
             </div>
+			 <div class="copy">
+                        <p>&copy; <? echo date('Y'); ?> Highland Community College</p>
+                    </div>
         </div><!-- container -->
     </div><!-- super-container -->
 
