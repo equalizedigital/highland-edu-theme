@@ -6,7 +6,8 @@
     "file:./style.css"
   ],
   "script": [
-    "file:./scripts.js"
+    "file:./scripts.js",
+    "https://unpkg.com/swiper/swiper-bundle.min.js"
   ],
   "category": "common",
   "icon": "images-alt2",

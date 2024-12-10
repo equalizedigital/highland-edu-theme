@@ -11,7 +11,7 @@
  * @license   GPL-2.0+
  * @link      https://cmb2.io
  */
-class CMB2_Hookup extends CMB2_Hookup_Base {
+class CMB2_hookup extends CMB2_Hookup_Base {
 
 	/**
 	 * Only allow JS registration once
@@ -54,20 +54,19 @@ class CMB2_Hookup extends CMB2_Hookup_Base {
 	protected $options_hookup = null;
 
 	/**
-	 * A functionalized constructor, used for the hookup action callbacks.
+	 * Constructor
 	 *
-	 * @since  2.2.6
-	 *
-	 * @param  CMB2 $cmb The CMB2 object to hookup.
-	 *
-	 * @return CMB2_Hookup_Base $hookup The hookup object.
+	 * @since 2.0.0
+	 * @param CMB2 $cmb The CMB2 object to hookup
 	 */
-	public static function maybe_init_and_hookup( CMB2 $cmb ) {
-		if ( $cmb->prop( 'hookup' ) ) {
+	public function __construct( CMB2 $cmb ) {
+		$this->cmb = $cmb;
+		$this->object_type = $this->cmb->mb_object_type();
+	}
 
-			$hookup = new self( $cmb );
-
-			// Hook in the hookup..ilters', $filter ), 10, 3 );
+	public function universal_hooks() {
+		foreach ( get_class_methods( 'CMB2_Show_Filters' ) as $filter ) {
+			add_filter( 'cmb2_show_on', array( 'CMB2_Show_Filters', $filter ), 10, 3 );
 		}
 
 		if ( is_admin() ) {
