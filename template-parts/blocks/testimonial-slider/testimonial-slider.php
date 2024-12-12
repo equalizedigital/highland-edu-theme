@@ -41,7 +41,7 @@ if ( ! empty( $block['className'] ) ) {
                             <div class="slide-details">
                                 <img src="<?php echo esc_url( $testimonial_image['sizes']['large'] ); ?>"
                                      alt="<?php echo esc_attr( $testimonial_image_alt ); ?>"/>
-                                <h3 class="name"><?php echo esc_html( $testimonial_name ); ?></h3>
+                                <p class="name"><?php echo esc_html( $testimonial_name ); ?></p>
                                 <button class="slide-ctrl play" aria-pressed="false">
                                     <span class="screen-reader-text">Pause</span>
                                     <div class="icon" width="80" height="80">
