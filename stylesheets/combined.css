@@ -1472,14 +1472,14 @@ h1.dog-title {
 }
 .alert-title h2 {
     font-family: 'Open Sans', sans-serif;
-    color: #C64936;
+    color: #fff;
     font-size: 18px;
     font-weight:700;
     padding:10px 0 5px 0;
     line-height:  22px;
 }
 .alert-wrapper a {
-    color: #C64936;
+    color: #fff;
 }
 .alert-body {
     width:80% !important;
