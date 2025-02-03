@@ -52,9 +52,6 @@ defined('ABSPATH') OR exit;
                                 <button class="toggle-mega-menu" aria-expanded="false" aria-controls="academics-subs">Academics<span class="caret-icon" aria-hidden="true"></span></button>
                             </li>
                             <li>
-                                <a target="_blank" rel="noopener" href="https://highlandcougars.com/">Athletics</a>
-                            </li>
-                            <li>
                             <button class="toggle-mega-menu" aria-expanded="false" aria-controls="campus-subs">Campus &amp; Community<span class="caret-icon" aria-hidden="true"></span></button>
                             </li>
                             <li>
