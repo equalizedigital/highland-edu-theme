@@ -257,7 +257,7 @@ img {
 @each $name in $gutenberg_colors {
 
 	.has-#{$name}-color {
-		color: brand-color( $name );
+		color: brand-color( $name ) !important;
 
 		&:hover {
 			color: brand-color( $name );

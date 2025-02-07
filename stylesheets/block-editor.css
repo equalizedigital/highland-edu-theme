@@ -208,7 +208,6 @@ h4.wp-block-heading {
   color: #285598;
   font-style: normal;
   font-weight: 700;
-  line-height: 12px;
 }
 @media (min-width: 768px) {
   h4.wp-block-heading {
@@ -218,11 +217,6 @@ h4.wp-block-heading {
 @media (min-width: 992px) {
   h4.wp-block-heading {
     font-size: 10px;
-  }
-}
-@media (max-width: 768px) {
-  h4.wp-block-heading {
-    line-height: 1;
   }
 }
 .page-template-default h4.wp-block-heading {
@@ -234,7 +228,6 @@ h5.wp-block-heading, h6.wp-block-heading {
   color: #285598;
   font-style: normal;
   font-weight: 700;
-  line-height: 12px;
 }
 @media (min-width: 768px) {
   h5.wp-block-heading, h6.wp-block-heading {
@@ -244,11 +237,6 @@ h5.wp-block-heading, h6.wp-block-heading {
 @media (min-width: 992px) {
   h5.wp-block-heading, h6.wp-block-heading {
     font-size: 10px;
-  }
-}
-@media (max-width: 768px) {
-  h5.wp-block-heading, h6.wp-block-heading {
-    line-height: 1;
   }
 }
 .page-template-default h5.wp-block-heading, .page-template-default h6.wp-block-heading {
@@ -623,7 +611,7 @@ img.aligncenter {
 /* Color Options
 --------------------------------------------- */
 .has-blue-color {
-  color: #285598;
+  color: #285598 !important;
 }
 .has-blue-color:hover {
   color: #285598;
@@ -650,7 +638,7 @@ img.aligncenter {
 }
 
 .has-dark-blue-color {
-  color: #193662;
+  color: #193662 !important;
 }
 .has-dark-blue-color:hover {
   color: #193662;
@@ -677,7 +665,7 @@ img.aligncenter {
 }
 
 .has-brown-color {
-  color: #603813;
+  color: #603813 !important;
 }
 .has-brown-color:hover {
   color: #603813;
@@ -704,7 +692,7 @@ img.aligncenter {
 }
 
 .has-orange-color {
-  color: #ff6200;
+  color: #ff6200 !important;
 }
 .has-orange-color:hover {
   color: #ff6200;
@@ -731,7 +719,7 @@ img.aligncenter {
 }
 
 .has-light-orange-color {
-  color: #FFDCC7;
+  color: #FFDCC7 !important;
 }
 .has-light-orange-color:hover {
   color: #FFDCC7;
@@ -758,7 +746,7 @@ img.aligncenter {
 }
 
 .has-gray-color {
-  color: #787474;
+  color: #787474 !important;
 }
 .has-gray-color:hover {
   color: #787474;
@@ -785,7 +773,7 @@ img.aligncenter {
 }
 
 .has-mid-gray-color {
-  color: #8b8989;
+  color: #8b8989 !important;
 }
 .has-mid-gray-color:hover {
   color: #8b8989;
@@ -812,7 +800,7 @@ img.aligncenter {
 }
 
 .has-light-gray-color {
-  color: #EBEBEB;
+  color: #EBEBEB !important;
 }
 .has-light-gray-color:hover {
   color: #EBEBEB;
@@ -839,7 +827,7 @@ img.aligncenter {
 }
 
 .has-white-color {
-  color: #fff;
+  color: #fff !important;
 }
 .has-white-color:hover {
   color: #fff;
@@ -927,6 +915,3 @@ li.has-large-font-size {
   line-height: 1;
   margin: 0;
 }
-
-
-/*# sourceMappingURL=block-editor.css.map */
