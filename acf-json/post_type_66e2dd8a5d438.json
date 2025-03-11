@@ -43,10 +43,10 @@
         "item_link_description": "A link to a agenda and minute."
     },
     "description": "",
-    "public": true,
+    "public": false,
     "hierarchical": false,
     "exclude_from_search": true,
-    "publicly_queryable": true,
+    "publicly_queryable": false,
     "show_ui": true,
     "show_in_menu": true,
     "admin_menu_parent": "",
