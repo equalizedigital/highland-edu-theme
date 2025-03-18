@@ -382,3 +382,13 @@ function replace_figure_with_div_in_image_block( $block_content, $block ) {
 add_filter( 'show_admin_bar', function ( $show ) {
 	return is_user_logged_in() ? $show : false;
 } );
+
+/**
+ * Set Public Post Preview the nonce life to 10 days.
+ *
+ * @return int
+ */
+function csm_nonce_life() {
+    return 10 * DAY_IN_SECONDS;
+}
+add_filter( 'ppp_nonce_life', 'csm_nonce_life' );
