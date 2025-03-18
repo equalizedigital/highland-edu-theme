@@ -383,6 +383,7 @@ add_filter( 'show_admin_bar', function ( $show ) {
 	return is_user_logged_in() ? $show : false;
 } );
 
+
 /**
  * Set Public Post Preview the nonce life to 10 days.
  *
