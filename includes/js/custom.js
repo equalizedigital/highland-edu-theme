@@ -384,3 +384,9 @@ document.addEventListener('DOMContentLoaded', function() {
         figure.parentNode.replaceChild(ul, figure);
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("hr.separator-aria-hidden").forEach(function(el) {
+        el.setAttribute("aria-hidden", "true");
+    });
+});
