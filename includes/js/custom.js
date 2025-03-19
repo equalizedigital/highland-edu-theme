@@ -384,3 +384,10 @@ document.addEventListener('DOMContentLoaded', function() {
         figure.parentNode.replaceChild(ul, figure);
     }
 });
+
+// Set aria-hidden attribute to true for separator elements to improve accessibility
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("hr.separator-aria-hidden").forEach(function(el) {
+        el.setAttribute("aria-hidden", "true");
+    });
+});
