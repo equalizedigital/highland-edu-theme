@@ -57,7 +57,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 textarea,
-select{border:1px solid #ccc;padding:6px 4px;outline:none;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;font:13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;color:#777;margin:0;max-width:100%;display:block;background:#fff;}
+select{border:1px solid #757575;padding:6px 4px;outline:none;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;font:13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;color:#777;margin:0;max-width:100%;display:block;background:#fff;}
 select{padding:0 !important;}
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -1887,8 +1887,4 @@ ul.sep-list li::after {
 
 ul.sep-list li:last-child::after {
     content: "";
-}
-
-input[type="text"], input[type="password"], input[type="email"], textarea, select {
-	border-color: #757575;
 }
