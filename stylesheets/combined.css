@@ -1888,3 +1888,7 @@ ul.sep-list li::after {
 ul.sep-list li:last-child::after {
     content: "";
 }
+
+input[type="text"], input[type="password"], input[type="email"], textarea, select {
+	border-color: #757575;
+}
