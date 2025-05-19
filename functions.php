@@ -134,7 +134,7 @@ include('includes/block-editor.php');
 //include('includes/fancy_loader.php');   	//-- call within page, not functions!
 
 // Action hook that handles the taxonomy resync after wp all import class imports.
-require_once 'includes/sync_taxonomies_after_class_import.php';
+require_once get_template_directory() . 'includes/sync_taxonomies_after_class_import.php';
 
 /**
  * Helper function to replace the first occurence of a string.
