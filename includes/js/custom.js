@@ -391,3 +391,74 @@ document.addEventListener("DOMContentLoaded", function() {
         el.setAttribute("aria-hidden", "true");
     });
 });
+
+// Otter Popup Modal Accessibility
+document.addEventListener('DOMContentLoaded', function () {
+	const modal = document.querySelector('.otter-popup__modal_content');
+	const overlay = document.querySelector('.otter-popup__modal_wrap_overlay');
+	const closeButton = document.querySelector('.otter-popup__modal_header button');
+
+	// Add ARIA roles and properties
+	const modalWrap = document.querySelector('.otter-popup__modal_wrap');
+	modal.setAttribute('role', 'dialog');
+	modal.setAttribute('aria-modal', 'true');
+	modal.setAttribute('aria-labelledby', 'wp-block-themeisle-blocks-advanced-heading-dc07cd14');
+
+	// Fix close button accessibility
+	closeButton.removeAttribute('aria-hidden');
+	closeButton.setAttribute('aria-label', 'Close modal');
+
+	// Trap focus inside modal
+	const focusableSelectors = [
+		'a[href]',
+		'button:not([disabled])',
+		'textarea:not([disabled])',
+		'input[type="text"]:not([disabled])',
+		'select:not([disabled])',
+		'[tabindex]:not([tabindex="-1"])'
+	];
+	let focusableElements = modal.querySelectorAll(focusableSelectors.join(','));
+	focusableElements = Array.prototype.slice.call(focusableElements);
+
+	let firstFocusable = focusableElements[0];
+	let lastFocusable = focusableElements[focusableElements.length - 1];
+
+	function trapFocus(e) {
+		if (e.key === 'Tab') {
+			if (e.shiftKey) {
+				// Shift + Tab
+				if (document.activeElement === firstFocusable) {
+					e.preventDefault();
+					lastFocusable.focus();
+				}
+			} else {
+				// Tab
+				if (document.activeElement === lastFocusable) {
+					e.preventDefault();
+					firstFocusable.focus();
+				}
+			}
+		}
+		if (e.key === 'Escape') {
+			closeModal();
+		}
+	}
+
+	function openModal() {
+		document.body.style.overflow = 'hidden';
+		firstFocusable.focus();
+		document.addEventListener('keydown', trapFocus);
+	}
+
+	function closeModal() {
+		document.body.style.overflow = '';
+		modalWrap.style.display = 'none';
+		document.removeEventListener('keydown', trapFocus);
+	}
+
+	closeButton.addEventListener('click', closeModal);
+	overlay.addEventListener('click', closeModal);
+
+	// Automatically open modal if needed
+	openModal();
+});

@@ -1896,3 +1896,8 @@ ul.sep-list li:last-child::after {
     background-color: #fff !important;
     text-align: left !important;
 }
+
+.otter-popup__modal_header button[aria-label="Close modal"]:focus {
+    outline: 2px solid #285598 !important;
+    outline-offset: 2px !important;
+}
