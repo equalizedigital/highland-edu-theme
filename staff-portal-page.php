@@ -46,26 +46,28 @@
 
 	<div class="super-container interior-page">
 		<div class="container">
-			<div class="two-thirds column alpha omega" id="portal_page">
-                <div class="sixteen columns alpha omega">
-                    <div class="eight columns alpha omega portal-hr-feed">
-                        <? get_template_part('portal-newsfeed'); ?>
-                    </div>
-                    <div class="eight columns alpha omega portal-news-feed cougar-corner">
-                        <? get_template_part('portal-hr-newsletter-feed'); ?>
-                    </div>
-                </div>
-                <div class="sixteen columns alpha omega">
-                    <div class="eight columns alpha omega portal-news-feed">
-                        <? get_template_part('portal-hr-feed'); ?>
-                    </div>
-                    <div class="eight columns alpha omega staff-portal-events">
-                        <H3>campus events</H3>
-                        <? get_template_part('staff-events-feed'); ?>
-                    </div>
-                </div>
-			</div>
-			<? get_template_part('sidebar'); ?>
+			<main id="main-content">
+				<div class="two-thirds column alpha omega" id="portal_page">
+					<div class="sixteen columns alpha omega">
+						<div class="eight columns alpha omega portal-hr-feed">
+							<? get_template_part('portal-newsfeed'); ?>
+						</div>
+						<div class="eight columns alpha omega portal-news-feed cougar-corner">
+							<? get_template_part('portal-hr-newsletter-feed'); ?>
+						</div>
+					</div>
+					<div class="sixteen columns alpha omega">
+						<div class="eight columns alpha omega portal-news-feed">
+							<? get_template_part('portal-hr-feed'); ?>
+						</div>
+						<div class="eight columns alpha omega staff-portal-events">
+							<H3>campus events</H3>
+							<? get_template_part('staff-events-feed'); ?>
+						</div>
+					</div>
+				</div>
+				<? get_template_part('sidebar'); ?>
+			</main>
 		</div>
 	</div>
 
