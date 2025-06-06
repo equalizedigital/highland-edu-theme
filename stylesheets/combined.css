@@ -154,7 +154,7 @@ ul#menu-topnav li:hover > a{color:#FFF;text-decoration:underline;text-decoration
 .slicknav_nav {padding-top: 100px !important;}
 .slicknav_nav a {position: relative;z-index: 10000;}
 .menu-wrapper{background:#ddd;}
-.portal-menu-holder{background:#fd6c35;margin-bottom:50px;}
+.portal-menu-holder{background:#603813;margin-bottom:50px;}
 .primary-nav-holder{z-index:2000;}
 .vid-holder iframe, .video-wrapper iframe, .vid-holder object, .vid-holder embed{position:absolute;top:0;left:0;width:100%;height:100%;}
 .video-thumb-holder{position:relative;}
@@ -1887,4 +1887,12 @@ ul.sep-list li::after {
 
 ul.sep-list li:last-child::after {
     content: "";
+}
+
+.event-feed .tribe-events-widget-events-list__view-more {
+    display: none !important;
+}
+.event-feed .tribe-events-widget-events-list__event-title {
+    background-color: #fff !important;
+    text-align: left !important;
 }
