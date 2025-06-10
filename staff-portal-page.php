@@ -47,6 +47,7 @@
 	<div class="super-container interior-page">
 		<div class="container">
 			<main id="main-content">
+				<? get_template_part('sidebar'); ?>
 				<div class="two-thirds column alpha omega" id="portal_page">
 					<div class="sixteen columns alpha omega">
 						<div class="eight columns alpha omega portal-hr-feed">
@@ -66,7 +67,6 @@
 						</div>
 					</div>
 				</div>
-				<? get_template_part('sidebar'); ?>
 			</main>
 		</div>
 	</div>

@@ -270,6 +270,7 @@ a.tour{background:#ff6200;}
 .staff-portal-events .event-feed-date { width: 25%; float: left; }
 .staff-portal-events .event-feed-details { width: 75%; float: left; }
 .staff-portal-events .event-feed { padding: 0 0; }
+.staff-portal-events .blue-btn { display: inline-block; line-height: 1em !important; }
 .map-area{max-height:770px;text-align:left;padding:125px 0;background-color: #285598;}
 .address h2{font-family:'Roboto', sans-serif;font-size:28px;line-height:60px;letter-spacing:-0.15px;font-weight:700;color:#FFF;text-align:center;margin-bottom:0; padding-bottom: 0;}
 .address p.street{font-family:'Roboto', sans-serif;font-size:28px;font-weight:300;line-height:40px;letter-spacing:-0.15px;text-transform:uppercase;margin-bottom:0;text-align: center; color:#fff;padding-bottom:0;margin-bottom:20px;}
@@ -794,7 +795,7 @@ ul.menu-main-menu li:hover > ul {
 #more_access ul ul li{min-width:180px;margin:0 0;border-bottom:#666 solid 1px;border-left:#666 solid 1px !important;padding:0;}
 #more_access ul ul ul{left:100%;top:0;}
 #more_access ul ul a{background:#777;line-height:1em;padding:10px;width:160px;height:auto;font-size:14px;color:#fff;}
-#more_access li:hover{background-color:#ff6200;color:#fff;}
+#more_access li:hover{background-color:#193662;color:#fff;}
 #more_access ul ul:hover > a{background-color:#666;}
 #more_access ul li:hover > ul{display:block;}
 * html #more_access ul li.current_page_item a,
