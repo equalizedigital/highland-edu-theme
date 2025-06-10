@@ -108,7 +108,7 @@ legend span{font-weight:normal;font-size:13px;color:#444;}
     }
 }
 .menu-dark{background:#787474;}
-.menu-orng{background:#ff6200;}
+.menu-orng{background:#1a3763;}
 .top-nav-holder{z-index:998;}
 @media screen and (min-width: 1024px) {
     .top-nav-holder{display: flex!important;justify-content: flex-end;}
