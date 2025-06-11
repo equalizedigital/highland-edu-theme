@@ -57,7 +57,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 textarea,
-select{border:1px solid #757575;padding:6px 4px;outline:none;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;font:13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;color:#777;margin:0;max-width:100%;display:block;background:#fff;}
+select{border:1px solid #757575;padding:6px 4px;outline:none;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;font:13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;color:#555;margin:0;max-width:100%;display:block;background:#fff;}
 select{padding:0 !important;}
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -108,7 +108,7 @@ legend span{font-weight:normal;font-size:13px;color:#444;}
     }
 }
 .menu-dark{background:#787474;}
-.menu-orng{background:#ff6200;}
+.menu-orng{background:#1a3763;}
 .top-nav-holder{z-index:998;}
 @media screen and (min-width: 1024px) {
     .top-nav-holder{display: flex!important;justify-content: flex-end;}
@@ -154,7 +154,7 @@ ul#menu-topnav li:hover > a{color:#FFF;text-decoration:underline;text-decoration
 .slicknav_nav {padding-top: 100px !important;}
 .slicknav_nav a {position: relative;z-index: 10000;}
 .menu-wrapper{background:#ddd;}
-.portal-menu-holder{background:#fd6c35;margin-bottom:50px;}
+.portal-menu-holder{background:#603813;margin-bottom:50px;}
 .primary-nav-holder{z-index:2000;}
 .vid-holder iframe, .video-wrapper iframe, .vid-holder object, .vid-holder embed{position:absolute;top:0;left:0;width:100%;height:100%;}
 .video-thumb-holder{position:relative;}
@@ -270,6 +270,7 @@ a.tour{background:#ff6200;}
 .staff-portal-events .event-feed-date { width: 25%; float: left; }
 .staff-portal-events .event-feed-details { width: 75%; float: left; }
 .staff-portal-events .event-feed { padding: 0 0; }
+.staff-portal-events .blue-btn { display: inline-block; line-height: 1em !important; }
 .map-area{max-height:770px;text-align:left;padding:125px 0;background-color: #285598;}
 .address h2{font-family:'Roboto', sans-serif;font-size:28px;line-height:60px;letter-spacing:-0.15px;font-weight:700;color:#FFF;text-align:center;margin-bottom:0; padding-bottom: 0;}
 .address p.street{font-family:'Roboto', sans-serif;font-size:28px;font-weight:300;line-height:40px;letter-spacing:-0.15px;text-transform:uppercase;margin-bottom:0;text-align: center; color:#fff;padding-bottom:0;margin-bottom:20px;}
@@ -794,7 +795,7 @@ ul.menu-main-menu li:hover > ul {
 #more_access ul ul li{min-width:180px;margin:0 0;border-bottom:#666 solid 1px;border-left:#666 solid 1px !important;padding:0;}
 #more_access ul ul ul{left:100%;top:0;}
 #more_access ul ul a{background:#777;line-height:1em;padding:10px;width:160px;height:auto;font-size:14px;color:#fff;}
-#more_access li:hover{background-color:#ff6200;color:#fff;}
+#more_access li:hover{background-color:#193662;color:#fff;}
 #more_access ul ul:hover > a{background-color:#666;}
 #more_access ul li:hover > ul{display:block;}
 * html #more_access ul li.current_page_item a,
@@ -825,6 +826,10 @@ ul.menu-main-menu li:hover > ul {
 * html #side_access ul li.current-menu-item a,
 * html #side_access ul li.current-menu-parent a,
 * html #side_access ul li a:hover{color:#FFF;}
+#side_access ul li a:focus-visible {
+    outline-color: white !important;
+    outline-offset: -10px;
+}
 
 .bot-menu-holder .primary-nav-wrapper {
     width: 100% !important;
@@ -1892,4 +1897,12 @@ ul.sep-list li:last-child::after {
 .otter-popup__modal_header button[aria-label="Close modal"]:focus {
     outline: 2px solid #285598 !important;
     outline-offset: 2px !important;
+}
+
+.event-feed .tribe-events-widget-events-list__view-more {
+    display: none !important;
+}
+.event-feed .tribe-events-widget-events-list__event-title {
+    background-color: #fff !important;
+    text-align: left !important;
 }

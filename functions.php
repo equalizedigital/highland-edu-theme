@@ -1,6 +1,6 @@
 <?php 
 defined('ABSPATH') OR exit;
-define('THEME_VERSION', '1.0.3');
+define('THEME_VERSION', '1.0.4');
 /**
  * @package WordPress
  * @subpackage WP-Skeleton
