@@ -325,6 +325,14 @@ footer .parallax-area .button-holder a:focus {
 footer .footer-logos .button-holder a:focus {
     outline-color: #285598 !important;
 }
+footer .footer-logos .button-holder a {
+    width: 243px;
+    box-sizing: border-box;
+    display: inline-block;
+    line-height: 26px;
+    text-align: center;
+    margin-bottom: 15px;
+}
 .wp-block-image img {
     display: inline-block;
 }
