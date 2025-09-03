@@ -1,8 +1,8 @@
-name: Deploy to WP Engine (staging)
+name: Deploy to WP Engine (production)
 on:
   push:
     branches:
-      - staging
+      - main
   workflow_dispatch:
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
         with:
           # Deploy vars
           WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
-          WPE_ENV: hicollegestg
+          WPE_ENV: hicollege
           # Deploy Options
           REMOTE_PATH: "wp-content/themes/highland_edu/"
           PHP_LINT: FALSE
