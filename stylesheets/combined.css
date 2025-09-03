@@ -1113,7 +1113,7 @@ h1.dog-title {
 	line-height: 68px;
 	text-transform: uppercase;
 	font-weight: 700;
-	
+
 }
 
 
@@ -1763,7 +1763,8 @@ body.simple-modal-open {
 .post-type-archive-tribe_events .tribe-events .tribe-events-c-search__button:focus,
 .post-type-archive-tribe_events .tribe-events .tribe-events-c-search__button:hover,
 .post-type-archive-tribe_events .tribe-events .tribe-events-c-search__button,
-.tribe-events-view.tribe-common .view-more-button {
+.tribe-events-view.tribe-common .view-more-button,
+.tribe-events-view.tribe-common a:not(.tribe-common-anchor--unstyle).view-more-button {
     color: #fff;
     font-family: "Raleway", sans-serif;
     font-weight: 400;
@@ -1778,13 +1779,16 @@ body.simple-modal-open {
     padding: 12px 26px;
     text-decoration: none;
   }
-  .tribe-events-view.tribe-common .view-more-button:focus {
+  .tribe-events-view.tribe-common .view-more-button:focus,
+  .tribe-events-view.tribe-common a:not(.tribe-common-anchor--unstyle).view-more-button:focus {
     outline: 2px solid #285598;
     outline-offset: 2px;
   }
   .post-type-archive-tribe_events .tribe-events .tribe-events-c-search__button:focus,
   .post-type-archive-tribe_events .tribe-events .tribe-events-c-search__button:hover,
-  .tribe-events-view.tribe-common .view-more-button:hover {
+  .tribe-events-view.tribe-common .view-more-button:hover,
+  .tribe-events-view.tribe-common a:not(.tribe-common-anchor--unstyle).view-more-button:hover,
+  .tribe-events-view.tribe-common a:not(.tribe-common-anchor--unstyle).view-more-button:focus {
     background-color: #193662;
     border: none;
   }
