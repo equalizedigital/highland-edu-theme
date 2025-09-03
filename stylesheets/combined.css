@@ -43,7 +43,7 @@ ul ul, ul ol,
 ol ol, ol ul{margin:4px 0 5px 30px;font-size:90%;}
 ul ul li, ul ol li,
 ol ol li, ol ul li{margin-bottom:6px;}
-li{line-height:18px;margin-bottom:12px;margin-left: 15px;}
+li{line-height:18px;margin-bottom:12px;margin-left: 20px;}
 ul.large li{line-height:21px;}
 li p{line-height:21px;}
 img.scale-with-grid{max-width:100%;height:auto;}
@@ -1113,10 +1113,7 @@ h1.dog-title {
 	line-height: 68px;
 	text-transform: uppercase;
 	font-weight: 700;
-	
 }
-
-
 
 /* style.css */
 .super-container{position:relative;width:100%;}
@@ -1763,7 +1760,8 @@ body.simple-modal-open {
 .post-type-archive-tribe_events .tribe-events .tribe-events-c-search__button:focus,
 .post-type-archive-tribe_events .tribe-events .tribe-events-c-search__button:hover,
 .post-type-archive-tribe_events .tribe-events .tribe-events-c-search__button,
-.tribe-events-view.tribe-common .view-more-button {
+.tribe-events-view.tribe-common .view-more-button,
+.tribe-events-view.tribe-common a:not(.tribe-common-anchor--unstyle).view-more-button {
     color: #fff;
     font-family: "Raleway", sans-serif;
     font-weight: 400;
@@ -1778,13 +1776,16 @@ body.simple-modal-open {
     padding: 12px 26px;
     text-decoration: none;
   }
-  .tribe-events-view.tribe-common .view-more-button:focus {
+  .tribe-events-view.tribe-common .view-more-button:focus,
+  .tribe-events-view.tribe-common a:not(.tribe-common-anchor--unstyle).view-more-button:focus {
     outline: 2px solid #285598;
     outline-offset: 2px;
   }
   .post-type-archive-tribe_events .tribe-events .tribe-events-c-search__button:focus,
   .post-type-archive-tribe_events .tribe-events .tribe-events-c-search__button:hover,
-  .tribe-events-view.tribe-common .view-more-button:hover {
+  .tribe-events-view.tribe-common .view-more-button:hover,
+  .tribe-events-view.tribe-common a:not(.tribe-common-anchor--unstyle).view-more-button:hover,
+  .tribe-events-view.tribe-common a:not(.tribe-common-anchor--unstyle).view-more-button:focus {
     background-color: #193662;
     border: none;
   }
@@ -1913,4 +1914,14 @@ ul.sep-list li:last-child::after {
 .event-feed .tribe-events-widget-events-list__event-title {
     background-color: #fff !important;
     text-align: left !important;
+}
+
+ul.wp-block-list {
+    list-style: unset;
+    padding: 0;
+    margin: 0;
+}
+
+ul.wp-block-list li > ul {
+    margin: 10px 0 10px 20px;
 }
