@@ -48,18 +48,20 @@
 	<div class="super-container interior-page">
 		<div class="container">
 			<div class="two-thirds column alpha omega" id="portal_page">
-				<div class="eight columns alpha omega portal-news-feed">
-					<? get_template_part('portal-newsfeed'); ?>
-				</div>
-				<div class="eight columns alpha omega portal-bulletin-board">
-					<? get_template_part('portal-bulletin-board'); ?>
-				</div>
-				<div class="sixteen columns alpha omega portal-events">
-					<div class="events-header">
-						<p>campus events</p>
+				<main id="main-content">
+					<div class="eight columns alpha omega portal-news-feed">
+						<? get_template_part('portal-newsfeed'); ?>
 					</div>
-					<? get_template_part('events-feed'); ?>
-				</div>
+					<div class="eight columns alpha omega portal-bulletin-board">
+						<? get_template_part('portal-bulletin-board'); ?>
+					</div>
+					<div class="sixteen columns alpha omega portal-events">
+						<div class="events-header">
+							<p>campus events</p>
+						</div>
+						<? get_template_part('events-feed'); ?>
+					</div>
+				</main>
 			</div>
 			<? get_template_part('sidebar'); ?>
 		</div>

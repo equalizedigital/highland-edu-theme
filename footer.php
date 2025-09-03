@@ -91,6 +91,9 @@
                 <div class="button-holder">
                     <a href="<? echo get_permalink(10505);?>" class="blue-btn">employment</a>
                 </div>
+                <div class="button-holder">
+                    <a href="<?php echo esc_url('https://host.nxt.blackbaud.com/adaptive-donor-form/?formId=11ce7f33-4edc-4324-89dc-ca1340f390a8&envid=p-irD7br1Nx0q8NbgJjJn5Bw&zone=usa'); ?>" class="blue-btn">Give</a>
+                </div>
                 <img src="<? bloginfo('template_url'); ?>/images/support_our_vets.jpg" alt="Supporting our veterans." />
             </div>
 			 <div class="copy">
