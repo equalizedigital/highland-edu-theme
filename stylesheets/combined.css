@@ -43,7 +43,7 @@ ul ul, ul ol,
 ol ol, ol ul{margin:4px 0 5px 30px;font-size:90%;}
 ul ul li, ul ol li,
 ol ol li, ol ul li{margin-bottom:6px;}
-li{line-height:18px;margin-bottom:12px;margin-left: 15px;}
+li{line-height:18px;margin-bottom:12px;margin-left: 20px;}
 ul.large li{line-height:21px;}
 li p{line-height:21px;}
 img.scale-with-grid{max-width:100%;height:auto;}
@@ -1113,10 +1113,7 @@ h1.dog-title {
 	line-height: 68px;
 	text-transform: uppercase;
 	font-weight: 700;
-
 }
-
-
 
 /* style.css */
 .super-container{position:relative;width:100%;}
@@ -1917,4 +1914,14 @@ ul.sep-list li:last-child::after {
 .event-feed .tribe-events-widget-events-list__event-title {
     background-color: #fff !important;
     text-align: left !important;
+}
+
+ul.wp-block-list {
+    list-style: unset;
+    padding: 0;
+    margin: 0;
+}
+
+ul.wp-block-list li > ul {
+    margin: 10px 0 10px 20px;
 }
