@@ -48,7 +48,7 @@
   
         <?php if (  $wp_query->max_num_pages > 1 ) : ?>
 
-          <nav id="nav-below">
+          <nav id="nav-below" aria-label="Search results pagination">
             <?php 
 			global $wp_query;  
   
@@ -58,7 +58,7 @@
 			  
 			  $current_page = max(1, get_query_var('paged'));  
 			  $big = 99999999;  
-			  echo '<ul class="bootpag">';  
+			  echo '<ul class="bootpag" style="margin-bottom: 50px;">';  
 			  str_replace($big, '%#%', get_pagenum_link($big));
 			  
 			  $links = paginate_links(array(  
@@ -67,11 +67,17 @@
 			      'current' => $current_page,  
 			      'total' => $total_pages,
 			      'prev_next' => false,
-			      'show_all' => true,
+			      'show_all' => false,
+			      'mid_size' => 2,
 			      'type' => 'array',
 			    ));  
 			  
 			  foreach($links as $link){
+			      // Add aria-label to each pagination link
+			      $link_text = strip_tags($link);
+			      if(is_numeric($link_text)) {
+			          $link = str_replace('<a', '<a aria-label="Page ' . $link_text . '"', $link);
+			      }
 				  echo '<li>',$link,'</li>';
 			  }
 			  
