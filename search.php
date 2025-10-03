@@ -17,7 +17,7 @@ get_template_part( 'sub-header', 'index' ); //the  header stuffs
 		</div><!-- menu-holder -->
 	</div>
 </header>
-<main id="main-content" role="main">
+<main id="main-content">
 	<div class="super-container interior-page">
 		<div class="container">
 			<div class="sixteen columns alpha">
