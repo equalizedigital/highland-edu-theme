@@ -32,7 +32,6 @@
 
 						</div><!-- #main -->
 					</main><!-- two-thirds -->
-	                <?php get_sidebar(); ?>
 				</div><!-- #content -->
 			</div><!-- #primary -->
 	    </div>
